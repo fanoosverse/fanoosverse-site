@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسیر پیدا نشد! | پروژه فانوس</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif; }
+        .bg-grid {
+            background-image: radial-gradient(circle, #ffffff05 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-white overflow-hidden h-screen flex items-center justify-center bg-grid">
+
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="relative z-10 text-center px-6">
+        <div class="relative mb-8 inline-block">
+            <h1 class="text-[150px] md:text-[200px] font-black text-white/5 leading-none select-none">404</h1>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <i data-lucide="frown" class="w-20 h-20 text-orange-500/50"></i>
+            </div>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">نور فانوس به این مسیر نمی‌رسه!</h2>
+        <p class="text-gray-400 text-lg max-w-md mx-auto mb-10 leading-relaxed">
+            متأسفانه صفحه‌ای که دنبالش بودی رو پیدا نکردیم. شاید آدرس رو اشتباه زدی یا این مسیر هنوز روشن نشده.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="index.html" class="bg-orange-500 hover:bg-orange-600 text-black font-bold px-8 py-3 rounded-2xl transition-all flex items-center justify-center gap-2">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                بازگشت به خانه
+            </a>
+            <button onclick="history.back()" class="bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-3 rounded-2xl font-bold transition-all">
+                برگشت به صفحه قبل
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

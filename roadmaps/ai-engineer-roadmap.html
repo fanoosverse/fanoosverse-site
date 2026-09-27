@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نقشه راه ورود به AI Engineering — فانوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#050505; --panel:#0c0c0c; --text:#ffffff; --muted:#a0a0a0;
+    --accent:#f97316; --gold:#f97316; --border:#1a1a1a; --depth-bg:#0a0a0a;
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:"Vazirmatn","Tahoma",sans-serif;
+    line-height:1.9; margin:0; padding:0;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:48px 24px 100px;}
+  header.hero{text-align:center; padding:40px 0 24px; border-bottom:1px solid var(--border); margin-bottom:36px;}
+  header.hero .badge{display:inline-block; background:#0c0c0c; color:#f97316; border:1px solid #1a1a1a; border-radius:999px; padding:4px 14px; font-size:13px; margin-bottom:16px;}
+  header.hero h1{font-size:30px; margin:0 0 10px; color:#fff;}
+  header.hero p{color:var(--muted); font-size:15px; margin:0;}
+  .meta-table{width:100%; border-collapse:collapse; margin:28px 0 44px; font-size:14px;}
+  .meta-table td{padding:10px 14px; border:1px solid var(--border); vertical-align:top;}
+  .meta-table td:first-child{background:#0c0c0c; color:var(--muted); width:190px; font-weight:600;}
+  section{margin-bottom:40px;}
+  h2{font-size:21px; color:var(--accent); border-bottom:2px solid var(--border); padding-bottom:10px; margin:0 0 18px;}
+  h3{font-size:17px; color:var(--gold); margin:22px 0 8px;}
+  h4{font-size:15px; color:#fff; margin:16px 0 6px;}
+  p{margin:0 0 12px; font-size:15px; color:#dbe3ee;}
+  .note{font-style:italic; color:#8c9bb0; font-size:14px; border-right:3px solid var(--border); padding-right:12px;}
+  ul{margin:0 0 14px; padding-right:22px;}
+  li{margin-bottom:8px; font-size:15px; color:#dbe3ee;}
+  .field-label{color:var(--muted); font-weight:600;}
+  .spec-card{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin-bottom:18px;}
+  .spec-card h4{margin-top:0; color:var(--accent);}
+  .flow{text-align:center; margin:20px 0;}
+  .flow div.step{display:inline-block; background:var(--panel); border:1px solid var(--border); color:#fff; padding:8px 18px; border-radius:8px; margin:4px 0; font-weight:600;}
+  .flow div.arrow{color:var(--gold); margin:2px 0;}
+  .refs li{font-size:14px; color:var(--muted);}
+  .refs a{color:var(--accent); text-decoration:none;}
+  .refs a:hover{text-decoration:underline;}
+  footer{text-align:center; color:var(--muted); font-size:13px; padding-top:30px; border-top:1px solid var(--border);}
+  .placeholder{background:#0c0c0c; border:1px solid #1a1a1a; color:#f97316; border-radius:8px; padding:10px 14px; font-size:14px;}
+  .qa{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:16px 20px; margin-bottom:14px;}
+  .qa .q{color:var(--gold); font-weight:700; font-size:15px; margin-bottom:8px;}
+  .qa .q::before{content:"س: "; color:var(--muted); font-weight:600;}
+  .qa p:last-child{margin-bottom:0;}
+  .stat{color:var(--accent); font-weight:700;}
+  details.depth{margin:6px 0 14px; border:1px solid var(--border); border-radius:8px; background:var(--depth-bg); overflow:hidden;}
+  details.depth summary{cursor:pointer; padding:9px 14px; color:var(--accent); font-size:13.5px; font-weight:600; list-style:none; user-select:none;}
+  details.depth summary::-webkit-details-marker{display:none;}
+  details.depth summary::before{content:"+ "; color:var(--gold);}
+  details.depth[open] summary::before{content:"− "; color:var(--gold);}
+  details.depth .depth-body{padding:2px 16px 14px; border-top:1px solid var(--border);}
+  details.depth .depth-body p{margin:10px 0 0;}
+  .navbar{position:fixed;top:0;right:0;left:0;height:70px;background:rgba(5,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000}
+  .navbar-brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:900;color:var(--text)}
+  .navbar-brand img{width:32px;height:32px;object-fit:contain}
+  .navbar-links{display:none}@media(min-width:768px){.navbar-links{display:flex;gap:24px;font-size:14px;color:var(--muted)}.navbar-links a{transition:.2s;cursor:pointer;text-decoration:none}.navbar-links a:hover{color:var(--accent)}.navbar-links a.active{color:var(--accent)}}
+  .navbar-cta{font-size:12px;padding:8px 16px;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;transition:.2s;text-decoration:none;cursor:pointer}
+  .navbar-cta:hover{background:var(--accent);color:black;font-weight:bold}
+  body{padding-top:70px;}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <img src="logos/(سفید)لوگو%20فانوس.png" alt="فانوس">
+    <span>فانوس</span>
+  </div>
+  <div class="navbar-links">
+    <a href="index.html">خانه</a>
+    <a href="roadmaps.html" class="active">نقشه‌های راه</a>
+    <a href="community.html">کامیونیتی</a>
+    <a href="about.html">درباره ما</a>
+  </div>
+  <a href="https://t.me/fanoosverse" target="_blank" class="navbar-cta">کانال فانوس‌ورس →</a>
+</nav>
+<div class="wrap">
+
+<header class="hero">
+  <div class="badge">فانوس 🌱 — نسخه نهایی</div>
+  <h1>نقشه راه ورود به AI Engineering</h1>
+  <p>بر اساس قالب استاندارد رودمپ‌های فانوس</p>
+</header>
+
+<table class="meta-table">
+  <tr><td>نام حوزه</td><td>AI Engineering</td></tr>
+  <tr><td>عنوان رودمپ</td><td>مسیر ورود به مهندسی هوش مصنوعی (AI Engineering) در عصر هوش مصنوعی</td></tr>
+  <tr><td>نسخه</td><td>نسخه نهایی</td></tr>
+  <tr><td>تاریخ آخرین به‌روزرسانی</td><td>۲۵/۹/۲۰۲۶</td></tr>
+  <tr><td>مسئول رودمپ</td><td>زهرا کمالی</td></tr>
+  <tr><td>اعضای مشارکت‌کننده</td><td>—</td></tr>
+  <tr><td>سطح مخاطب</td><td>مناسب برای همه افراد؛ از فردی بدون هیچ پیش‌زمینه تا کسی که تجربه برنامه‌نویسی یا داده دارد</td></tr>
+  <tr><td>پیش‌نیاز کلی</td><td>پیش‌نیاز اجباری وجود ندارد؛ آشنایی مقدماتی با منطق برنامه‌نویسی یا ریاضیات پایه مسیر را سریع‌تر می‌کند. توانایی خواندن مستندات فنی به انگلیسی و پشتکار در یادگیری مستقل، مهم‌تر از رشته تحصیلی یا پیش‌زمینه رسمی است.</td></tr>
+</table>
+
+<section>
+  <h2>۵. معرفی و تعریف حوزه</h2>
+  <h3>این حوزه چیست؟</h3>
+  <p>AI Engineer کسی است که با استفاده از تکنولوژی‌های هوش مصنوعی، قابلیت‌ها و سیستم‌های هوشمند را طراحی و پیاده‌سازی می‌کند و آن‌ها را به یک نرم‌افزار یا محصول واقعی تبدیل می‌کند. این حوزه بین برنامه‌نویسی، هوش مصنوعی و ساخت نرم‌افزار قرار دارد و تمرکز اصلی آن، به‌جای صرفاً ساختن یا آموزش یک مدل، حل یک مسئله واقعی با کمک AI است.</p>
+  <h3>چه مسئله‌ای را حل می‌کند؟</h3>
+  <p>سازمان‌ها امروز به مدل‌های آماده هوش مصنوعی (مثل LLMها) دسترسی دارند، اما تبدیل این مدل‌ها به یک محصول قابل‌اتکا، امن و قابل نگهداری کار جداگانه‌ای می‌طلبد: باید داده مناسب فراهم شود، مدل یا API درست انتخاب شود، سیستم بازیابی اطلاعات (RAG) یا Agent طراحی شود، و در نهایت همه اینها به شکل یک سرویس واقعی Deploy و مانیتور شود.</p>
+  <h3>چه کسانی معمولاً وارد این حوزه می‌شوند؟</h3>
+  <ul>
+    <li>دانشجویان علوم کامپیوتر و مهندسی نرم‌افزار</li>
+    <li>برنامه‌نویسان Backend یا Python Developerها</li>
+    <li>متخصصان Machine Learning و Data Science که می‌خواهند وارد فاز محصول شوند</li>
+    <li>علاقه‌مندان به تغییر مسیر شغلی به سمت AI</li>
+  </ul>
+  <h3>زیرشاخه‌های اصلی حوزه</h3>
+  <ul>
+    <li>Machine Learning</li><li>Deep Learning</li><li>Generative AI / LLM</li><li>NLP</li>
+    <li>Computer Vision</li><li>RAG و سیستم‌های مبتنی بر دانش</li><li>AI Agents / Agentic AI</li>
+    <li>Recommendation Systems</li><li>AI Automation</li><li>Model Deployment / MLOps</li>
+  </ul>
+</section>
+
+<section>
+  <h2>۶. پیش‌نیازها</h2>
+  <p>برای شروع این مسیر پیش‌نیاز اجباری وجود ندارد. اما آشنایی مقدماتی با منطق برنامه‌نویسی (در هر زبانی) و ریاضیات پایه دبیرستانی (جبر، احتمال ساده) روند یادگیری Level 0 را سریع‌تر می‌کند. نکته‌ای مهم‌تر از رشته تحصیلی یا سابقه دانشگاهی، توانایی خواندن مستندات فنی به انگلیسی و پشتکار در یادگیری مستقل است؛ چون بخش بزرگی از منابع این مسیر (مستندات رسمی، مقالات، دوره‌های آنلاین) اصولاً انگلیسی‌زبان است.</p>
+</section>
+
+<section>
+  <h2>۷. نقشه مسیر اصلی یادگیری</h2>
+
+  <h3>Level 0 — Foundations</h3>
+  <h4>Python</h4>
+  <p><span class="field-label">چیست:</span> نحو زبان، ساختارهای داده (لیست، دیکشنری)، توابع، کار با فایل و کتابخانه‌ها.<br>
+  <span class="field-label">چرا یاد بگیرم:</span> زبان اصلی تقریباً تمام ابزارهای AI/ML/Backend است.<br>
+  <span class="field-label">چه زمانی:</span> همین اول مسیر، قبل از هر چیز دیگر.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> حل مسئله‌های کوچک، نوشتن اسکریپت‌های واقعی.<br>
+  <span class="field-label">تأثیر AI:</span> ابزارهایی مثل Copilot سرعت نوشتن کد را بالا می‌برند، اما بدون درک منطق برنامه نمی‌توان خروجی آن‌ها را ارزیابی کرد.</p>
+
+  <h4>ریاضیات و آمار پایه</h4>
+  <p><span class="field-label">چیست:</span> جبر خطی مقدماتی، احتمال، آمار توصیفی.<br>
+  <span class="field-label">چرا یاد بگیرم:</span> پایه فهم مدل‌های یادگیری ماشین و ارزیابی آن‌هاست.<br>
+  <span class="field-label">چه زمانی:</span> موازی با یادگیری Python.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> دوره‌های کوتاه آنلاین + حل مثال‌های عددی ساده.<br>
+  <span class="field-label">تأثیر AI:</span> محدود و غیرمستقیم؛ مدل‌های زبانی می‌توانند محاسبات و مسائل ریاضی را حل کنند، اما نمی‌توانند جای شهود آماری، تفسیر داده و تشخیص یک نتیجه غلط را بگیرند.</p>
+
+  <h4>Git و مبانی Software Engineering</h4>
+  <p><span class="field-label">چیست:</span> کنترل نسخه، کار با GitHub، خواندن/نوشتن مستندات فنی.<br>
+  <span class="field-label">چرا یاد بگیرم:</span> هر پروژه واقعی باید نسخه‌بندی و مستند شود.<br>
+  <span class="field-label">چه زمانی:</span> از همان هفته‌های اول.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> ساخت یک ریپازیتوری شخصی، تمرین Commit و Branch روی یک پروژه کوچک، مشارکت در یک پروژه متن‌باز ساده.<br>
+  <span class="field-label">تأثیر AI:</span> محدود؛ ابزارهای AI می‌توانند پیام Commit یا خلاصه Pull Request پیشنهاد دهند، اما نیاز به کنترل نسخه، بازبینی کد و مستندسازی درست تغییری نکرده است.</p>
+
+  <h3>Level 1 — Fundamentals</h3>
+  <h4>کار با داده و SQL</h4>
+  <p>خواندن/تمیزکاری داده با pandas، نوشتن کوئری‌های SQL. هر سیستم AI روی داده ساخته می‌شود؛ کیفیت داده کیفیت مدل را تعیین می‌کند.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> بعد از تسلط نسبی به Python، همزمان یا بلافاصله پس از Level 0.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> تمرین با دیتاست‌های عمومی (Kaggle)، نوشتن کوئری روی یک دیتابیس واقعی، انجام چند تمرین EDA کامل.<br>
+  <span class="field-label">تأثیر AI:</span> ابزارهایی مثل Copilot یا دستیارهای SQL می‌توانند کوئری پیشنهاد دهند، اما تشخیص داده کثیف، مقادیر گمشده و انتخاب استراتژی تمیزکاری همچنان به قضاوت انسانی نیاز دارد.</p>
+  </div></details>
+
+  <h4>مبانی Machine Learning</h4>
+  <p>رگرسیون، دسته‌بندی، خوشه‌بندی، معیارهای ارزیابی مدل. درک ML پیش‌نیاز فهم درست LLMها و Deep Learning است.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> پس از یادگیری داده و SQL، پیش از ورود جدی به Deep Learning.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> یک دوره مقدماتی ML + پیاده‌سازی چند مدل ساده با scikit-learn روی یک دیتاست واقعی.<br>
+  <span class="field-label">تأثیر AI:</span> بخشی از انتخاب و تنظیم مدل با ابزارهای AutoML خودکار شده، اما فهم چرایی عملکرد یک مدل و تشخیص Overfitting هنوز مهارتی انسانی است.</p>
+  </div></details>
+
+  <h3>Level 2 — Core Skills</h3>
+  <h4>Deep Learning و PyTorch</h4>
+  <p>شبکه‌های عصبی، لایه‌ها، آموزش مدل، Backpropagation؛ زیرساخت تمام مدل‌های زبانی و بینایی مدرن.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> پس از تسلط به مبانی ML.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> پیاده‌سازی یک شبکه عصبی ساده از صفر، سپس کار با PyTorch روی یک دیتاست تصویر یا متن.<br>
+  <span class="field-label">تأثیر AI:</span> دستیارهای کدنویسی، نوشتن لایه‌های استاندارد را سریع‌تر می‌کنند، اما درک Backpropagation و انتخاب معماری درست همچنان به دانش پایه نیاز دارد.</p>
+  </div></details>
+
+  <h4>مبانی NLP و LLM</h4>
+  <p>Tokenization، Embedding، معماری Transformer در سطح مفهومی؛ پایه درک نحوه کار مدل‌های زبانی.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> موازی با یا بلافاصله پس از Deep Learning پایه.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> کار عملی با یک مدل زبانی از طریق Hugging Face، پیاده‌سازی یک Tokenizer ساده.<br>
+  <span class="field-label">تأثیر AI:</span> خود این موضوع محصول مستقیم پیشرفت هوش مصنوعی است؛ سرعت تغییر این حوزه بسیار بالاست و نیازمند به‌روز ماندن مداوم است.</p>
+  </div></details>
+
+  <h4>Prompt Engineering مقدماتی</h4>
+  <p>طراحی و اصلاح Promptها برای دریافت خروجی بهتر از LLM؛ سریع‌ترین راه استفاده عملی از توانایی مدل‌های زبانی.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> بلافاصله پس از آشنایی مفهومی با LLMها.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> تمرین عملی روی چند Use Case واقعی و مقایسه خروجی Promptهای مختلف.<br>
+  <span class="field-label">تأثیر AI:</span> این مهارت خودش نتیجه مستقیم گسترش LLMهاست و به‌سرعت در حال گسترش به سمت «Context Engineering» (طراحی کل زمینه‌ای که در اختیار مدل قرار می‌گیرد، نه فقط متن Prompt) است — روندی که در تحلیل بازار کار داخلی این رودمپ هم به‌عنوان یک مهارت نوظهور دیده شده [۹].</p>
+  </div></details>
+
+  <h3>Level 3 — Specialization</h3>
+  <p>انتخاب یکی از مسیرهای تخصصی؛ جزئیات کامل هر مسیر (چیستی، مهارت‌ها، ابزارها و تأثیر AI) در بخش «مسیرهای تخصصی و شغلی» آمده است.</p>
+
+  <h3>Level 4 — Advanced</h3>
+  <h4>Fine-tuning مدل‌ها</h4>
+  <p>تنظیم دقیق یک مدل از پیش‌آموزش‌دیده روی داده اختصاصی؛ برای نیازهایی که Prompt به‌تنهایی کافی نیست.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> بعد از تسلط به Prompt Engineering و زمانی که محدودیت‌های آن مشخص شد.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> Fine-tune کردن یک مدل کوچک متن‌باز روی یک دیتاست کوچک اختصاصی با Hugging Face.<br>
+  <span class="field-label">تأثیر AI:</span> با رشد مدل‌های بزرگ‌تر و توانمندتر، سهم Fine-tuning سنتی نسبت به RAG و Prompt کمی کاهش یافته، اما برای نیازهای تخصصی و محصولات با حجم بالا همچنان جایگاه دارد.</p>
+  </div></details>
+
+  <h4>طراحی سیستم RAG پیشرفته</h4>
+  <p>Embedding، Vector Database، Retrieval چندمرحله‌ای، ارزیابی کیفیت پاسخ؛ پرکاربردترین الگو برای وصل‌کردن LLM به دانش سازمانی.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> پس از یادگیری مفاهیم پایه RAG (بخش «AI × Domain»).<br>
+  <span class="field-label">چطور یاد بگیرم:</span> ساخت یک سیستم RAG واقعی روی مجموعه‌ای از اسناد، تست چند استراتژی Retrieval و ارزیابی کیفیت پاسخ.<br>
+  <span class="field-label">تأثیر AI:</span> طبق تحلیل داخلی بازار کار این رودمپ، RAG امروز در حدود <span class="stat">۴۲٪</span> از آگهی‌های شغلی AI Engineering بررسی‌شده به‌عنوان مهارت مطرح شده است [۹].</p>
+  </div></details>
+
+  <h4>AI Agents</h4>
+  <p>طراحی Agent با قابلیت استفاده از ابزار، حافظه و برنامه‌ریزی چندمرحله‌ای؛ مسیر رو به رشد صنعت برای خودکارسازی وظایف پیچیده.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> پس از تسلط به Prompt Engineering و آشنایی با RAG.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> ساخت یک Agent ساده با یک ابزار واحد، سپس افزودن حافظه و چند ابزار دیگر.<br>
+  <span class="field-label">تأثیر AI:</span> پرتقاضاترین و سریع‌الرشدترین مهارت بازار کار امروز؛ در تحلیل داخلی این رودمپ «Agentic AI» در حدود نیمی از آگهی‌های بررسی‌شده مطرح شده [۹]، و گزارش AI Index دانشگاه استنفورد نیز رشد ۲۸۰٪ آگهی‌های شغلی مرتبط با Agentic AI را در یک سال تأیید می‌کند [۷].</p>
+  </div></details>
+
+  <h3>Level 5 — Professional</h3>
+  <h4>API و Backend</h4>
+  <p>ساخت سرویس با FastAPI/Flask، طراحی API؛ بدون این لایه هیچ مدلی به محصول واقعی تبدیل نمی‌شود.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> موازی با یا بلافاصله پس از یادگیری اولین مسیر تخصصی.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> ساخت یک API واقعی با FastAPI برای یکی از پروژه‌های شخصی و Deploy آن.<br>
+  <span class="field-label">تأثیر AI:</span> ابزارهای AI کدنویسیِ Boilerplate این لایه را سریع‌تر می‌کنند، ولی طراحی درست API و مدیریت خطا همچنان مهارتی مهندسی است.</p>
+  </div></details>
+
+  <h4>Docker، Cloud و MLOps</h4>
+  <p>Containerization، استقرار روی Cloud، مانیتورینگ مدل در Production؛ مرحله پایانی مسیر یادگیری اصلی.</p>
+  <details class="depth"><summary>بیشتر بدانید (چه زمانی، چطور، تأثیر AI)</summary><div class="depth-body">
+  <p><span class="field-label">چه زمانی:</span> مرحله پایانی مسیر یادگیری اصلی، پیش از ورود جدی به بازار کار.<br>
+  <span class="field-label">چطور یاد بگیرم:</span> Containerize کردن یک پروژه شخصی با Docker و Deploy آن روی یک سرویس رایگان.<br>
+  <span class="field-label">تأثیر AI:</span> تشخیص افت کیفیت مدل در Production به‌طور فزاینده با ابزارهای خودکار انجام می‌شود، اما طراحی زیرساخت و تصمیم‌گیری درباره مقیاس‌پذیری همچنان نیاز انسانی دارد.</p>
+  </div></details>
+</section>
+
+<section>
+  <h2>۸. AI × Domain</h2>
+  <h3>۸.۱ تأثیر AI بر حوزه</h3>
+  <ul>
+    <li>بخش زیادی از نوشتن کد Boilerplate و تست‌های ساده با ابزارهای AI اتوماسیون شده است.</li>
+    <li>طراحی سیستم، انتخاب معماری درست (RAG در برابر Fine-tuning در برابر Prompt ساده) و ارزیابی کیفیت خروجی، مهارتی است که ارزش بیشتری پیدا کرده.</li>
+    <li>صرفِ دانستن نحو یک زبان برنامه‌نویسی به‌تنهایی دیگر مزیت رقابتی کمی ایجاد می‌کند.</li>
+  </ul>
+  <h3>۸.۲ کاربردهای AI در حوزه</h3>
+  <ul>
+    <li>ساخت Chatbot و دستیار هوشمند</li>
+    <li>پاسخ‌گویی به سؤال از روی حجم زیاد اسناد (RAG)</li>
+    <li>ساخت Agent برای انجام خودکار چند کار زنجیره‌ای</li>
+    <li>تولید متن، تصویر و صدا در دل یک اپلیکیشن</li>
+    <li>تحلیل و پیش‌بینی داده</li>
+    <li>اتوماسیون فرآیندهای تکراری</li>
+  </ul>
+  <h3>۸.۳ ابزارهای AI</h3>
+  <p>مدل‌های LLM (از طریق API یا Open Source)، فریم‌ورک‌های Agent و RAG مانند LangChain و LlamaIndex، Vector Databaseها، و دستیارهای کدنویسی مانند GitHub Copilot.</p>
+  <h3>۸.۴ مهارت‌های جدید</h3>
+  <ul>
+    <li>طراحی و ارزیابی Prompt</li>
+    <li>طراحی معماری RAG و انتخاب استراتژی Retrieval مناسب</li>
+    <li>طراحی Agent و مدیریت ابزارهای متصل به آن</li>
+    <li>ارزیابی کیفی و کمّی خروجی مدل‌های زبانی</li>
+    <li>درک محدودیت‌ها و ریسک‌های امنیتی مدل‌های زبانی</li>
+  </ul>
+  <h3>۸.۵ مسیر ترکیبی</h3>
+  <p>ترکیب AI Engineering با هر حوزه دیگری مسیرهای جدیدی مثل «مهندس امنیت مدل‌های زبانی»، «مهندس AI حوزه سلامت» یا «توسعه‌دهنده محصولات مبتنی بر Agent» ایجاد می‌کند که هنوز رقابت کمتری در آن‌ها وجود دارد.</p>
+</section>
+
+<section>
+  <h2>۹. مسیرهای تخصصی و شغلی</h2>
+
+  <div class="spec-card"><h4>RAG &amp; Knowledge Systems Engineer</h4>
+  <p><span class="field-label">چیست:</span> مهندسی که دانش و اسناد داخلی یک سازمان (PDF، ویکی، پایگاه‌داده) را از طریق Retrieval به یک مدل زبانی وصل می‌کند تا پاسخ‌ها بر پایه دانش واقعی و به‌روز باشد، نه فقط دانش از پیش آموزش‌دیده مدل.<br>
+  <span class="field-label">مناسب برای:</span> علاقه‌مند به وصل‌کردن دانش سازمانی/اسناد به مدل‌های زبانی.<br>
+  <span class="field-label">مهارت‌ها:</span> Embedding، Vector Database، طراحی Retrieval، ارزیابی کیفیت پاسخ.<br>
+  <span class="field-label">ابزارها:</span> LangChain / LlamaIndex، Pinecone / Chroma / Weaviate / FAISS / Qdrant.<br>
+  <span class="field-label">پروژه‌ها:</span> دستیار پرسش‌وپاسخ روی اسناد داخلی یک سازمان.<br>
+  <span class="field-label">مشاغل:</span> AI Engineer، ML Engineer با تمرکز RAG. &nbsp;|&nbsp;
+  <span class="field-label">ورود:</span> Junior تا Mid.<br>
+  <span class="field-label">تأثیر AI:</span> این مسیر خودش مستقیماً محصول گسترش LLMهاست؛ طبق تحلیل بازار کار داخلی این رودمپ، RAG در حدود ۴۲٪ و Vector Database در حدود یک‌چهارم آگهی‌های شغلی AI Engineering بررسی‌شده دیده می‌شود [۹].</p></div>
+
+  <div class="spec-card"><h4>AI Agents Engineer</h4>
+  <p><span class="field-label">چیست:</span> مهندسی که به یک مدل زبانی توانایی استفاده از ابزار، حافظه و برنامه‌ریزی چندمرحله‌ای می‌دهد تا بتواند وظایف پیچیده را به‌صورت خودمختار انجام دهد، نه صرفاً به یک پیام پاسخ دهد.<br>
+  <span class="field-label">مناسب برای:</span> علاقه‌مند به خودکارسازی وظایف چندمرحله‌ای با AI.<br>
+  <span class="field-label">مهارت‌ها:</span> طراحی Agent، مدیریت حافظه و ابزار، Orchestration.<br>
+  <span class="field-label">ابزارها:</span> LangGraph یا مشابه، APIهای مدل‌های زبانی.<br>
+  <span class="field-label">پروژه‌ها:</span> Agentی که چند کار روزمره را زنجیره می‌کند.<br>
+  <span class="field-label">مشاغل:</span> AI Engineer، Automation Engineer. &nbsp;|&nbsp;
+  <span class="field-label">ورود:</span> Junior تا Mid.<br>
+  <span class="field-label">تأثیر AI:</span> پرتقاضاترین مسیر تخصصی امروز؛ گزارش AI Index دانشگاه استنفورد رشد ۲۸۰٪ آگهی‌های شغلی Agentic AI را در یک سال ثبت کرده است [۷].</p></div>
+
+  <div class="spec-card"><h4>LLM Fine-tuning &amp; Optimization Engineer</h4>
+  <p><span class="field-label">چیست:</span> مهندسی که به‌جای استفاده مستقیم از یک مدل عمومی، آن را روی داده اختصاصی تنظیم دقیق می‌کند یا برای اجرای سریع‌تر و ارزان‌تر بهینه/فشرده می‌سازد.<br>
+  <span class="field-label">مناسب برای:</span> علاقه‌مند به لایه‌های عمیق‌تر مدل‌سازی.<br>
+  <span class="field-label">مهارت‌ها:</span> Deep Learning، Fine-tuning، بهینه‌سازی و فشرده‌سازی مدل.<br>
+  <span class="field-label">ابزارها:</span> PyTorch، Hugging Face Transformers.<br>
+  <span class="field-label">پروژه‌ها:</span> Fine-tune یک مدل کوچک متن‌باز روی یک دیتاست تخصصی.<br>
+  <span class="field-label">مشاغل:</span> ML Engineer، Applied AI Researcher. &nbsp;|&nbsp;
+  <span class="field-label">ورود:</span> معمولاً Mid.<br>
+  <span class="field-label">تأثیر AI:</span> با قدرت گرفتن RAG و Prompt Engineering، سهم این مسیر نسبت به قبل کمی کاهش یافته، اما برای نیازهای تخصصی یا حجم بالای درخواست همچنان جایگاه مشخصی دارد.</p></div>
+
+  <div class="spec-card"><h4>MLOps / AI Deployment Engineer</h4>
+  <p><span class="field-label">چیست:</span> مهندسی که مسئول انتقال یک مدل از محیط توسعه به یک سرویس واقعی، پایدار و قابل‌مانیتور در Production است.<br>
+  <span class="field-label">مناسب برای:</span> علاقه‌مند به زیرساخت، استقرار و پایداری سیستم‌ها.<br>
+  <span class="field-label">مهارت‌ها:</span> Docker، Cloud، CI/CD، مانیتورینگ مدل.<br>
+  <span class="field-label">ابزارها:</span> Docker، AWS/GCP/Azure، MLflow.<br>
+  <span class="field-label">پروژه‌ها:</span> Deploy کامل یک سرویس AI با مانیتورینگ ساده.<br>
+  <span class="field-label">مشاغل:</span> MLOps Engineer، DevOps با تمرکز AI. &nbsp;|&nbsp;
+  <span class="field-label">ورود:</span> Junior تا Mid.<br>
+  <span class="field-label">تأثیر AI:</span> با افزایش سریع تعداد مدل‌ها و Agentهای در حال اجرا در شرکت‌ها، نیاز به این نقش برای نگهداری و مانیتورینگ پایدار رو به افزایش است.</p></div>
+
+  <div class="spec-card"><h4>Generative AI Product Engineer</h4>
+  <p><span class="field-label">چیست:</span> مهندسی که خروجی مدل‌های تولیدکننده متن/تصویر/صدا را به یک محصول واقعی با تجربه کاربری قابل‌استفاده تبدیل می‌کند.<br>
+  <span class="field-label">مناسب برای:</span> علاقه‌مند به ساخت محصول نهایی مبتنی بر تولید متن/تصویر/صدا.<br>
+  <span class="field-label">مهارت‌ها:</span> کار با API مدل‌های چندوجهی، طراحی تجربه کاربری برای محصولات AI.<br>
+  <span class="field-label">ابزارها:</span> APIهای Generative AI، FastAPI، فریم‌ورک‌های فرانت‌اند ساده.<br>
+  <span class="field-label">پروژه‌ها:</span> اپلیکیشنی که از متن یا داده ورودی، خروجی چندرسانه‌ای تولید می‌کند.<br>
+  <span class="field-label">مشاغل:</span> AI Product Engineer، Full-stack AI Developer. &nbsp;|&nbsp;
+  <span class="field-label">ورود:</span> Junior.<br>
+  <span class="field-label">تأثیر AI:</span> لایه محصول کمتر از لایه مدل خودکار شده؛ طراحی تجربه کاربری مناسب برای رفتار غیرقطعی مدل‌های تولیدی همچنان به قضاوت انسانی نیاز دارد.</p></div>
+</section>
+
+<section>
+  <h2>۱۰. مسیرهای شغلی</h2>
+  <ul>
+    <li>کارآموزی (Internship): شروع از موقعیت‌های کارآموزی و یادگیری در دل یک پروژه واقعی.</li>
+    <li>موقعیت Junior: بعد از یادگیری مهارت‌های اصلی و ساخت چند پروژه مناسب.</li>
+    <li>پروژه و فریلنسری: شروع با پروژه‌های کوچک (Chatbot، RAG، Automation) و ساخت نمونه‌کار تدریجی.</li>
+    <li>پروژه شخصی و GitHub: ساخت یک پروژه واقعی با Backend، API و Deployment و انتشار آن.</li>
+    <li>ورود از حوزه‌های نزدیک: از Python/Backend Developer یا از ML/Data Science به‌سمت AI Engineering.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>۱۱. فعالیت‌های عملی (Hands-on Path)</h2>
+  <p>ساختار استاندارد هر مرحله: Learn → Try → Build → Challenge → Real Project.</p>
+  <ul>
+    <li><span class="field-label">Level 0-1:</span> حل چند مسئله کوچک Python + تحلیل یک دیتاست ساده با pandas.</li>
+    <li><span class="field-label">Level 2:</span> ساخت اسکریپتی که با یک LLM API صحبت می‌کند و Promptهای مختلف را تست می‌کند.</li>
+    <li><span class="field-label">Level 3-4:</span> ساخت یک سیستم RAG کوچک روی چند فایل PDF شخصی؛ افزودن یک Agent ساده به آن.</li>
+    <li><span class="field-label">Level 5:</span> قراردادن کل سیستم پشت یک API و Deploy روی یک سرویس رایگان.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>۱۲. پروژه‌های کوچک (Mini Projects)</h2>
+  <ul>
+    <li>یک Chatbot ساده متصل به یک LLM API با حافظه مکالمه کوتاه.</li>
+    <li>یک ابزار پرسش‌وپاسخ روی یک فایل PDF یا چند صفحه متن (RAG ساده).</li>
+    <li>یک طبقه‌بند متن ساده با scikit-learn یا یک مدل کوچک.</li>
+    <li>یک اسکریپت خلاصه‌ساز خودکار برای مجموعه‌ای از مقاله‌ها یا ایمیل‌ها.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>۱۳. پروژه‌های واقعی (Real Projects)</h2>
+  <ul>
+    <li>یک دستیار هوشمند کامل (RAG + Backend با FastAPI + Deployment) برای یک حوزه دلخواه.</li>
+    <li>یک سیستم Multi-tool Agent که چند وظیفه واقعی را زنجیره می‌کند.</li>
+    <li>یک مدل Fine-tune شده که از طریق یک API واقعی در دسترس است.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>۱۴. ابزارها</h2>
+  <p><span class="field-label">زبان و کتابخانه‌های پایه:</span> Python، pandas، NumPy، scikit-learn<br>
+  <span class="field-label">Deep Learning و LLM:</span> PyTorch، Hugging Face Transformers<br>
+  <span class="field-label">RAG و Agent:</span> LangChain، LlamaIndex، Vector Databaseها (Pinecone، Chroma، Weaviate، FAISS، Qdrant)<br>
+  <span class="field-label">Backend و API:</span> FastAPI، Flask<br>
+  <span class="field-label">زیرساخت و استقرار:</span> Docker، AWS/GCP/Azure، MLflow<br>
+  <span class="field-label">ابزارهای همکاری:</span> Git و GitHub</p>
+</section>
+
+<section>
+  <h2>۱۵. بازار کار</h2>
+
+  <h3>۱۵.۱ وضعیت فعلی بازار (بر اساس تحلیل ۴۳ آگهی شغلی واقعی AI Engineering در ایران)</h3>
+  <p class="note">این تحلیل حاصل بررسی میدانی ۴۳ آگهی شغلی واقعی (عمدتاً تهران) است که در تسک جمع‌آوری داده فانوس طی مرداد تا شهریور ۱۴۰۵ پردازش شده‌اند [۹]. نمونه کوچک است و عمدتاً محدود به آگهی‌های انگلیسی‌زبان روی یک پلتفرم کاریابی؛ نتیجه یک عکس‌فوری واقعی از بازار است، نه یک سرشماری کامل.</p>
+
+  <div class="qa"><p class="q">چه موقعیت‌های شغلی وجود دارد؟</p>
+  <p>عناوین شغلی به‌شدت پراکنده‌اند: از ۴۳ آگهی، <span class="stat">۳۲ عنوان</span> نرمال‌شدهٔ متفاوت دیده شده (مثل AI Engineer، AI Specialist، AI/ML Engineer، AI Automation Engineer، Speech AI Engineer، AI Security Engineer). این پراکندگی نشان می‌دهد بازار داخلی هنوز به یک عنوان شغلی استاندارد برای این نقش نرسیده و شرح‌شغل باید با دقت خوانده شود، نه فقط عنوان آگهی. از نظر سطح ارشدیت، حدود <span class="stat">۶۰٪</span> آگهی‌ها اصلاً سطح را ذکر نکرده‌اند؛ از میان مواردی که ذکر شده، Senior با فاصله زیاد پرتکرارترین است (نزدیک به دوسوم)، Mid حدود یک‌چهارم، و Junior کمترین سهم (حدود یک‌دهم) را دارد — یعنی ورود به این حوزه معمولاً از یک نقش نزدیک (Backend، Data) راحت‌تر از ورود مستقیم Junior است. از نظر نوع همکاری، اکثریت قاطع آگهی‌ها حضوری (۸۶٪) و تمام‌وقت (۸۸٪) هستند؛ فرصت دورکاری اقلیت است.</p></div>
+
+  <div class="qa"><p class="q">چه مهارت‌هایی بیشتر درخواست می‌شوند؟</p>
+  <p>در صدر فهرست: Python (<span class="stat">۶۱٪</span> آگهی‌ها)، Prompt Engineering (<span class="stat">۶۱٪</span>)، LLM (<span class="stat">۵۸٪</span>) و Agentic AI (<span class="stat">۵۱٪</span>). پس از آن‌ها RAG (<span class="stat">۴۲٪</span>)، Embedding (<span class="stat">۳۰٪</span>) و Vector Database (<span class="stat">۲۶٪</span>) قرار دارند. جالب توجه است که سهم Vector Database در این نمونه داخلی (۲۶٪) به‌مراتب بیشتر از میانگین جهانی گزارش‌شده توسط 365 Data Science (حدود ۴.۵٪ از ۹۰۳ آگهی آمریکایی) است [۶]؛ این می‌تواند نشانه‌ی تمرکز نسبتاً بالای استارتاپ‌های تهران روی محصولات مبتنی بر RAG باشد. REST API نیز در ۴۲٪ آگهی‌ها به‌عنوان مهارت مستقل ذکر شده، که تأکیدی است بر جایگاه لایه Backend/API در این نقش (بخش ۵ و Level 5).</p></div>
+
+  <div class="qa"><p class="q">چه ابزارهایی رایج هستند؟</p>
+  <p>Docker (<span class="stat">۴۰٪</span>) پرتکرارترین ابزار است، و پس از آن Git و PyTorch (هرکدام <span class="stat">۳۰٪</span>). در میان ابزارهای اتوماسیون/Agent، n8n (<span class="stat">۲۳٪</span>) و LangChain (<span class="stat">۱۹٪</span>) پرتکرارند — نشانه‌ی اهمیت پلتفرم‌های no-code/low-code Automation در کنار کدنویسی مستقیم، که در بسیاری از رودمپ‌های بین‌المللی این‌قدر برجسته نیست. در سمت Vector Database، Qdrant (<span class="stat">۱۴٪</span>) پرکاربردترین گزینه در آگهی‌های داخلی بوده است.</p></div>
+
+  <h3>۱۵.۲ آینده حوزه</h3>
+
+  <div class="qa"><p class="q">حوزه در چه جهتی حرکت می‌کند؟</p>
+  <p>روند غالب، جابه‌جایی از «تحقیق روی مدل» به «مهندسی سیستم‌های تولیدی» است: گزارش «Jobs on the Rise 2026» لینکدین، عنوان AI Engineer را برای دومین سال متوالی پررشدترین عنوان شغلی آمریکا اعلام کرده [۸]، و در تحلیل داخلی این رودمپ نیز عناوین حول «مهندسی» (نه صرفاً «پژوهش») غالب‌اند. هم‌زمان، مرز بین AI Engineering و Backend/Data Engineering کم‌رنگ‌تر می‌شود: در نمونه بین‌المللی 365 Data Science، مهارت‌های Data Pipeline (۱۲٪) و Big Data (۹٪) به‌طور مشخص در آگهی‌های AI Engineer دیده می‌شوند [۶]، هم‌راستا با یافته گزارش WEF درباره AI و Big Data به‌عنوان دو مهارت به‌هم‌پیوسته در صدر رشد پنج‌ساله آینده [۱].</p></div>
+
+  <div class="qa"><p class="q">AI چه تأثیری بر آن دارد؟</p>
+  <p>هوش مصنوعی هم‌زمان دو طرف بازار کار خودش را شکل می‌دهد: از یک طرف نوشتن کد تکراری و Boilerplate را خودکار می‌کند (بخش ۸.۱)، و از طرف دیگر خودِ رشد سریع Agentic AI بازار کار تازه‌ای ساخته — گزارش AI Index دانشگاه استنفورد رشد <span class="stat">۲۸۰٪</span> آگهی‌های شغلی مرتبط با Agentic AI را در یک سال ثبت کرده [۷]. نتیجه این است که ارزش نسبی مهارت‌های «اجرای دستی یک کار مشخص» کاهش و ارزش «طراحی، ارزیابی و نظارت بر سیستم‌هایی که خودشان کار را انجام می‌دهند» افزایش می‌یابد.</p></div>
+
+  <div class="qa"><p class="q">چه مهارت‌هایی احتمالاً اهمیت بیشتری پیدا می‌کنند؟</p>
+  <p>در تحلیل داخلی آگهی‌های شغلی این رودمپ، چند مهارت به‌عنوان سیگنال نوظهور (نه‌چندان جاافتاده، ولی رو به رشد) شناسایی شده‌اند [۹]: <span class="stat">MCP – Model Context Protocol</span> (استاندارد نوظهور برای اتصال Agentها به ابزارها و منابع داده)، <span class="stat">Context Engineering</span> (طراحی زمینه‌ای که به مدل داده می‌شود، فراتر از Prompt ساده)، رهبری فنی تیم‌های AI (AI Team Leadership)، و پایگاه‌های داده برداری تخصصی‌تر مثل Qdrant و Milvus. این یافته‌ها با روند جهانی هم‌خوانی دارد: هم گزارش WEF از تغییر ۴۰٪ مهارت‌های موردنیاز شغل‌ها تا ۲۰۳۰ می‌گوید [۱]، و هم گزارش‌های صنعتی از ظهور عناوین تازه‌ای مثل Forward Deployed Engineer و Context Engineer در کنار AI Agent Architect خبر می‌دهند.</p></div>
+</section>
+
+<section>
+  <h2>۱۶. فرصت‌های کمتر دیده‌شده</h2>
+  <ul>
+    <li>AI Agent Ops: نگهداری و مانیتورینگ Agentهایی که در Production کار می‌کنند.</li>
+    <li>AI Security: دفاع در برابر Prompt Injection و سوءاستفاده از مدل‌های زبانی.</li>
+    <li>Edge AI: استقرار مدل‌های سبک روی دستگاه‌های محدود به‌جای Cloud.</li>
+    <li>مدل‌های Fine-tune شده تخصصی برای یک صنعت خاص (سلامت، حقوق، مالی).</li>
+    <li>ارزیابی و Red-teaming مدل‌های زبانی پیش از انتشار.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>۱۷. اگر نمی‌دانم از کجا شروع کنم؟</h2>
+  <p><span class="field-label">اگر هیچ پیش‌زمینه‌ای نداری:</span> از Level 0 (Python و ریاضیات پایه) شروع کن.<br>
+  <span class="field-label">اگر Python را بلدی:</span> از Level 1 (داده و SQL و ML پایه) شروع کن.<br>
+  <span class="field-label">اگر قبلاً ML/Data Science کار کرده‌ای:</span> از Level 2 به بعد شروع کن.<br>
+  <span class="field-label">اگر هدفت ورود سریع‌تر به بازار کار است:</span> پس از Level 2، مستقیم یک مسیر تخصصی را انتخاب کن و روی یک پروژه واقعی تمرکز کن.</p>
+</section>
+
+<section>
+  <h2>۱۸. خلاصه نهایی رودمپ</h2>
+  <div class="flow">
+    <div class="step">Start Here</div><div class="arrow">↓</div>
+    <div class="step">Foundations</div><div class="arrow">↓</div>
+    <div class="step">Core Skills</div><div class="arrow">↓</div>
+    <div class="step">Choose Your Path</div><div class="arrow">↓</div>
+    <div class="step">Specialization A | B | C | D | E</div><div class="arrow">↓</div>
+    <div class="step">AI × Domain</div><div class="arrow">↓</div>
+    <div class="step">Mini Projects</div><div class="arrow">↓</div>
+    <div class="step">Real Projects</div><div class="arrow">↓</div>
+    <div class="step">Portfolio</div><div class="arrow">↓</div>
+    <div class="step">Career Paths</div><div class="arrow">↓</div>
+    <div class="step">Next Step</div>
+  </div>
+</section>
+
+<section>
+  <h2>۱۹. منابع و رفرنس‌ها</h2>
+  <p>روش استنادرسانی: ادعاهای مربوط به بازار کار و روند صنعت به گزارش‌ها/مستندات رسمی و مجموعه‌داده داخلی زیر ارجاع داده شده‌اند. مفاهیم فنی پایه (تعریف RAG، Fine-tuning، Prompt Engineering) دانش عمومی صنعت است و مستقیماً از مستندات رسمی ابزارهای مرتبط قابل پیگیری است.</p>
+  <ol class="refs">
+    <li>[۱] World Economic Forum, "The Future of Jobs Report 2025", ژانویه ۲۰۲۵ — <a href="https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf" target="_blank">reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf</a></li>
+    <li>[۲] Hugging Face, مستندات رسمی — <a href="https://huggingface.co/docs" target="_blank">huggingface.co/docs</a></li>
+    <li>[۳] PyTorch, مستندات رسمی — <a href="https://pytorch.org/docs" target="_blank">pytorch.org/docs</a></li>
+    <li>[۴] LangChain, مستندات رسمی — <a href="https://python.langchain.com" target="_blank">python.langchain.com</a></li>
+    <li>[۵] DeepLearning.AI, مسیرهای آموزشی — <a href="https://www.deeplearning.ai" target="_blank">deeplearning.ai</a></li>
+    <li>[۶] 365 Data Science, "AI Engineer Job Outlook 2026" (تحلیل ۹۰۳ آگهی شغلی از Glassdoor آمریکا)، به‌روزرسانی آوریل ۲۰۲۶ — <a href="https://365datascience.com/career-advice/career-guides/ai-engineer-job-outlook-2025/" target="_blank">365datascience.com/career-advice/career-guides/ai-engineer-job-outlook-2025</a></li>
+    <li>[۷] Stanford HAI, "The 2026 AI Index Report"، آوریل ۲۰۲۶ — <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank">hai.stanford.edu/ai-index/2026-ai-index-report</a></li>
+    <li>[۸] گزارش «LinkedIn Jobs on the Rise 2026»، به نقل از — <a href="https://www.hrleader.com.au/business/27698-ai-engineer-tops-linkedin-s-2026-jobs-on-the-rise-list" target="_blank">hrleader.com.au</a></li>
+    <li>[۹] مجموعه‌داده داخلی فانوس: تحلیل ۴۳ آگهی شغلی واقعی AI Engineering (عمدتاً تهران)، جمع‌آوری و پردازش‌شده در تسک Job Posting Processing با کد جمع‌آورنده «zhr»، مرداد–شهریور ۱۴۰۵.</li>
+  </ol>
+</section>
+
+<footer>
+  فانوس 🌱 — انجمن علمی علوم کامپیوتر و جامعه هوش مصنوعی دانشگاه سمنان<br>
+  این فایل با یک قالب عمومی و تمیز ساخته شده چون دسترسی خودکار به قالب دقیق سایت fanoosverse.ir ممکن نشد؛ محتوا دقیقاً مطابق نسخه Word است.
+</footer>
+
+</div>
+</body>
+</html>

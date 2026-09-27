@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Agentic AI Engineer | نقشه راه فانوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#050505;--bg2:#050505;--card:#0c0c0c;--card2:#0c0c0c;--line:#1a1a1a;
+--text:#ffffff;--muted:#a0a0a0;--blue:#f97316;--cyan:#f97316;--violet:#f97316;
+--pink:#f97316;--green:#f97316;--orange:#f97316;--shadow:0 22px 70px rgba(0,0,0,.32);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 10% 5%,rgba(249,115,22,.13),transparent 27%),
+radial-gradient(circle at 90% 12%,rgba(249,115,22,.10),transparent 24%),
+linear-gradient(145deg,var(--bg),var(--bg2) 55%,#050505);
+color:var(--text);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.95}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px);background-size:48px 48px}
+a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1320px;margin:auto;padding:0 24px}
+.hero{position:relative;overflow:hidden;padding:72px 0 52px;border-bottom:1px solid var(--line)}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(249,115,22,.15);border-radius:50%;left:-130px;top:-180px;box-shadow:0 0 0 60px rgba(249,115,22,.025),0 0 0 120px rgba(249,115,22,.018)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #1a1a1a;background:rgba(16,24,43,.7);padding:6px 13px;border-radius:999px;color:#f97316;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan)}
+h1{font-size:clamp(38px,6vw,72px);line-height:1.18;letter-spacing:-1.5px;margin:18px 0 8px;font-weight:900}
+.gradient{background:linear-gradient(90deg,#fff,#aebfff 45%,#72e1d7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:850px;color:var(--muted);font-size:18px;margin:0 0 25px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:10px}.stat{padding:9px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(16,24,43,.65);font-size:13px;color:#d0d0d0}
+.layout{display:grid;grid-template-columns:255px minmax(0,1fr);gap:28px;padding:32px 0}
+.sidebar{position:sticky;top:18px;align-self:start;max-height:calc(100vh - 36px);overflow:auto;border:1px solid var(--line);background:rgba(13,20,36,.88);backdrop-filter:blur(16px);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.sidebar-title{font-size:13px;color:var(--muted);padding:7px 10px 11px}
+.sidebar a{display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:10px;color:#a0a0a0;font-size:13px;line-height:1.7;transition:.18s}
+.sidebar a:hover{background:#0c0c0c;color:white;transform:translateX(-2px)}
+.num{font-family:monospace;color:var(--blue);font-size:11px;min-width:18px}
+.section{scroll-margin-top:22px;margin-bottom:24px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(18,27,48,.96),rgba(10,16,29,.96));box-shadow:var(--shadow);overflow:hidden}
+.section-head{display:flex;align-items:center;gap:15px;padding:24px 27px 18px;border-bottom:1px solid rgba(38,54,83,.65)}
+.section-icon{width:44px;height:44px;flex:none;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#1d2d54,#131e36);border:1px solid #1a1a1a;font-weight:900;color:#f97316}
+.section-head h2{margin:0;font-size:25px;font-weight:800;line-height:1.5}.section-head p{margin:0;color:var(--muted);font-size:12px}
+.content{padding:25px 27px 29px}h3{font-size:19px;margin:22px 0 7px}p{color:#d0d0d0;margin:7px 0 13px}
+.lead{font-size:16px;color:#d0d0d0}.callout{border:1px solid #1a1a1a;border-right:4px solid var(--cyan);padding:15px 17px;border-radius:14px;background:rgba(80,216,207,.045);margin:16px 0;color:#d0d0d0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.chip{border:1px solid #1a1a1a;background:#0c0c0c;padding:5px 10px;border-radius:9px;color:#ffffff;font-size:12px;direction:ltr}
+.roadmap{position:relative;margin:8px 0}.roadmap:before{content:"";position:absolute;right:23px;top:25px;bottom:25px;width:2px;background:linear-gradient(var(--blue),var(--violet),var(--cyan))}
+.stage{position:relative;padding:0 62px 22px 0}.stage:last-child{padding-bottom:0}.stage:before{content:"";position:absolute;right:16px;top:9px;width:16px;height:16px;border-radius:50%;background:#0d1526;border:4px solid var(--blue);box-shadow:0 0 0 5px rgba(249,115,22,.08)}
+.stage:nth-child(2):before{border-color:#f97316}.stage:nth-child(3):before{border-color:var(--violet)}.stage:nth-child(4):before{border-color:#f97316}.stage:nth-child(5):before{border-color:var(--cyan)}.stage:nth-child(6):before{border-color:var(--green)}
+.stage-card{background:linear-gradient(135deg,rgba(22,34,59,.95),rgba(14,22,39,.95));border:1px solid #1a1a1a;border-radius:17px;padding:18px 20px;transition:.2s}
+.stage-card:hover{border-color:#1a1a1a;transform:translateY(-2px)}
+.stage-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.stage-title{font-size:18px;font-weight:800}.level{font-size:11px;color:#f97316;background:#0c0c0c;border:1px solid #1a1a1a;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.why{color:#a0a0a0;font-size:13px}.arrow{color:var(--cyan);font-size:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.four{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.box{border:1px solid var(--line);background:rgba(20,31,53,.72);border-radius:16px;padding:18px}.box h3{margin:0 0 7px;font-size:17px}.box p{font-size:13px;margin-bottom:6px}
+.arch{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.arch .box{min-height:130px}.arch-icon{font-size:23px;margin-bottom:6px}
+.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.ref-list{margin:10px 0 0;padding-right:20px}.ref-list li{color:#a0a0a0;font-size:13px;margin:7px 0}.ref-list a{color:#f97316;text-decoration:underline;text-underline-offset:3px}
+.market-note{font-size:12px;color:#a0a0a0;margin-top:10px}
+.question{border:1px dashed #1a1a1a;border-radius:15px;padding:16px 18px;margin-top:15px;background:rgba(249,115,22,.035)}
+.question b{color:#ffffff}.answer{color:#b8c5dc;font-size:13px}
+.spec{position:relative;overflow:hidden}.spec:after{content:"";position:absolute;left:-30px;bottom:-45px;width:130px;height:130px;border-radius:50%;background:rgba(249,115,22,.06)}
+.spec.orch{border-top:3px solid var(--blue)}.spec.multi{border-top:3px solid var(--violet)}.spec.safe{border-top:3px solid var(--pink)}.spec.infra{border-top:3px solid var(--cyan)}.spec.prod{border-top:3px solid var(--green)}
+.spec h3{margin-top:0}.spec .tagline{font-size:12px;color:var(--muted)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:13px 0}.flow span{background:#0c0c0c;border:1px solid #1a1a1a;padding:6px 10px;border-radius:9px;font-size:12px}.flow i{color:#6076a5;font-style:normal}
+pre{direction:ltr;text-align:left;background:#050505;border:1px solid #1a1a1a;border-radius:14px;padding:17px;overflow:auto;color:#ffffff;font:13px/1.7 Consolas,monospace}
+.project{display:grid;grid-template-columns:58px 1fr;gap:15px;align-items:start}.project-num{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#0c0c0c,#0c0c0c);border:1px solid #1a1a1a;color:#ffffff;font-weight:800}
+table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;min-width:720px}th,td{padding:11px 13px;text-align:right;vertical-align:top;border-bottom:1px solid var(--line);font-size:13px}th{background:#0c0c0c;color:#ffffff}tr:last-child td{border-bottom:0}td{color:#a0a0a0}
+.spec p{font-size:13px}.spec p b{color:#ffffff}
+.idcard{border:1px solid var(--line);background:rgba(20,31,53,.72);border-radius:18px;padding:6px 22px}.idrow{display:grid;grid-template-columns:200px 1fr;gap:16px;align-items:start;padding:14px 0;border-bottom:1px dashed #1a1a1a}.idrow:last-child{border-bottom:0}.idk{color:var(--muted);font-size:14px}.idv{color:var(--text);font-weight:600;font-size:15px}
+@media(max-width:600px){.idrow{grid-template-columns:1fr;gap:2px}}
+.final{background:radial-gradient(circle at 90% 0%,rgba(80,216,207,.09),transparent 28%),linear-gradient(145deg,#111d33,#0b1424)}
+.bigflow{font-size:17px;line-height:2.6;text-align:center;color:#ffffff}.bigflow b{color:#f97316}
+
+.lvl{display:inline-flex;align-items:center;gap:8px;margin:6px 0 4px;font-size:12px;color:#f97316;background:#0c0c0c;border:1px solid #1a1a1a;padding:3px 11px;border-radius:999px}
+.topic{position:relative;border:1px solid var(--line);background:rgba(20,31,53,.72);border-radius:16px;padding:18px 20px 14px;margin:14px 0;border-top:3px solid var(--blue)}
+.topic.l1{border-top-color:var(--violet)}.topic.l2{border-top-color:var(--cyan)}.topic.l4{border-top-color:var(--pink)}.topic.l5{border-top-color:var(--green)}
+.topic h3{margin:0 0 10px;font-size:18px}
+.topic dl{margin:0;display:grid;gap:8px}
+.topic .row{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start;padding-top:8px;border-top:1px solid rgba(38,54,83,.55)}
+.topic .row:first-child{border-top:0;padding-top:0}
+.topic dt{color:var(--cyan);font-size:12px;font-weight:700;padding-top:2px}
+.topic dd{margin:0;color:#d0d0d0;font-size:13px}
+.topic .chips{margin:10px 0 4px}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+footer{text-align:center;color:#a0a0a0;padding:18px 0 55px;font-size:12px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0;max-height:none}.two,.three,.arch,.profile-grid,.four{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wrap{padding:0 14px}.hero{padding:52px 0 38px}.layout{padding-top:20px}.section-head,.content{padding-left:18px;padding-right:18px}.two,.three,.arch,.profile-grid,.four{grid-template-columns:1fr}.stage{padding-right:50px}.roadmap:before{right:18px}.stage:before{right:11px}.topic .row{grid-template-columns:1fr;gap:2px}.stage-top{flex-wrap:wrap}.project{grid-template-columns:1fr}.section-head h2{font-size:21px}}
+.three .wide{grid-column:span 2}
+@media(max-width:600px){.three .wide{grid-column:auto}}
+  .navbar{position:fixed;top:0;right:0;left:0;height:70px;background:rgba(5,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000}
+  .navbar-brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:900;color:var(--text)}
+  .navbar-brand img{width:32px;height:32px;object-fit:contain}
+  .navbar-links{display:none}@media(min-width:768px){.navbar-links{display:flex;gap:24px;font-size:14px;color:var(--muted)}.navbar-links a{transition:.2s;cursor:pointer;text-decoration:none}.navbar-links a:hover{color:var(--orange)}.navbar-links a.active{color:var(--orange)}}
+  .navbar-cta{font-size:12px;padding:8px 16px;border:1px solid var(--orange);background:transparent;color:var(--orange);border-radius:8px;transition:.2s;text-decoration:none;cursor:pointer}
+  .navbar-cta:hover{background:var(--orange);color:#000;font-weight:bold}
+  body{padding-top:70px;}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <img src="logos/(سفید)لوگو%20فانوس.png" alt="فانوس">
+    <span>فانوس</span>
+  </div>
+  <div class="navbar-links">
+    <a href="index.html">خانه</a>
+    <a href="roadmaps.html" class="active">نقشه‌های راه</a>
+    <a href="community.html">کامیونیتی</a>
+    <a href="about.html">درباره ما</a>
+  </div>
+  <a href="https://t.me/fanoosverse" target="_blank" class="navbar-cta">کانال فانوس‌ورس →</a>
+</nav>
+
+<header class="hero">
+<div class="wrap">
+<div class="eyebrow"><span class="dot"></span> FANOS • ROADMAP • 2026</div>
+<h1><span class="gradient">Agentic AI Engineer</span><br>نقشه راه از صفر تا بازار کار</h1>
+<p>یک مسیر مرحله‌به‌مرحله برای یادگیری ساخت Agentهای هوش مصنوعی؛ از Python و Prompt نوشتن تا Tool Use، حافظه، LangGraph، Multi-Agent، تست، ایمنی و اجرای واقعی در Production.</p>
+<div class="hero-stats">
+<span class="stat">۰ → حرفه‌ای</span><span class="stat">Python + LLM</span><span class="stat">Tool Use</span><span class="stat">Memory / RAG</span><span class="stat">LangGraph</span><span class="stat">Multi-Agent</span><span class="stat">MCP / A2A</span><span class="stat">Testing &amp; Safety</span>
+</div>
+</div>
+</header>
+
+<main class="wrap layout">
+<aside class="sidebar">
+<div class="sidebar-title">مسیر سریع</div>
+<a href="#identity"><span class="num">01</span> شناسنامه رودمپ</a>
+<a href="#definition"><span class="num">02</span> Agentic AI چیست؟</a>
+<a href="#ai-domain"><span class="num">03</span> AI × Domain</a>
+<a href="#roadmap"><span class="num">04</span> نقشه راه کلی</a>
+<a href="#level0"><span class="num">05</span> سطح ۰ — پایه</a>
+<a href="#level1"><span class="num">06</span> سطح ۱ — مفاهیم اصلی Agent</a>
+<a href="#patterns"><span class="num">07</span> الگوهای Agent</a>
+<a href="#level2"><span class="num">08</span> سطح ۲ — هماهنگ‌کننده‌ها</a>
+<a href="#specialization"><span class="num">09</span> سطح ۳ — انتخاب تخصص</a>
+<a href="#level4"><span class="num">10</span> سطح ۴ — تست و ایمنی</a>
+<a href="#level5"><span class="num">11</span> سطح ۵ — Production</a>
+<a href="#projects"><span class="num">12</span> Hands-on و پروژه‌ها</a>
+<a href="#career-paths"><span class="num">13</span> مسیرهای ورود به کار</a>
+<a href="#tools"><span class="num">14</span> ابزارها</a>
+<a href="#opportunities"><span class="num">15</span> فرصت‌های کمتر دیده‌شده</a>
+<a href="#market"><span class="num">16</span> بازار کار</a>
+<a href="#final"><span class="num">17</span> خلاصه نهایی</a>
+<a href="#references"><span class="num">18</span> منابع و رفرنس‌ها</a>
+</aside>
+
+<div>
+
+<section class="section" id="identity">
+<div class="section-head"><div class="section-icon">01</div><div><h2>شناسنامه رودمپ</h2><p>تعریف سریع مسیر و خروجی مورد انتظار</p></div></div>
+<div class="content">
+<div class="idcard"><div class="idrow"><span class="idk">نام حوزه</span><span class="idv"><span dir="ltr">Agentic AI Engineering</span></span></div><div class="idrow"><span class="idk">عنوان رودمپ</span><span class="idv">مسیر ورود به مهندسی Agentic AI در عصر هوش مصنوعی</span></div><div class="idrow"><span class="idk">نسخه</span><span class="idv"><span dir="ltr">Draft 03</span></span></div><div class="idrow"><span class="idk">تاریخ آخرین به‌روزرسانی</span><span class="idv">مهر ۱۴۰۵</span></div><div class="idrow"><span class="idk">مسئول رودمپ</span><span class="idv">سیده هستی آمیری</span></div><div class="idrow"><span class="idk">اعضای مشارکت‌کننده</span><span class="idv">[نام اعضای تیم]</span></div><div class="idrow"><span class="idk">سطح مخاطب</span><span class="idv">مناسب برای همه افراد (بدون پیش‌زمینه)</span></div><div class="idrow"><span class="idk">پیش‌نیاز کلی</span><span class="idv">آشنایی مقدماتی با برنامه‌نویسی و کار با API</span></div></div>
+</div>
+</section>
+
+<section class="section" id="definition">
+<div class="section-head"><div class="section-icon">02</div><div><h2>Agentic AI Engineer چیست؟</h2><p>آشنایی با نقش و مسئله‌ای که این حوزه حل می‌کند</p></div></div>
+<div class="content">
+<div class="callout"><b>توضیح مقدماتی:</b> یک مدل زبانی بزرگ به‌تنهایی فقط متن تولید می‌کند. Agent مدلی است که به ابزارها متصل شده و می‌تواند جست‌وجو کند، فایل بخواند، API را فراخوانی کند، نتیجه را بررسی کند و گام بعدی را انتخاب کند. مهندس Agentic AI این سیستم‌ها را طوری طراحی می‌کند که درست، اقتصادی و ایمن کار کنند.</div>
+<div class="question"><b>این حوزه چیست؟</b><div class="answer">در Agentic AI یک مدل زبانی بزرگ (LLM) فقط جواب نمی‌دهد؛ هدف را می‌فهمد، مراحل را برنامه‌ریزی می‌کند، ابزار صدا می‌زند، نتیجه را بررسی می‌کند و تا رسیدن به هدف ادامه می‌دهد. مهندس Agentic AI این سیستم‌ها را طراحی، تست و اجرا می‌کند.</div></div>
+<div class="question"><b>Agent چه فرقی با چت‌بات دارد؟</b><div class="answer">چت‌بات معمولاً یک پاسخ متنی می‌دهد؛ Agent می‌تواند کار انجام دهد: جست‌وجو، خواندن فایل، فراخوانی API و ثبت نتیجه. در تعریف Anthropic، در یک <b>Workflow</b> مسیر را کدِ از پیش نوشته‌شده تعیین می‌کند، اما در یک <b>Agent</b> خودِ مدل مسیر و استفاده از ابزارها را هدایت می‌کند.</div></div>
+<div class="question"><b>چه مسئله‌ای را حل می‌کند؟</b><div class="answer">کارهای چندمرحله‌ای که قاعده ثابتی ندارند؛ مثل تحقیق و جمع‌بندی، پردازش درخواست‌های پشتیبانی، تحلیل اسناد، رزرو و خودکارسازی فرایندهای داخلی.</div></div>
+<div class="question"><b>چه کسانی معمولاً وارد این حوزه می‌شوند؟</b><div class="answer">مهندسان نرم‌افزار و Backend، افراد حوزه Data و AI/ML و دانشجویان رشته‌های فنی؛ اما ورود به این حوزه به مدرک یا رشته خاصی محدود نیست و مهارت عملی اهمیت زیادی دارد.</div></div>
+<div class="question"><b>چه زمانی Agent لازم نیست؟</b><div class="answer">اگر یک Prompt یا یک Workflow ساده مسئله را حل می‌کند، Agent لازم نیست. Agent در ازای انعطاف بیشتر، هزینه، تأخیر و ریسک بیشتری دارد؛ بنابراین بهتر است از ساده‌ترین راه‌حل شروع شود.</div></div>
+<div class="callout"><b>زیرحوزه‌های اصلی:</b> Tool Use · Memory / RAG · Planning · Orchestration · Multi-Agent · Testing &amp; Safety · Deployment &amp; Monitoring.</div>
+<div class="callout"><b>پیش‌نیازها:</b> برای شروع این مسیر پیش‌نیاز اجباری وجود ندارد. آشنایی مقدماتی با برنامه‌نویسی و کار با API روند یادگیری را سریع‌تر می‌کند.</div>
+<p class="lead"><b>Agentic AI Engineer</b> به‌طور کلی مهندسی است که با استفاده از <b>مدل‌های زبانی، ابزارها و حافظه</b> سیستم‌هایی می‌سازد که بتوانند یک هدف را قدم‌به‌قدم پیش ببرند و نتیجه را قابل اعتماد تحویل بدهند.</p>
+<div class="flow"><span>Goal</span><i>→</i><span>Plan</span><i>→</i><span>Tool Call</span><i>→</i><span>Observation</span><i>→</i><span>Decide</span><i>→</i><span>Answer / Repeat</span></div>
+<div class="three">
+<div class="box"><h3>🛠️ استفاده از ابزار</h3><p>وصل کردن مدل به جست‌وجو، API، فایل و دیتابیس.</p></div>
+<div class="box"><h3>🧠 حافظه</h3><p>نگه‌داشتن مکالمه، ترجیحات و دانش قابل بازیابی.</p></div>
+<div class="box"><h3>🗺️ برنامه‌ریزی</h3><p>تجزیه کار به مراحل و بازبینی نتیجه هر مرحله.</p></div>
+<div class="box"><h3>👥 چند Agent</h3><p>تقسیم نقش بین چند Agent برای کارهای پیچیده.</p></div>
+<div class="box"><h3>🧪 تست و ارزیابی</h3><p>سنجش دقت، خطا، هزینه و پایداری رفتار Agent.</p></div>
+<div class="box"><h3>🛡️ ایمنی</h3><p>جلوگیری از سوءاستفاده و اقدام‌های حساس بدون تأیید انسان.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="ai-domain">
+<div class="section-head"><div class="section-icon">03</div><div><h2>AI × Domain</h2><p>وقتی Agent با یک حوزه تخصصی ترکیب می‌شود</p></div></div>
+<div class="content">
+<p class="lead">ساخت Agent فقط یک بخش ماجراست. ارزش اصلی زمانی بیشتر می‌شود که مهارت مهندسی Agent با دانش یک <b>حوزه تخصصی (Domain)</b> ترکیب شود؛ مثل سلامت، مالی، حقوق، آموزش، عملیات و نرم‌افزار.</p>
+
+<h3>۳.۱ تأثیر AI بر این حوزه</h3>
+<div class="two">
+<div class="box"><h3>چه چیزی تغییر کرده؟</h3><p>مدل‌ها در استدلال، استفاده از ابزار و انجام کارهای چندمرحله‌ای بهتر شده‌اند؛ به همین دلیل ساخت Agent از یک آزمایش به یک نیاز کاری نزدیک‌تر شده است.</p></div>
+<div class="box"><h3>چه کارهایی سریع‌تر شده‌اند؟</h3><p>نوشتن نمونه اولیه، خواندن مستندات و تولید کد کمکی با ابزارهایی مثل Claude Code و Copilot سریع‌تر شده؛ اما ارزیابی و دیباگ خروجی هنوز به فهم واقعی نیاز دارد.</p></div>
+<div class="box"><h3>چه مهارت‌هایی ارزش بیشتری پیدا کرده‌اند؟</h3><p>طراحی سیستم، ارزیابی و تست، امنیت، کنترل هزینه و تأخیر، و توانایی تصمیم‌گیری درباره اینکه کجا Agent لازم است و کجا نه.</p></div>
+<div class="box"><h3>چه چیزهایی بیشتر در معرض تغییرند؟</h3><p>Promptهای بسیار پیچیده و کدهای اتصال ساده مزیت پایدار کمتری می‌سازند. فریم‌ورک‌ها هم سریع تغییر می‌کنند؛ پس فهم مفاهیم مهم‌تر از حفظ API یک ابزار است.</p></div>
+</div>
+
+<h3>۳.۲ کاربردهای Agent در حوزه‌ها</h3>
+<div class="three">
+<div class="box"><h3>🏥 سلامت</h3><p>خلاصه‌سازی پرونده و متون پزشکی، پیگیری نوبت و پشتیبانی تصمیم؛ با نظارت جدی انسان.</p></div>
+<div class="box"><h3>💰 مالی</h3><p>پردازش اسناد، بررسی تراکنش‌های مشکوک و گزارش‌سازی؛ اقدام‌های مالی نیازمند تأیید انسان است.</p></div>
+<div class="box"><h3>⚖️ حقوق</h3><p>جست‌وجو در قراردادها، استخراج بندها و خلاصه‌سازی؛ با اهمیت ویژه دقت و کنترل انسانی.</p></div>
+<div class="box"><h3>🎓 آموزش</h3><p>تولید تمرین، بازخورد شخصی‌سازی‌شده و دستیارهای یادگیری.</p></div>
+<div class="box"><h3>🏭 عملیات و پشتیبانی</h3><p>پاسخ به تیکت‌ها، مسیریابی درخواست‌ها و خودکارسازی فرایندهای تکراری.</p></div>
+<div class="box"><h3>💻 نرم‌افزار</h3><p>کمک به کدنویسی، تست، بازبینی کد و مستندسازی.</p></div>
+</div>
+
+<h3>۳.۳ مهارت‌های جدید</h3>
+<div class="two">
+<div class="box"><h3>AI Evaluation</h3><p>تعریف معیار، ساخت مجموعه تست، مقایسه نسخه‌ها و بررسی کیفیت و خطا.</p></div>
+<div class="box"><h3>Human-in-the-loop</h3><p>طراحی نقطه‌هایی که انسان قبل از یک اقدام حساس تأیید می‌کند.</p></div>
+<div class="box"><h3>Domain Knowledge</h3><p>فهم مسئله واقعی یک صنعت و تشخیص اینکه کجا Agent واقعاً ارزش ایجاد می‌کند.</p></div>
+<div class="box"><h3>Secure &amp; Responsible AI</h3><p>توجه به امنیت، حریم خصوصی، شفافیت و ریسک‌های اجرای خودکار.</p></div>
+</div>
+<div class="callout"><b>چرا Domain مهم است؟</b> Agent خوب بدون شناخت مسئله واقعی به محصول خوب تبدیل نمی‌شود. کسی که هم Agent بسازد و هم فرایند یک حوزه را بشناسد، ابزار درست‌تری انتخاب می‌کند، معیار بهتری تعریف می‌کند و می‌داند کجا باید انسان در حلقه بماند.</div>
+
+<h3>۳.۴ مسیر آینده</h3>
+<div class="flow"><span>LLM + Tools</span><i>+</i><span>Domain Knowledge</span><i>→</i><span>Reliable Workflow</span><i>→</i><span>Agent System</span><i>→</i><span>Domain Specialist / AI Engineer</span></div>
+<p>مسیر آینده فقط «ساخت یک Agent جذاب» نیست؛ ترکیب Agent با دانش حوزه، ارزیابی، ایمنی و مهندسی سیستم اهمیت بیشتری پیدا می‌کند. داده‌های Stanford AI Index 2026 هم رشد سریع مهارت‌های Agentic AI در آگهی‌های شغلی را نشان می‌دهد (جزئیات در بخش بازار کار).</p>
+</div>
+</section>
+
+<section class="section" id="roadmap">
+<div class="section-head"><div class="section-icon">04</div><div><h2>Roadmap — نقشه راه کلی</h2><p>ترتیب پیشنهادی یادگیری از پایه تا اجرای واقعی</p></div></div>
+<div class="content">
+<div class="roadmap">
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">Python + LLM / Prompt</span><span class="level">سطح ۰ · Foundation</span></div><p class="why">پایه برنامه‌نویسی و فهم اینکه مدل زبانی چگونه رفتار می‌کند</p><span class="arrow">→ خروجی: نوشتن برنامه، کار با API و دستور دادن درست به مدل</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">Tool Use، حافظه و برنامه‌ریزی</span><span class="level">سطح ۱ · Core</span></div><p class="why">سه توانایی اصلی که یک مدل را به Agent تبدیل می‌کند</p><span class="arrow">→ خروجی: ساخت Agent ساده با ابزار، حافظه و تصمیم‌گیری چندمرحله‌ای</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">LangGraph، Multi-Agent و MCP / A2A</span><span class="level">سطح ۲ · Orchestration</span></div><p class="why">طراحی جریان کار پیچیده، هماهنگی چند Agent و اتصال استاندارد به ابزارها</p><span class="arrow">→ خروجی: Agentهای ساخت‌یافته و قابل توسعه</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">انتخاب تخصص</span><span class="level">سطح ۳ · Specialization</span></div><p class="why">انتخاب یکی از مسیرهای شغلی برای پروژه‌های عمیق‌تر</p><span class="arrow">→ خروجی: تمرکز روی یک نقش مشخص</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">تست و ایمنی</span><span class="level">سطح ۴ · Reliability</span></div><p class="why">بدون سنجش و ایمن‌سازی نمی‌شود به Agent در محیط واقعی اعتماد کرد</p><span class="arrow">→ خروجی: Agent ارزیابی‌شده و مقاوم در برابر سوءاستفاده</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">Deployment و Monitoring</span><span class="level">سطح ۵ · Production</span></div><p class="why">اجرای Agent برای کاربر واقعی و دیدن رفتار، خطا و هزینه آن</p><span class="arrow">→ خروجی: Portfolio + ورود به بازار کار</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="level0">
+<div class="section-head"><div class="section-icon">05</div><div><h2>سطح ۰ — پایه</h2><p>Python و آشنایی با مدل‌های زبانی</p></div></div>
+<div class="content">
+<p>اولین قدم، یادگیری خوب Python و آشنایی با مدل‌های زبانی است؛ اما لازم نیست برای Python به اندازه یک Software Engineer حرفه‌ای زمان گذاشته شود. بیشتر ابزارهای ساخت Agent با Python کار می‌کنند.</p>
+<h3>موضوعات اصلی Python</h3>
+<div class="chips"><span class="chip">Syntax</span><span class="chip">Functions</span><span class="chip">Classes</span><span class="chip">Files</span><span class="chip">JSON</span><span class="chip">HTTP / APIs</span><span class="chip">Exceptions</span></div>
+<h3>مفاهیم LLM</h3>
+<div class="chips"><span class="chip">Tokens</span><span class="chip">Context Window</span><span class="chip">System Prompt</span><span class="chip">Few-shot Examples</span><span class="chip">Structured Output</span></div>
+<div class="callout"><b>هدف:</b> در نهایت باید بتوانیم با Python برنامه بنویسیم، از API داده بگیریم و به مدل زبانی دستور مؤثر بدهیم.</div>
+</div>
+</section>
+
+<section class="section" id="level1">
+<div class="section-head"><div class="section-icon">06</div><div><h2>سطح ۱ — مفاهیم اصلی Agent</h2><p>Tool Use، حافظه و برنامه‌ریزی؛ سه توانایی اصلی یک Agent</p></div></div>
+<div class="content">
+<p>در این سطح با سه توانایی اصلی آشنا می‌شویم که یک مدل زبانی را به Agent تبدیل می‌کند.</p>
+<div class="arch">
+<div class="box"><div class="arch-icon">🛠️</div><h3>Tool Use</h3><p>به مدل می‌گوییم از چه ابزاری و چگونه استفاده کند تا فقط حرف نزند و کار واقعی انجام دهد.</p></div>
+<div class="box"><div class="arch-icon">🧠</div><h3>Memory / RAG</h3><p>Agent مکالمه‌ها را نگه می‌دارد و از اسناد بیرونی اطلاعات بازیابی می‌کند.</p></div>
+<div class="box"><div class="arch-icon">🗺️</div><h3>Planning</h3><p>Agent مسئله را به مرحله‌ها تقسیم می‌کند و نتیجه هر مرحله را بررسی می‌کند.</p></div>
+</div>
+<h3>مفاهیم مرتبط</h3>
+<div class="chips"><span class="chip">Function Calling</span><span class="chip">Embeddings</span><span class="chip">Vector Database</span><span class="chip">RAG</span><span class="chip">ReAct</span><span class="chip">Reflection</span><span class="chip">Stop Conditions</span></div>
+<div class="flow"><span>User Goal</span><i>→</i><span>LLM decides</span><i>→</i><span>Tool Call</span><i>→</i><span>Observation</span><i>→</i><span>Done?</span><i>→</i><span>Final Answer</span></div>
+<div class="callout"><b>هدف:</b> در نهایت بتوانیم یک Agent ساده با ابزار، حافظه و تصمیم‌گیری چندمرحله‌ای بسازیم.</div>
+</div>
+</section>
+
+<section class="section" id="patterns">
+<div class="section-head"><div class="section-icon">07</div><div><h2>الگوهای طراحی Agent</h2><p>بعد از فهم اصول، با الگوهای رایج ساخت سیستم‌های Agentic آشنا می‌شویم</p></div></div>
+<div class="content">
+<div class="three">
+<div class="box"><h3>🔗 Prompt Chaining</h3><p>کار به چند مرحله پشت‌سرهم تقسیم می‌شود و خروجی هر مرحله ورودی مرحله بعد است.</p></div>
+<div class="box"><h3>🔀 Routing</h3><p>ورودی طبقه‌بندی می‌شود و به مسیر، Prompt یا مدل مناسب هدایت می‌شود.</p></div>
+<div class="box"><h3>⚡ Parallelization</h3><p>چند زیرکار هم‌زمان اجرا می‌شوند، یا یک کار چند بار اجرا می‌شود تا نتیجه مطمئن‌تر شود.</p></div>
+<div class="box"><h3>🎛️ Orchestrator–Workers</h3><p>یک مدل مرکزی کار را به زیروظایف تقسیم می‌کند و به Workerها می‌سپارد.</p></div>
+<div class="box"><h3>♻️ Evaluator–Optimizer</h3><p>یک مدل خروجی می‌سازد و مدل دیگر آن را ارزیابی و بازخورد می‌دهد؛ این چرخه تکرار می‌شود.</p></div>
+<div class="box"><h3>🤖 Autonomous Agent</h3><p>مدل در یک حلقه خودش ابزار و مسیر را انتخاب می‌کند تا به هدف یا شرط توقف برسد.</p></div>
+</div>
+<div class="callout"><b>یک اصل مهم:</b> پنج الگوی اول Workflow هستند (مسیر را کد تعیین می‌کند) و الگوی آخر Agent است (مسیر را مدل تعیین می‌کند). بهتر است از ساده‌ترین الگو شروع شود و فقط در صورت نیاز واقعی مسئله، پیچیدگی اضافه شود؛ زیرا Agent هزینه و تأخیر بیشتری دارد.</div>
+</div>
+</section>
+
+<section class="section" id="level2">
+<div class="section-head"><div class="section-icon">08</div><div><h2>سطح ۲ — ابزارهای هماهنگ‌کننده</h2><p>LangGraph، فریم‌ورک‌های چند-Agent و پروتکل‌های ارتباطی</p></div></div>
+<div class="content">
+<p>بعد از فهم اصول، با ابزارهایی آشنا می‌شویم که Agentهای پیچیده را ساخت‌یافته و قابل توسعه می‌کنند.</p>
+<div class="three">
+<div class="box"><h3>🕸️ LangGraph</h3><p>طراحی مسیر تصمیم‌گیری Agent با State و شاخه‌های شرطی.</p></div>
+<div class="box"><h3>👥 CrewAI / Microsoft Agent Framework</h3><p>همکاری چند Agent با نقش‌ها و وظایف مشخص.</p></div>
+<div class="box"><h3>🔌 MCP و A2A</h3><p>MCP برای اتصال Agent به ابزار و داده است و A2A برای ارتباط Agentها با یکدیگر.</p></div>
+</div>
+<div class="flow"><span>Orchestrator Agent</span><i>→</i><span>A2A</span><i>→</i><span>Specialist Agent</span><i>→</i><span>MCP</span><i>→</i><span>Tools &amp; Data</span></div>
+<div class="question"><b>سؤال: چرا قبل از انتخاب فریم‌ورک باید وضعیت آن را بررسی کرد؟</b><div class="answer">این حوزه سریع تغییر می‌کند. برای نمونه مایکروسافت AutoGen را در حالت maintenance قرار داده و Microsoft Agent Framework را جانشین آن معرفی کرده است.</div></div>
+</div>
+</section>
+
+<section class="section" id="specialization">
+<div class="section-head"><div class="section-icon">09</div><div><h2>سطح ۳ — انتخاب تخصص</h2><p>پس از Core Skills، یکی از مسیرهای شغلی انتخاب می‌شود</p></div></div>
+<div class="content">
+<div class="two">
+<div class="box spec orch"><h3>طراح جریان کاری Agent</h3><div class="tagline">Orchestration Engineer</div>
+<p><b>مناسب چه کسی است؟</b> افرادی که به طراحی ساختار و منطق سیستم علاقه دارند، پیشینه Backend یا Automation دارند و می‌خواهند رفتار Agent دقیق و قابل پیش‌بینی باشد.</p><p><b>مهارت‌های لازم:</b> Python پیشرفته، طراحی State و گراف، مدیریت خطا و Retry، آشنایی با Async.</p><div class="chips"><span class="chip">LangGraph</span><span class="chip">Checkpoints</span><span class="chip">Async Python</span><span class="chip">Error Handling</span></div>
+<p><b>نقش AI در این مسیر:</b> AI هم موتور تصمیم‌گیری هر گره است و هم کمک‌کدنویس؛ ارزش اصلی این نقش، تعیین جایی است که مدل تصمیم می‌گیرد و جایی که کد ثابت اجرا می‌شود.</p><p><b>پروژه‌های مناسب:</b> گردش‌کار رزرو یا پردازش سفارش با شاخه شرطی، Retry و تأیید انسانی؛ Agent پردازش اسناد با چند مرحله.</p><p><b>مشاغل مرتبط:</b> AI Workflow Engineer، Agent Developer، Automation Engineer.</p><p><b>سطح ورود (تقریبی):</b> میان‌رده؛ با پیش‌زمینه Backend سریع‌تر.</p><p><b>مسیر رشد بعدی:</b> Agent Architect ← Tech Lead سیستم‌های AI؛ یا حرکت به سمت Multi-Agent و زیرساخت.</p></div>
+<div class="box spec multi"><h3>مهندس چند-Agent</h3><div class="tagline">Multi-Agent Engineer</div>
+<p><b>مناسب چه کسی است؟</b> افرادی که مسئله‌های بزرگ را به نقش‌ها و وظایف تقسیم می‌کنند و با دیباگ سیستم‌های پیچیده راحت‌اند؛ مناسب مهندسان با تجربه Orchestration.</p><p><b>مهارت‌های لازم:</b> طراحی نقش و Handoff، شروط توقف، کنترل هزینه، پروتکل‌های MCP و A2A.</p><div class="chips"><span class="chip">CrewAI</span><span class="chip">MS Agent Framework</span><span class="chip">A2A</span><span class="chip">MCP</span></div>
+<p><b>نقش AI در این مسیر:</b> مدل‌ها در قالب نقش‌های مختلف (پژوهشگر، نویسنده، بازبین) کار می‌کنند؛ باید سنجیده شود که آیا تیم Agent واقعاً بهتر از Agent تکی است یا فقط هزینه را افزایش می‌دهد.</p><p><b>پروژه‌های مناسب:</b> تیم پژوهشگر–نویسنده–بازبین؛ سیستم تحلیل گزارش با چند Agent تخصصی؛ اتصال Agentها با A2A.</p><p><b>مشاغل مرتبط:</b> Multi-Agent Engineer، AI Systems Engineer، Applied AI Engineer.</p><p><b>سطح ورود (تقریبی):</b> میان‌رده تا ارشد.</p><p><b>مسیر رشد بعدی:</b> AI Systems Architect ← Staff / Principal Engineer؛ یا تخصص در ارزیابی سیستم‌های چند-Agent.</p></div>
+<div class="box spec safe"><h3>مهندس تست و ایمنی Agent</h3><div class="tagline">Agent Testing &amp; Safety</div>
+<p><b>مناسب چه کسی است؟</b> افرادی که به کیفیت، امنیت و بررسی سناریوهای خطا اهمیت می‌دهند؛ مناسب مهندسان QA، امنیت و افراد دقت‌محور.</p><p><b>مهارت‌های لازم:</b> طراحی Eval، تحلیل خطا، شناخت Prompt Injection و Excessive Agency، اصل Least Privilege.</p><div class="chips"><span class="chip">Evals</span><span class="chip">LLM-as-Judge</span><span class="chip">Red Teaming</span><span class="chip">OWASP LLM Top 10</span></div>
+<p><b>نقش AI در این مسیر:</b> AI هم موضوع تست است و هم ابزار آن (مثلاً LLM-as-Judge)؛ با این حال قاضی مبتنی بر مدل نیز خطا دارد و باید با نمونه‌های انسانی سنجیده شود.</p><p><b>پروژه‌های مناسب:</b> مجموعه Eval برای یک Agent با ۲۰ تا ۵۰ سناریو؛ گزارش حمله Prompt Injection و راه‌حل؛ داشبورد مقایسه نسخه‌ها.</p><p><b>مشاغل مرتبط:</b> AI QA / Evaluation Engineer، AI Security Engineer، Responsible AI Specialist.</p><p><b>سطح ورود (تقریبی):</b> میان‌رده؛ برای افراد QA یا امنیت سریع‌تر است.</p><p><b>مسیر رشد بعدی:</b> AI Safety / Governance Lead ← مشاور ریسک AI؛ نقشی که با رشد مقررات ارزشمندتر می‌شود.</p></div>
+<div class="box spec infra"><h3>مهندس زیرساخت Agent</h3><div class="tagline">Agent Infrastructure</div>
+<p><b>مناسب چه کسی است؟</b> مناسب افراد با پیشینه DevOps، Backend یا Cloud که هدفشان اجرای پایدار، اقتصادی و قابل رصد Agent است.</p><p><b>مهارت‌های لازم:</b> Docker، API، صف و Async، Tracing، مانیتورینگ هزینه و تأخیر، مدیریت Secretها.</p><div class="chips"><span class="chip">Docker</span><span class="chip">FastAPI</span><span class="chip">Langfuse / LangSmith</span><span class="chip">Cloud</span></div>
+<p><b>نقش AI در این مسیر:</b> رشد Agentها ابزارهایی مثل ردیابی توکن، Cache معنایی و مسیریابی بین مدل‌ها را ایجاد کرده است؛ کار اصلی این نقش، کاهش هزینه و تأخیر بر پایه اندازه‌گیری است.</p><p><b>پروژه‌های مناسب:</b> استقرار Agent با Docker و داشبورد هزینه؛ بهینه‌سازی Context؛ مسیریابی بین مدل ارزان و قوی.</p><p><b>مشاغل مرتبط:</b> LLMOps Engineer، MLOps Engineer، AI Platform Engineer.</p><p><b>سطح ورود (تقریبی):</b> میان‌رده.</p><p><b>مسیر رشد بعدی:</b> AI Platform Lead ← Head of AI Infrastructure؛ یا ورود به AI Hardware و Edge AI.</p></div>
+<div class="box spec prod"><h3>مهندس محصول مبتنی بر Agent</h3><div class="tagline">Agent Product Engineer</div>
+<p><b>مناسب چه کسی است؟</b> مناسب توسعه‌دهندگان Full-stack، بنیان‌گذاران و افرادی که می‌خواهند محصول نهایی بسازند و به تجربه کاربر اهمیت می‌دهند. ورود به این تخصص معمولاً برای تازه‌کارها ساده‌تر است.</p><p><b>مهارت‌های لازم:</b> طراحی API و UX، مدیریت انتظار کاربر، بازخورد و تحلیل استفاده، شناخت مسئله واقعی یک حوزه.</p><div class="chips"><span class="chip">FastAPI</span><span class="chip">Frontend</span><span class="chip">UX</span><span class="chip">Domain Knowledge</span></div>
+<p><b>نقش AI در این مسیر:</b> AI ساخت سریع نمونه اولیه را ممکن کرده است؛ تفاوت اصلی را کسی ایجاد می‌کند که مسئله واقعی کاربر را می‌شناسد و تجربه‌ای قابل اعتماد می‌سازد.</p><p><b>پروژه‌های مناسب:</b> دستیار پشتیبانی برای یک کسب‌وکار، Agent تحلیل قرارداد یا گزارش مالی، ابزار داخلی اتوماسیون.</p><p><b>مشاغل مرتبط:</b> AI Product Engineer، Full-stack AI Engineer، فریلنسر و بنیان‌گذار محصول AI.</p><p><b>سطح ورود (تقریبی):</b> تازه‌کار تا میان‌رده.</p><p><b>مسیر رشد بعدی:</b> AI Product Lead ← Founder / CTO؛ یا تخصص در یک Domain مثل حقوق، سلامت یا مالی.</p></div>
+</div>
+<div class="callout"><b>نکته:</b> لازم نیست چند تخصص هم‌زمان دنبال شود. پس از ساختن Core Skills، انتخاب یک نقش و انجام پروژه عمیق همان مسیر پیشنهاد می‌شود. «سطح ورود» تقریبی است و به شرکت و بازار بستگی دارد.</div>
+</div>
+</section>
+
+<section class="section" id="level4">
+<div class="section-head"><div class="section-icon">10</div><div><h2>سطح ۴ — تست کردن و ایمن‌سازی</h2><p>قبل از هر تلاش برای بردن Agent به Production</p></div></div>
+<div class="content">
+<p>قبل از بردن Agent به محیط واقعی باید بدانیم چقدر درست کار می‌کند و چقدر امن است.</p>
+<div class="two">
+<div class="box"><h3>🧪 تست Agent</h3><p>سنجش دقت، خطا، هزینه و تأخیر با چند سناریوی تکرارشونده؛ چون خروجی مدل هر بار ممکن است کمی فرق کند.</p></div>
+<div class="box"><h3>🛡️ ایمنی</h3><p>مقابله با Prompt Injection و لزوم تأیید انسان برای کارهای حساس مثل پرداخت.</p></div>
+</div>
+<div class="callout"><b>قاعده ساده:</b> Agent فقط به ابزارها و دسترسی‌هایی نیاز دارد که کارش واقعاً لازم دارد. OWASP هم Prompt Injection و «Excessive Agency» را جزو ریسک‌های اصلی اپلیکیشن‌های LLM معرفی کرده است.</div>
+</div>
+</section>
+
+<section class="section" id="level5">
+<div class="section-head"><div class="section-icon">11</div><div><h2>سطح ۵ — اجرای واقعی (Production)</h2><p>مدل‌ساز → مهندس سیستم Agentic</p></div></div>
+<div class="content">
+<p>در این مرحله Agent فقط یک نمونه آزمایشی نمی‌ماند و به بخشی از یک سیستم واقعی تبدیل می‌شود. این همان جایی است که مسیر از «ساخت Agent» به سمت «مهندسی سیستم Agentic» حرکت می‌کند.</p>
+<div class="four">
+<div class="box"><h3>🔌 FastAPI</h3><p>ارائه Agent از طریق API.</p></div>
+<div class="box"><h3>🐳 Docker</h3><p>بسته‌بندی و اجرای قابل تکرار سرویس.</p></div>
+<div class="box"><h3>📈 Tracing / Logs</h3><p>ثبت مراحل تصمیم‌گیری و فراخوانی ابزارها.</p></div>
+<div class="box"><h3>💸 Cost &amp; Latency</h3><p>پایش هزینه توکن و زمان پاسخ.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="projects">
+<div class="section-head"><div class="section-icon">12</div><div><h2>Hands-on و پروژه‌ها</h2><p>تمرین باید در طول کل Roadmap تکرار شود</p></div></div>
+<div class="content">
+<h3>مسیر عملی: Learn → Try → Build → Challenge → Real Project</h3>
+<p>در هر سطح، پس از یادگیری، انجام این چهار فعالیت پیشنهاد می‌شود. در صورت مناسب بودن برای Portfolio، خروجی در GitHub منتشر می‌شود.</p>
+<div style="overflow-x:auto"><table><tr><th>سطح</th><th>Beginner Task</th><th>Mini Project</th><th>Challenge</th><th>Real Project</th></tr>
+<tr><td><b>سطح ۰</b></td><td>برنامه‌ای که یک API عمومی را صدا بزند و JSON را چاپ کند</td><td>خلاصه‌ساز متن با LLM API و خروجی JSON</td><td>اجرای خلاصه‌ساز روی ۲۰ متن و سنجش کیفیت با یک معیار مشخص</td><td>ابزار خط فرمان خلاصه‌سازی مقاله با README</td></tr>
+<tr><td><b>سطح ۱</b></td><td>Agent با یک ابزار ساده (ماشین‌حساب)</td><td>Agent دو ابزاره با حافظه نام کاربر</td><td>RAG روی ۱۰ سند با ذکر منبع و شمارش پاسخ‌های غلط</td><td>دستیار پرسش‌وپاسخ روی اسناد (پروژه ۰۲)</td></tr>
+<tr><td><b>سطح ۲</b></td><td>گراف دو گره‌ای در LangGraph</td><td>گردش‌کار با شاخه شرطی و Retry</td><td>تیم سه Agent و مقایسه با Agent تکی (هزینه و کیفیت)</td><td>Agent پشتیبانی با مسیریابی تیکت، تأیید انسانی و یک ابزار MCP</td></tr>
+<tr><td><b>سطح ۳</b></td><td>نمودار معماری یک پروژه در تخصص انتخابی</td><td>نمونه کوچک مخصوص همان تخصص</td><td>بهبود یک شاخص (هزینه، دقت یا تأخیر) و گزارش قبل و بعد</td><td>پروژه عمیق تخصصی (ستون «پروژه‌های مناسب» در سطح ۳)</td></tr>
+<tr><td><b>سطح ۴</b></td><td>نوشتن ۵ سناریوی تست برای Agent</td><td>مجموعه Eval با ۲۰ نمونه و LLM-as-Judge</td><td>حمله Prompt Injection به یک Agent و بستن راه نفوذ</td><td>گزارش ارزیابی و ایمنی یک Agent کامل</td></tr>
+<tr><td><b>سطح ۵</b></td><td>اجرای Agent در Docker روی سیستم محلی</td><td>API با FastAPI و ثبت لاگ</td><td>کاهش قابل‌اندازه‌گیری هزینه یا تأخیر با ثبت اعداد قبل و بعد</td><td>استقرار پروژه ۰۵ با داشبورد لاگ و هزینه (Portfolio)</td></tr>
+</table></div>
+<h3>پروژه‌های واقعی</h3>
+
+<div class="project"><div class="project-num">01</div><div><h3>Tool-Calling Agent — پروژه شروع</h3><p>ساخت یک Agent با دو یا سه ابزار (مثلاً آب‌وهوا، ماشین‌حساب و جست‌وجو) که خودش انتخاب کند کدام ابزار را صدا بزند. تصمیم‌ها و خروجی هر ابزار ثبت می‌شود و چند نمونه اجرای درست و غلط گزارش می‌شود.</p></div></div>
+<div class="project"><div class="project-num">02</div><div><h3>Agent با حافظه و RAG — پروژه قابل ارائه</h3><p>ساخت Agentی که ترجیحات کاربر را به خاطر بسپارد و از مجموعه‌ای از اسناد با ذکر منبع پاسخ دهد. علاوه بر نتیجه، کیفیت پاسخ‌ها و موارد اشتباه تحلیل و در README توضیح داده می‌شود.</p></div></div>
+<div class="project"><div class="project-num">03</div><div><h3>LangGraph Workflow — پروژه چندمرحله‌ای</h3><p>طراحی یک گردش‌کار (مثل رزرو سفر) با چند شاخه شرطی، مدیریت خطا و یک نقطه تأیید انسانی. هدف این پروژه تمرین کنترل جریان کار و پایداری Agent است.</p></div></div>
+<div class="project"><div class="project-num">04</div><div><h3>Multi-Agent Team — انتخاب تخصص</h3><p>ساخت یک تیم دو یا سه‌نفره (مثلاً پژوهشگر، نویسنده، بازبین) و مقایسه نتیجه با یک Agent تکی از نظر کیفیت، هزینه و زمان. در صورت مناسب بودن، یک ابزار با MCP به تیم وصل می‌شود.</p></div></div>
+<div class="project"><div class="project-num">05</div><div><h3>Production-ready Agent — پروژه نهایی</h3><p>انتخاب یک مسئله واقعی در یک حوزه مشخص و پوشش کل چرخه: تعریف مسئله و معیار موفقیت، Agent با ابزار و حافظه، مجموعه تست و ارزیابی، آزمایش Prompt Injection، API با Docker، داشبورد لاگ و هزینه و مستندسازی. این پروژه باید در GitHub و Portfolio قابل نمایش باشد.</p></div></div>
+<div class="callout"><b>پروژه واقعی فقط «Agent ساخته‌شده» نیست:</b> شامل مسئله مشخص، ارزیابی، ایمنی، کد قابل اجرا، مستندات و در پروژه‌های پیشرفته‌تر API و Deployment است.</div>
+<pre>User
+  ↓
+Real-world Task
+  ↓
+Agent (LLM + Tools + Memory)
+  ↓
+Guardrails + Human Approval
+  ↓
+Evaluation + Error Analysis
+  ↓
+Inference API
+  ↓
+Docker
+  ↓
+Cloud / Server + Monitoring
+  ↓
+Usable Agentic System</pre>
+</div>
+</section>
+
+<section class="section" id="career-paths">
+<div class="section-head"><div class="section-icon">13</div><div><h2>مسیرهای ورود به کار</h2><p>راه‌های واقع‌بینانه برای تبدیل یادگیری به سابقه و فرصت شغلی</p></div></div>
+<div class="content">
+<div class="three">
+<div class="box"><h3>ورود از حوزه نزدیک</h3><p>حرکت از Software Engineering، Backend یا Data به سمت نقش‌های Agent و AI Engineering و افزودن مهارت‌های جدید به تجربه قبلی.</p></div>
+<div class="box"><h3>پروژه شخصی</h3><p>ساخت ۲ تا ۴ پروژه قابل نمایش و انتشار آن‌ها در GitHub همراه با README، نحوه اجرا، نتایج تست و تحلیل خطا.</p></div>
+<div class="box"><h3>اتوماسیون واقعی در کار فعلی</h3><p>بهبود یک فرایند تکراری در محل کار یا پروژه فعلی با یک Agent کوچک و امن؛ این نوع تجربه برای رزومه ارزشمند است.</p></div>
+<div class="box"><h3>مشارکت Open Source</h3><p>رفع باگ در فریم‌ورک‌ها یا MCP serverها، افزودن مثال یا مستند و تمرین کار تیمی با Git.</p></div>
+<div class="box"><h3>پروژه فریلنسری / قراردادی</h3><p>پس از ساخت نمونه‌کار، پروژه‌های محدود و مشخص مثل Agent پشتیبانی یا اتوماسیون اسناد می‌توانند تجربه تجاری ایجاد کنند.</p></div>
+<div class="box"><h3>ساخت محصول</h3><p>یک مسئله واقعی را از Agent تا API، Deployment و بازخورد کاربر جلو ببر؛ این مسیر هم‌زمان مهارت فنی و محصولی می‌سازد.</p></div>
+</div>
+<h3>نقش‌هایی که با این مسیر می‌شود گرفت</h3>
+<div class="three"><div class="box"><h3>AI / LLM Application Engineer</h3><p>ساخت قابلیت‌های مبتنی بر LLM داخل محصول: RAG، Tool Use و API.</p><p><b>مهارت کلیدی:</b> Python، LLM API، RAG</p><p><b>سطح ورود:</b> تازه‌کار تا میان‌رده</p></div><div class="box"><h3>AI Agent Developer</h3><p>طراحی و ساخت Agent برای فرایندهای مشخص یک سازمان.</p><p><b>مهارت کلیدی:</b> LangGraph، Tool Use، تست</p><p><b>سطح ورود:</b> میان‌رده</p></div><div class="box"><h3>AI Automation Engineer</h3><p>خودکارسازی فرایندهای تکراری کسب‌وکار با Agent و ابزارهای موجود.</p><p><b>مهارت کلیدی:</b> Python، API، شناخت فرایند</p><p><b>سطح ورود:</b> تازه‌کار تا میان‌رده</p></div><div class="box"><h3>AI Solutions / Forward-deployed Engineer</h3><p>همکاری مستقیم با مشتری، فهم مسئله او و ساخت راه‌حل Agentic متناسب با آن.</p><p><b>مهارت کلیدی:</b> ارتباط، Domain، پروتوتایپ سریع</p><p><b>سطح ورود:</b> میان‌رده</p></div><div class="box"><h3>AI Evaluation / QA Engineer</h3><p>ساخت Eval و سنجش کیفیت و ایمنی Agentها.</p><p><b>مهارت کلیدی:</b> طراحی تست، تحلیل خطا</p><p><b>سطح ورود:</b> میان‌رده</p></div><div class="box"><h3>LLMOps / AI Platform Engineer</h3><p>استقرار، مانیتورینگ و کنترل هزینه سیستم‌های Agent.</p><p><b>مهارت کلیدی:</b> Docker، Cloud، Observability</p><p><b>سطح ورود:</b> میان‌رده</p></div></div>
+<div class="callout"><b>عنوان‌ها یکسان نیستند:</b> در آگهی‌ها معمولاً عنوان‌هایی مثل «AI Engineer»، «LLM Engineer» یا «مهندس هوش مصنوعی کاربردی» دیده می‌شود؛ به‌جای عنوان، شرح مهارت‌ها اهمیت بیشتری دارد.</div>
+<h3>نردبان رشد</h3>
+<div class="flow"><span>کارآموز / Junior</span><i>→</i><span>Agent Developer</span><i>→</i><span>Senior AI Engineer</span><i>→</i><span>Tech Lead / Architect</span><i>→</i><span>Head of AI · Founder · مشاور</span></div>
+<p>در هر پله، سهم مهارت‌های سیستمی، ارزیابی و ارتباط با کسب‌وکار بیشتر می‌شود و سهم کدنویسی صرف کمتر.</p>
+</div>
+</section>
+
+<section class="section" id="tools">
+<div class="section-head"><div class="section-icon">14</div><div><h2>ابزارها</h2><p>زبان‌ها، کتابخانه‌ها و ابزارهای پایه موردنیاز</p></div></div>
+<div class="content">
+<div class="four">
+<div class="box"><h3>Python</h3><p>زبان اصلی مسیر؛ Functions، Classes، Files، JSON و کار با API.</p></div>
+<div class="box"><h3>LLM APIs / SDKs</h3><p>فراخوانی مدل‌ها، Function Calling و خروجی ساخت‌یافته (مثل OpenAI Agents SDK).</p></div>
+<div class="box"><h3>LangGraph</h3><p>طراحی گردش‌کار Agent با State، شاخه‌های شرطی و Checkpoint.</p></div>
+<div class="box"><h3>CrewAI / MAF</h3><p>هماهنگی چند Agent با نقش‌ها و وظایف مشخص.</p></div>
+<div class="box"><h3>MCP / A2A</h3><p>اتصال استاندارد Agent به ابزارها و به Agentهای دیگر.</p></div>
+<div class="box"><h3>Vector Database</h3><p>ذخیره و بازیابی Embeddingها برای RAG و حافظه بلندمدت.</p></div>
+<div class="box"><h3>FastAPI</h3><p>ساخت API برای ارائه Agent به سایر بخش‌های یک سیستم.</p></div>
+<div class="box"><h3>Docker</h3><p>بسته‌بندی برنامه و وابستگی‌ها برای Deployment قابل تکرار.</p></div>
+<div class="box"><h3>Observability</h3><p>ابزارهای لاگ، Trace و هزینه برای Agent (مثل LangSmith و Langfuse).</p></div>
+<div class="box"><h3>Eval Tools</h3><p>اجرای سناریوهای تست و مقایسه نسخه‌های مختلف Agent.</p></div>
+<div class="box"><h3>Git / GitHub</h3><p>نگهداری کد، نسخه‌بندی و مستندسازی پروژه‌ها.</p></div>
+<div class="box"><h3>Jupyter / VS Code</h3><p>محیط‌های رایج برای آزمایش، توسعه و اجرای کد.</p></div>
+</div>
+<div class="callout"><b>ترتیب یادگیری ابزارها:</b> Python → LLM API → Tool Use → Memory / RAG → LangGraph → CrewAI / MAF → MCP → Eval &amp; Safety → FastAPI / Docker → Observability.</div>
+<h3>ابزارهای همکاری</h3>
+<div class="three">
+<div class="box"><h3>Git / GitHub</h3><p>Branch، Pull Request و Code Review برای کار تیمی؛ Issues برای مدیریت وظایف Agent.</p></div>
+<div class="box"><h3>Notion / Confluence</h3><p>مستندسازی تصمیم‌های طراحی، Promptها و نتایج تست برای اعضای تیم.</p></div>
+<div class="box"><h3>Slack / Discord</h3><p>ارتباط تیمی و دریافت هشدار خطا و هزینه از Agent.</p></div>
+<div class="box"><h3>LangSmith / Langfuse</h3><p>اشتراک Traceها بین اعضای تیم برای دیباگ مشترک رفتار Agent.</p></div>
+<div class="box"><h3>Docker Compose / Sandbox</h3><p>محیط یکسان برای همه اعضا؛ Agent پیش از اتصال به سیستم واقعی در Staging اجرا می‌شود.</p></div>
+<div class="box"><h3>Jira / Linear / Trello</h3><p>برنامه‌ریزی Sprint و پیگیری باگ‌ها و بهبودها.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="opportunities">
+<div class="section-head"><div class="section-icon">15</div><div><h2>فرصت‌های کمتر دیده‌شده</h2><p>حوزه‌هایی که کمتر از «ساخت یک Agent» دیده می‌شوند</p></div></div>
+<div class="content">
+<div class="three">
+<div class="box"><h3>رصد و دیباگ Agent</h3><p>ابزارهایی که نشان می‌دهند Agent در هر مرحله چه تصمیمی گرفته و چرا شکست خورده.</p></div>
+<div class="box"><h3>امنیت Agent</h3><p>محافظت در برابر سوءاستفاده، Prompt Injection و دسترسی بیش از حد ابزارها.</p></div>
+<div class="box"><h3>نقطه‌های تأیید انسانی</h3><p>طراحی اینکه کجا و چگونه انسان قبل از اقدام حساس تصمیم نهایی را می‌گیرد.</p></div>
+<div class="box"><h3>کاهش هزینه و تأخیر</h3><p>بهینه‌سازی تعداد فراخوانی مدل، طول Context و انتخاب مدل مناسب هر مرحله.</p></div>
+<div class="box"><h3>Agent صوتی یا مرورگری</h3><p>Agentهایی که با صدا کار می‌کنند یا در مرورگر کار انجام می‌دهند.</p></div>
+<div class="box"><h3>Agent تخصصی صنعت</h3><p>Agent مخصوص یک حوزه مثل حقوق، سلامت یا مالی که دانش Domain در آن مزیت اصلی است.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="market">
+<div class="section-head"><div class="section-icon">16</div><div><h2>بازار کار</h2><p>تصویر فعلی و روندهای آینده بر اساس گزارش‌های معتبر</p></div></div>
+<div class="content">
+<p class="lead"><b>وضعیت فعلی:</b> عنوان «Agentic AI Engineer» در همه شرکت‌ها یکسان نیست و این مهارت‌ها در نقش‌هایی مثل AI Engineer، ML Engineer و Software Engineer با تمرکز روی AI هم دیده می‌شوند.</p>
+
+<h3>بازار آمریکا</h3>
+<div class="three">
+<div class="box"><h3>روند آگهی‌های شغلی</h3><p>طبق <b>Stanford AI Index 2026</b> (بر پایه داده‌های Lightcast)، سهم مهارت‌های Agentic AI در آگهی‌های شغلی آمریکا از <b>0.06٪</b> در 2024 به <b>0.23٪</b> در 2025 رسید؛ یعنی بیش از <b>280٪</b> رشد در یک سال و حدود <b>90 هزار</b> آگهی. این دسته برای اولین بار امسال به‌عنوان یک خوشه مهارتی مستقل ثبت شده است.</p></div>
+<div class="box"><h3>بازه حقوق</h3><p>طبق <b>Robert Half 2026 Salary Guide</b>، بازه حقوق AI/ML Engineer در آمریکا حدود <b>134,000 تا 193,250 دلار</b> در سال است. این عدد برای نقش عمومی AI/ML Engineer است، نه مخصوص Agentic AI. Robert Half رشد پیش‌بینی‌شده حقوق شروع را برای AI/ML و علم داده <b>4.1٪</b> و بالاتر از میانگین گزارش می‌کند.</p></div>
+<div class="box"><h3>مهارت‌های مرتبط</h3><p>مهارت‌هایی که در این مسیر تکرار می‌شوند و بهتر است در نمونه‌کار دیده شوند: LangGraph، RAG و Vector Database، تست و ارزیابی، مانیتورینگ Agent. در داده‌های Lightcast هم Python پرتقاضاترین مهارت تخصصی AI است و مهارت‌های مرتبط با استقرار (مثل AWS و مقیاس‌پذیری) رشد بلندمدت سریعی داشته‌اند.</p></div>
+</div>
+<p class="market-note">توجه: اعداد بالا مربوط به بازار ایالات متحده‌اند و نباید مستقیماً به بازار ایران یا هر کشور دیگری تعمیم داده شوند. رشد 280٪ هم از یک پایه کوچک (حدود 0.23٪ کل آگهی‌ها) اتفاق افتاده است.</p>
+
+<h3>بازار ایران</h3>
+<p class="lead">داده‌های این بخش از بررسی مستقیم <b>۴۰ آگهی/فرصت شغلی</b> مرتبط با Agentic AI به‌دست آمده که در شهریور ۱۴۰۵ از جاب‌ویژن، جابینجا، لینکدین، ایران‌استخدام و ایران‌تلنت جمع‌آوری شده‌اند (۵ مورد در چند منبع تکرار شده‌اند؛ یعنی حدود ۳۵ موقعیت شغلی منحصربه‌فرد).</p>
+<div class="three">
+<div class="box"><h3>روند آگهی‌های شغلی</h3><p>از ۴۰ آگهی بررسی‌شده، <b>۸۲٪</b> به‌صراحت LLM، <b>۶۵٪</b> عبارت RAG و <b>۶۰٪</b> عبارت Agentic را در عنوان یا شرح شغل داشتند؛ <b>۵۰٪</b> هم دقیقاً از عبارت «AI Agent» استفاده کرده بودند. <b>۲۱ مورد (~۵۳٪)</b> در تهران بود و <b>۱۰ مورد (۲۵٪)</b> امکان دورکاری/ریموت داشت. کارفرماها فقط استارتاپ نبودند؛ شرکت‌هایی مثل علی‌بابا، اسنپ‌باکس، بانک خاورمیانه، پرشیا خودرو، امن‌پردازان کویر (Padvish) و OmidPayment هم آگهی فعال داشتند.</p></div>
+<div class="box"><h3>بازه حقوق</h3><p>از ۴۰ آگهی، فقط <b>۳ مورد</b> رقم دقیق حقوق اعلام کرده بودند: «متخصص هوش مصنوعی (Agentic AI)» در تهران/ونک <b>۸۰ تا ۱۲۰ میلیون تومان</b>، «Senior LLM &amp; Agentic AI Engineer» در پردیس <b>۱۱۰ تا ۱۴۰ میلیون تومان</b>، و «مهندس هوش مصنوعی گفتار» (زیر ۳ سال سابقه) <b>از ۵۰ میلیون تومان</b>. بازه دیده‌شده در این نمونه یعنی <b>~۵۰ تا ۱۴۰ میلیون تومان در ماه</b> بسته به سطح تجربه. بقیه آگهی‌ها یا «توافقی» بودند یا رقمی اعلام نکرده بودند (یک موقعیت هم دورکاری با پرداخت دلاری بود). این عدد بر پایه فقط ۳ آگهی است، نه میانگین کل بازار.</p></div>
+<div class="box"><h3>مهارت‌های مرتبط</h3><p>درصد آگهی‌هایی که هرکدام را ذکر کرده‌اند: Python <b>۶۲٪</b>، Vector Database و Docker هرکدام <b>۲۵٪</b>، LangChain <b>۲۲٪</b>، LangGraph و Multi-Agent هرکدام <b>۲۰٪</b>، Fine-tuning <b>۱۸٪</b>، n8n، FastAPI و CI/CD هرکدام <b>۱۵٪</b>، Tool Calling <b>۱۲٪</b>، Prompt Engineering و PyTorch هرکدام <b>۱۰٪</b>، و MCP (به‌عنوان مهارت نوظهور) <b>۵٪</b>.</p></div>
+</div>
+<div class="callout"><b>روش پیگیری:</b> در jobvision.ir، jobinja.ir و iranestekhdam.ir با جست‌وجوی عبارت‌هایی مثل «LLM»، «AI Agent»، «RAG»، «LangChain» و «مهندس هوش مصنوعی» و استفاده از فیلترهای «کارآموزی» یا «دورکاری»، می‌توان مهارت‌های تکرارشونده را شناسایی و در Portfolio پوشش داد.</div>
+<p class="market-note">توجه: این آمار از یک نمونه ۴۰‌تایی (جمع‌آوری‌شده شهریور ۱۴۰۵) به دست آمده و آمار رسمی و کامل کل بازار ایران نیست؛ به‌ویژه بازه حقوق فقط بر پایه ۳ آگهی است. ارقام تومانی هم به‌دلیل تورم و نوسان به‌سرعت تغییر می‌کنند و باید در بازه‌های زمانی جدیدتر بازبینی شوند.</p>
+
+
+<div class="callout"><b>چشم‌انداز:</b> تمرکز شرکت‌ها از چت‌بات‌های ساده به سمت Agentهایی می‌رود که بخش بزرگی از یک کار را خودشان پیش می‌برند. در این مسیر، تخصص در یک نقش مشخص (مثل تست و ایمنی، Orchestration یا زیرساخت) معمولاً مهم‌تر از دانستن سطحی همه‌چیز است.</div>
+</div>
+</section>
+
+<section class="section" id="final">
+<div class="section-head"><div class="section-icon">17</div><div><h2>خلاصه نهایی رودمپ</h2><p>مسیر فشرده از پایه تا Agentic AI Engineer</p></div></div>
+<div class="content final">
+<div class="bigflow">
+<b>Python</b>
+<br>↓<br>
+<b>LLM + Prompt</b>
+<br>↓<br>
+<b>Tool Use</b>
+<br>↓<br>
+<b>Memory / RAG</b>
+<br>↓<br>
+<b>Planning + الگوهای Agent</b>
+<br>↓<br>
+<b>LangGraph / Multi-Agent</b>
+<br>↓<br>
+<b>MCP / A2A</b>
+<br>↓<br>
+<b>تخصص</b> (Orchestration / Multi-Agent / Safety / Infra / Product)
+<br>↓<br>
+<b>Testing + Safety</b>
+<br>↓<br>
+<b>Deployment + Monitoring</b>
+<br>↓<br>
+<b>پروژه‌های واقعی</b>
+<br>↓<br>
+<b>Agentic AI Engineer</b>
+</div>
+</div>
+</section>
+
+<section class="section" id="references">
+<div class="section-head"><div class="section-icon">18</div><div><h2>منابع و رفرنس‌ها</h2><p>منابع رسمی و گزارش‌های معتبر مورد استفاده</p></div></div>
+<div class="content">
+<ul class="ref-list">
+<li><a href="https://jobvision.ir/jobs/category/data-science" target="_blank" rel="noopener">جاب‌ویژن — آگهی‌های استخدام علوم داده و هوش مصنوعی</a> — برای وضعیت بازار کار ایران و مهارت‌های درخواستی.</li>
+<li><a href="https://jobinja.ir" target="_blank" rel="noopener">جابینجا (Jobinja)</a> — برای نمونه آگهی‌های استخدام هوش مصنوعی و بازه حقوق شروع در ایران.</li>
+<li><a href="https://iranestekhdam.ir" target="_blank" rel="noopener">ایران استخدام</a> — برای آگهی‌های استخدام کارشناس هوش مصنوعی در شرکت‌ها و نهادهای مختلف.</li>
+<li><a href="https://salary.irantalent.com/salary-report/data-science-ai-expert-salary/" target="_blank" rel="noopener">ایران‌تلنت — گزارش حقوق علوم داده / هوش مصنوعی ۱۴۰۵</a> — برای میانه، صدک‌ها و بازه حقوق کارشناس هوش مصنوعی در ایران.</li>
+<li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noopener">Stanford HAI — 2026 AI Index Report</a> — برای داده‌های بازار کار و رشد مهارت‌های Agentic AI.</li>
+<li><a href="https://lightcast.io/resources/research/stanford-ai-index-2026" target="_blank" rel="noopener">Lightcast — Stanford AI Index 2026: Job Postings Data</a> — برای جزئیات داده‌های آگهی‌های شغلی و مهارت‌های AI.</li>
+<li><a href="https://www.roberthalf.com/us/en/job-details/aiml-engineer" target="_blank" rel="noopener">Robert Half — AI/ML Engineer Salary (2026)</a> — برای بازه حقوق نقش AI/ML Engineer در آمریکا.</li>
+<li><a href="https://www.roberthalf.com/us/en/insights/salary-guide/technology" target="_blank" rel="noopener">Robert Half — 2026 Technology Salary Guide</a> — برای روند حقوق در حوزه فناوری.</li>
+<li><a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener">Anthropic — Building Effective Agents</a> — برای تفاوت Workflow و Agent و الگوهای طراحی.</li>
+<li><a href="https://platform.openai.com/docs/guides/agents" target="_blank" rel="noopener">OpenAI — Agents Guide / Agents SDK</a> — برای ساخت Agent با OpenAI.</li>
+<li><a href="https://www.langchain.com/langgraph" target="_blank" rel="noopener">LangGraph</a> — برای طراحی گردش‌کار Agent با State و شاخه‌های شرطی.</li>
+<li><a href="https://docs.crewai.com" target="_blank" rel="noopener">CrewAI — Official Documentation</a> — برای ساخت تیم‌های چند-Agent.</li>
+<li><a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">Model Context Protocol (MCP)</a> — برای اتصال استاندارد Agent به ابزارها و داده.</li>
+<li><a href="https://a2a-protocol.org" target="_blank" rel="noopener">Agent2Agent (A2A) Protocol</a> — برای ارتباط استاندارد بین Agentها.</li>
+<li><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" target="_blank" rel="noopener">Linux Foundation — Agentic AI Foundation (AAIF)</a> — برای مدیریت باز پروتکل‌ها و پروژه‌های Agentic.</li>
+<li><a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP — Top 10 for LLM Applications</a> — برای ریسک‌هایی مثل Prompt Injection و Excessive Agency.</li>
+<li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST — AI Risk Management Framework</a> — برای ملاحظات اعتمادپذیری، ایمنی، امنیت و شفافیت.</li>
+<li><a href="https://www.python.org/doc/" target="_blank" rel="noopener">Python.org — Official Documentation</a> — برای زبان Python و مستندات رسمی.</li>
+<li><a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener">FastAPI — Official Documentation</a> — برای ساخت API با Python.</li>
+<li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Docker — Official Documentation</a> — برای Containerization و Deployment.</li>
+</ul>
+<div class="callout"><b>روش استفاده از منابع:</b> محتوای آموزشی رودمپ به‌صورت خلاصه و کاربردی نوشته شده و برای جزئیات فنی باید به مستندات رسمی هر ابزار و گزارش اصلی مراجعه شود. فریم‌ورک‌های Agent سریع تغییر می‌کنند؛ پیش از انتخاب هر کدام باید وضعیت فعلی پروژه بررسی شود.</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>Agentic AI Engineer Roadmap • Fanous • 2026 • منابع رسمی و گزارش‌های معتبر</footer>
+</body>
+</html>

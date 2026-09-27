@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نقشه راه Data Scientist شدن</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050505;
+    --fg: #ffffff;
+    --muted: #a0a0a0;
+    --accent: #f97316;
+    --accent-dark: #f97316;
+    --line: #1a1a1a;
+    --panel: #0c0c0c;
+    --brand: #f97316;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #050505; --fg: #ffffff; --muted: #a0a0a0;
+      --accent: #f97316; --accent-dark: #f97316;
+      --line: #1a1a1a; --panel: #0c0c0c; --brand: #f97316;
+    }
+  }
+  }
+  :root[data-theme="dark"] {
+    --bg: #050505; --fg: #ffffff; --muted: #a0a0a0;
+    --accent: #f97316; --accent-dark: #f97316;
+    --line: #1a1a1a; --panel: #0c0c0c; --brand: #f97316;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Vazirmatn", "IRANSans", "Tahoma", "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 {
+    font-size: 1.7rem; line-height: 1.5; text-align: center;
+    color: var(--accent-dark); margin: 0 0 8px;
+  }
+  .subtitle { text-align: center; color: var(--accent); margin: 0 0 32px; font-weight: 600; }
+  h2 {
+    font-size: 1.3rem; margin: 40px 0 12px; color: var(--accent-dark);
+    border-bottom: 2px solid var(--accent); padding-bottom: 6px;
+  }
+  h3 { font-size: 1.1rem; margin: 28px 0 10px; color: var(--accent); }
+  p { margin: 0 0 12px; text-align: justify; }
+  ul { margin: 0 0 18px; padding-inline-start: 22px; }
+  li { margin-bottom: 8px; }
+  table {
+    width: 100%; border-collapse: collapse; margin: 0 0 24px;
+    background: var(--panel); font-size: 0.95rem;
+  }
+  td { border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
+  tr td:first-child { width: 38%; font-weight: 600; color: var(--accent-dark); }
+  .table-scroll { overflow-x: auto; }
+  img, table { max-width: 100%; }
+  ol.flow {
+    list-style: none; margin: 0 0 24px; padding: 0;
+    display: flex; flex-direction: column; gap: 6px; align-items: stretch;
+  }
+  ol.flow li {
+    background: var(--panel); border: 1px solid var(--line);
+    border-inline-start: 4px solid var(--accent);
+    border-radius: 8px; padding: 10px 14px; margin: 0;
+    font-weight: 600; direction: ltr; text-align: center;
+  }
+  ol.flow li + li { position: relative; }
+  ol.flow li + li::before {
+    content: "↓"; display: block; color: var(--accent);
+    font-size: 0.9rem; line-height: 1; margin-bottom: 6px; font-weight: 400;
+  }
+  .figure {
+    margin: 0 0 24px; padding: 12px; background: var(--panel);
+    border: 1px solid var(--line); border-radius: 10px; text-align: center;
+  }
+  .figure img {
+    display: block; max-width: 100%; height: auto; margin: 0 auto 8px;
+    border-radius: 6px;
+  }
+  .figure figcaption {
+    font-size: 0.85rem; color: var(--muted); line-height: 1.7;
+  }
+  .site-footer {
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .site-footer .footer-line {
+    margin: 0 0 8px; text-align: center;
+    color: var(--brand); font-weight: 700; font-size: 0.95rem; line-height: 2;
+  }
+  .site-footer .footer-line:last-child { margin-bottom: 0; }
+  .navbar{position:fixed;top:0;right:0;left:0;height:70px;background:rgba(5,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000}
+  .navbar-brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:900;color:var(--fg)}
+  .navbar-brand img{width:32px;height:32px;object-fit:contain}
+  .navbar-links{display:none}@media(min-width:768px){.navbar-links{display:flex;gap:24px;font-size:14px;color:var(--muted)}.navbar-links a{transition:.2s;cursor:pointer;text-decoration:none}.navbar-links a:hover{color:var(--accent)}.navbar-links a.active{color:var(--accent)}}
+  .navbar-cta{font-size:12px;padding:8px 16px;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;transition:.2s;text-decoration:none;cursor:pointer}
+  .navbar-cta:hover{background:var(--accent);color:black;font-weight:bold}
+  .wrap{padding-top:100px;}
+  
+  @media print {
+    body { font-size: 12pt; }
+    h2 { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <img src="logos/(سفید)لوگو%20فانوس.png" alt="فانوس">
+    <span>فانوس</span>
+  </div>
+  <div class="navbar-links">
+    <a href="index.html">خانه</a>
+    <a href="roadmaps.html" class="active">نقشه‌های راه</a>
+    <a href="community.html">کامیونیتی</a>
+    <a href="about.html">درباره ما</a>
+  </div>
+  <a href="https://t.me/fanoosverse" target="_blank" class="navbar-cta">کانال فانوس‌ورس →</a>
+</nav>
+<main class="wrap">
+<h1>نقشه راه data scientist شدن</h1>
+<p class="subtitle">شناسنامه رودمپ</p>
+<div class="table-scroll">
+<table>
+  <tbody>
+    <tr><td>نام حوزه عنوان رودمپ</td><td>Data sience مسیر دانشمند علم داده شدن در عصر هوش مصنوعی</td></tr>
+    <tr><td>نسخه آخرین بروز رسانی</td><td>Draft 02 در دست تکمیل...</td></tr>
+    <tr><td>مسئول رودمپ</td><td>ماهان ولدی</td></tr>
+    <tr><td>اعضای شرکت کننده سطح مخاطب</td><td>- مناسب برای همه افرادی که علاقه مند ب این حوزه هستن</td></tr>
+    <tr><td>پیش نیاز کلی</td><td>یک زبان برنامه نویسی تا سطح متوسطه (که اصولا زبان پایتون برای یادگیری انتخاب می شود، زبان R هم می تواند برای ورود به علم داده مناسب باشد.)</td></tr>
+  </tbody>
+</table>
+</div>
+<h2>معرفی و تعریف حوزه علم داده</h2>
+<p>این حوزه چیست؟ علم داده (Data Science) حوزه‌ای بین‌رشته‌ای است که با تلفیق ریاضیات، آمار، برنامه‌نویسی و به ویژه تکنیک‌های هوش مصنوعی، تلاش می‌کند ارزش و دانش پنهان را از میان انبوه داده‌های خام استخراج کرده و آن را به اطلاعات قابل استفاده تبدیل کند.</p>
+<p>چه مسئله ای را حل می کند؟ بتوانیم از بین این همه داده بفهمیم چه و چرا اتفاقی افتاده و احتمالا چه قرار هست در ادامه بیافتد. در واقع علم داده مسئله ای را حل می کند.(به این شکل که داده خام را در نهایت به بینش یا نتیجه قابل استفاده برای کار های مختلف تبدیل می کند. علم داده به سازمان‌ها کمک می‌کند تا با پاسخ به سه پرسش اساسی، ابهام در تصمیم‌گیری را از بین ببرند: چه اتفاقی افتاده است؟ (تحلیل توصیفی) چرا این اتفاق افتاده است؟ (تحلیل تشخیصی) در آینده چه اتفاقی خواهد افتاد؟ (تحلیل پیش‌بینانه) در واقع، این حوزه مسائل پیچیده واقعی را دریافت کرده، آن‌ها را به مسئله داده‌محور تبدیل می‌کند و در نهایت خروجی را به صورت بینش‌های کاربردی (Insights) یا مدل‌های هوشمند تصمیم‌گیر ارائه می‌دهد.</p>
+<p>کاربرد اصلی این حوزه در دنیای واقعی چیست؟ اصلی‌ترین کاربرد علم داده، هدایت تصمیم‌گیری‌های کلان بر اساس داده بدلی (Data-Driven) به جای حدس و گمان است تا پیش‌بینی آینده دقیق‌تر، سازمان‌یافته‌تر و همراه با جزئیات کامل‌تر صورت گیرد. به طور مثال: فروشگاه ها: پیشبینی اینکه چه محصولی بیشتر فروش می رود و پیشنهاد محصول مناسب تر ب کاربر. پزشکی: تحلیل داده های بیماران و کمک به تشخیص بیماری و پیش بینی عوارض منتهی به آن بیماری و اتفاقات محتمل بر عوارض آن.. تجارت الکترونیک: پیش‌بینی میزان فروش محصولات، سیستم‌های پیشنهاددهنده هوشمند به کاربران و بهبود تجربه مشتری مالی و بانکداری: کشف تراکنش‌های مشکوک (کلاهبرداری)، ارزیابی ریسک اعتباری مشتریان و الگوریتم‌های معاملاتی.</p>
+<p>چه کسانی معمولاً وارد این حوزه میشوند؟ قطعا در وهله اول دانشمند دیتا (data scientist) همچنین افراد با زمینه های:</p>
+<ul>
+  <li>علوم و مهندسی کامپیوتر</li>
+  <li>آمار و ریاضی</li>
+  <li>فعالان اقتصاد و مدیریت (برای حل مسائل کسب‌وکار بر اساس داده‌ها)</li>
+  <li>مهندسی و علوم مختلف (برای حل مسائل تخصصی رشته خودشان وارد این حوزه می شوند)</li>
+  <li>همچنین افراد علاقه مند به تغییر مسیر شغلی (با داشتن پایه قوی در حل مسئله و برنامه‌نویسی)</li>
+</ul>
+<p>زیر شاخه های اصلی این حوزه چیست؟</p>
+<ul>
+  <li>Data engineering (مهندسی داده): ساخت و نگهداری زیرساخت‌ها، pipline داده‌ها (ETL) و پایگاه‌های داده برای جمع‌آوری داده‌های خام</li>
+  <li>Data analytics (تحلیل داده): بررسی داده‌های گذشته برای کشف الگوها</li>
+  <li>Machine learning (یادگیری ماشین): ساخت مدل‌های پیش‌بینی‌کننده و الگوریتم‌هایی که از داده‌ها یاد می‌گیرند</li>
+  <li>Deep learning (یادگیری عمیق): پردازش داده‌های غیرساختاریافته مانند تصویر، متن و صوت با استفاده از شبکه‌های عصبی</li>
+  <li>Research &amp; Applied Data Science (پژوهش و علم داده کاربردی): حل مسائل خاص صنعتی، آزمون فرضیه‌ها (A/B Testing) و بهینه‌سازی مدل‌های آماری</li>
+</ul>
+<h2>نقشه مسیر اصلی یادگیری</h2>
+<h3>Level 0 — Foundations</h3>
+<ul>
+  <li>Python (تا حد متوسطی کار شده باشد به طوری که فرد توانایی کارکردن با سه کتابخانه معروف pandas, numpy, matplotlib را به طور معقول بلد باشد.)</li>
+  <li>Database, SQL (استخراج و مدیریت داده موردنیاز)</li>
+  <li>آمار و ریاضیات پایه (آمار توصیفی (میانگین، میانه، انحراف معیار)، احتمال پایه، فهم نمودارها)</li>
+  <li>تفکر تحلیلی، الگوریتمی و توانایی حل مسئله (طرح سوال مناسب از داده، تفکیک مسائل بزرگ به بخش‌های کوچک‌تر)</li>
+</ul>
+<h3>Level 1 — Fundamentals</h3>
+<ul>
+  <li>جمع‌آوری و آماده‌سازی داده (Data Collection &amp; Preparation) داده‌ها از کجا میان و چطور باید تمیز و آماده تحلیل بشن؟ مثلاً حذف داده‌های ناقص، تکراری یا اشتباه.</li>
+  <li>تحلیل داده (Data Analysis) بررسی داده‌ها برای پیدا کردن الگوها، روابط و اتفاقات مهم. مثلاً بفهمیم چرا فروش یک محصول کاهش پیدا کرده.</li>
+  <li>آمار و احتمال (Statistics &amp; Probability) استفاده از روش‌های آماری برای اینکه بتونیم از داده‌ها نتیجه‌گیری درست داشته باشیم و با عدم قطعیت کنار بیایم.</li>
+  <li>مصورسازی داده (Data Visualization) تبدیل داده‌های پیچیده به نمودار و داشبورد تا الگوها راحت‌تر دیده و درک بشن.</li>
+  <li>یادگیری ماشین (Machine Learning) استفاده از داده‌های گذشته برای ساخت مدل‌هایی که بتوانند پیش‌بینی یا دسته‌بندی انجام دهند. مثلاً پیش‌بینی اینکه یک کاربر احتمالاً چه محصولی را می‌خرد.</li>
+  <li>مدل‌سازی و ارزیابی (Modeling &amp; Evaluation) ساخت مدل مناسب، آموزش آن و بررسی اینکه چقدر خوب کار می‌کند.</li>
+  <li>حل مسئله با داده (Data-Driven Problem Solving) مهم‌ترین بخش ماجرا: تبدیل یک مسئله واقعی به یک مسئله قابل حل با داده و انتخاب روش مناسب برای حل آن.</li>
+</ul>
+<h3>Level 2 — Core Skills</h3>
+<p>تسلط بر مهارت‌هایی که در پروژه‌های واقعی استفاده می‌شوند</p>
+<ul>
+  <li>پاک‌سازی و مهندسی داده</li>
+  <li>تحلیل اکتشافی داده (EDA)</li>
+  <li>تحلیل اکتشافی و اشراف‌داده‌ای</li>
+  <li>SQL و کار با دیتابیس</li>
+  <li>مدل‌سازی و ارزیابی مدل</li>
+  <li>حل مسئله از ابتدا تا انتها</li>
+  <li>ارائه و داستان‌سرایی با داده</li>
+  <li>استفاده از Git و کار تیمی</li>
+</ul>
+<h3>Level 3 — Specialization</h3>
+<p>بسته به علاقه یکی از مسیر های زیر انتخاب شود:</p>
+<ul>
+  <li>Business data (علم داده برای کسب‌وکار)</li>
+  <li>Business Analytics (تحلیل داده برای تصمیم‌های کسب‌وکار)</li>
+  <li>Operations Analytics (تحلیل و بهینه‌سازی فرایندهای عملیاتی)</li>
+  <li>Healthcare Data Science (تحلیل داده‌های سلامت و پزشکی)</li>
+  <li>Bioinformatics (تحلیل داده‌های زیستی و ژنتیکی)</li>
+  <li>Computational Biology (حل مسائل زیست‌شناسی با روش‌های محاسباتی)</li>
+  <li>Industrial Data Science (تحلیل داده‌های صنعتی)</li>
+  <li>Manufacturing Analytics (تحلیل فرایند تولید)</li>
+  <li>IoT Data Analytics (تحلیل داده‌های سنسورها و دستگاه‌های متصل)</li>
+  <li>Quality Analytics (تحلیل و کنترل کیفیت)</li>
+  <li>Data Engineering (ساخت زیرساخت و Pipeline های داده)</li>
+  <li>Big Data (پردازش داده‌های بسیار حجیم)</li>
+  <li>Distributed Data Processing (پردازش توزیع‌شده)</li>
+  <li>Statistical Data Science (استنباط و مدل‌سازی آماری)</li>
+  <li>Experimental Design (طراحی آزمایش و تحلیل نتایج)</li>
+  <li>Causal Inference (بررسی رابطه علت و معلولی)</li>
+</ul>
+<h3>Level 4 — Advanced</h3>
+<ul>
+  <li>یادگیری عمیق‌تر الگوریتم‌های یادگیری ماشین و انتخاب الگوریتم مناسب برای هر مسئله</li>
+  <li>Feature Engineering و Feature Selection</li>
+  <li>کار با داده‌های حجیم و پیچیده</li>
+  <li>تحلیل آماری پیشرفته و طراحی آزمایش (A/B Testing)</li>
+  <li>ساخت و ارزیابی مدل‌های پیش‌بینی و طبقه‌بندی</li>
+  <li>آشنایی با مباحث Deep Learning و مدل‌های پیشرفته</li>
+  <li>کار با Time Series و پیش‌بینی روندها</li>
+  <li>ساخت سیستم‌های توصیه‌گر و تحلیل رفتار کاربران</li>
+  <li>استفاده از ابزارهای تخصصی مانند Scikit-learn، XGBoost و PyTorch</li>
+  <li>بهینه‌سازی مدل‌ها و تحلیل خطاهای آن‌ها</li>
+  <li>آشنایی با MLOps و نحوه قرار دادن مدل در محیط واقعی</li>
+</ul>
+<h3>Level 5 — Professional</h3>
+<ul>
+  <li>حل مسئله به‌صورت End-to-End؛ از تعریف مسئله و جمع‌آوری داده تا ارائه و استقرار راه‌حل</li>
+  <li>کار با پروژه‌ها و داده‌های واقعی کسب‌وکار</li>
+  <li>تبدیل مسائل کسب‌وکار به مسائل قابل حل با Data Science</li>
+  <li>طراحی و پیاده‌سازی Pipeline های داده و مدل</li>
+  <li>استقرار، مانیتورینگ و نگهداری مدل‌های Machine Learning</li>
+  <li>کار با Cloud و زیرساخت‌های داده در مقیاس بالا</li>
+  <li>توانایی ارائه نتایج تحلیل به افراد فنی و غیرفنی</li>
+  <li>آشنایی با مفاهیم Business Intelligence و تصمیم‌گیری داده‌محور</li>
+  <li>ساخت Portfolio حرفه‌ای و انجام پروژه‌های واقعی</li>
+  <li>همکاری مؤثر با تیم‌های Data Engineer، ML Engineer و Business</li>
+  <li>درک نیازهای صنعت و انتخاب راهکار مناسب بر اساس هزینه، زمان و ارزش کسب‌وکار</li>
+  <li>توانایی به‌روز ماندن با ابزارها، تکنولوژی‌ها و روش‌های جدید حوزه Data Science</li>
+</ul>
+<h2>AI × Domain</h2>
+<p>پیش از اشاره مطالب و مطرح کردن سوال های مربوط به این بخش لازم به ذکر هست که علم داده علاوه بر اینکه امروزه خود از هوش مصنوعی تاثیر می پذیرد، به شدت بر هوش مصنوعی اثرگذار است به صورتی که تاحد خوبی میتوان گفت که این اثرگذاری و اثرپذیری دوطرفه می باشد.</p>
+<h3>تأثیر AI بر حوزه</h3>
+<ul>
+  <li>تمیزکاری ابتدایی داده‌ها (Data Cleaning): تشخیص مقادیر خالی، حذف داده‌های تکراری و استانداردسازی فرمت‌ها به صورت اتوماتیک.</li>
+  <li>تست اولیه مدل‌ها (AutoML): امتحان کردن ده‌ها مدل یادگیری ماشین به صورت هم‌زمان برای پیدا کردن بهترین مدل اولیه.</li>
+  <li>تحلیل اکتشافی داده‌ها: (EDA) گرفتن آمارهای کلیدی و خلاصه‌سازی داده‌ها ظرف چند ثانیه.</li>
+  <li>عیب‌یابی کد: (Debugging) پیدا کردن سریع باگ‌ها و خطاهای پیچیده در پایتون یا R</li>
+</ul>
+<h3>کاربردهای AI در حوزه</h3>
+<h3>در این بخش ها بکار گرفته می شود:</h3>
+<ul>
+  <li>داده‌های غیرساختاریافته: تحلیل متن، تصویر، صدا و ویدیو که قبلاً بسیار سخت بود، حالا به لطف مدل‌های زبانی (LLMs) و بینایی ماشین کاملاً ساده شده است.</li>
+  <li>پیش‌بینی‌های هوشمند: تحلیل رفتار مشتری، پیش‌بینی ریزش مشتریان (Churn) و تخمین فروش.</li>
+  <li>سیستم‌های پیشنهادی: الگوریتم‌هایی شبیه به یوتیوب و دیجی‌کالا که محصول مناسب را به کاربر نشان می‌دهند.</li>
+</ul>
+<h3>ابزارهای AI</h3>
+<ul>
+  <li>دستیارهای کدنویسی GitHub, Copilot: و ChatGPT برای سرعت بخشیدن به نوشتن پایتون.</li>
+  <li>پلتفرم‌های:AutoML ابزارهایی مثل PyCaret و DataRobot برای تست سریع الگوریتم‌ها.</li>
+  <li>کتابخانه‌های مدرن LangChain: و LlamaIndex برای اتصال مدل‌های زبانی به داده‌های اختصاصی شرکت‌ها.</li>
+</ul>
+<h3>مهارتهای جدید</h3>
+<ul>
+  <li>کار با مدل‌های زبانی بزرگ (LLM Fine-tuning):چگونگی سفارشی‌سازی مدل‌هایی مثل GPT برای داده‌های خاص یک شرکت.</li>
+  <li>کار با پایگاه‌های داده برداری: (Vector Databases) مثل ChromaDB یا Pinecone که برای جستجوی هوشمند در داده‌های متنی استفاده می‌شوند.</li>
+  <li>اخلاق و امنیت داده (AI Ethics &amp; Privacy):اطمینان از اینکه هوش مصنوعی تصمیمات تبعیض‌آمیز نمی‌گیرد و اطلاعات مشتریان لو نمی‌رود.</li>
+</ul>
+<h3>مسیر ترکیبی</h3>
+<p>ترکیب برنده در آینده قطعا میکس هوش مصنوعی و صنعت تخصصی ای است که از پی</p>
+<p>گرفته می شود، برای مثال:</p>
+<ul>
+  <li>بازاریابی+ هوش مصنوعی &rarr; دیتاساینتیست رفتار مصرف‌کننده: پیش‌بینی دقیق تحلیل‌های روان‌شناختی مشتریان برای کمپین‌های تبلیغاتی.</li>
+  <li>کشاورزی + هوش مصنوعی &rarr; دیتاساینتیست کشاورزی دقیق: بررسی تصاویر ماهواره‌ای برای پایش سلامت محصولات و بهینه‌سازی مصرف آب.</li>
+</ul>
+<h2>مسیرهای تخصصی و شغلی</h2>
+<ul>
+  <li>مهندس هوش مصنوعی و مدل‌های زبانی (AI / LLM Engineer)</li>
+  <li>مهندس یادگیری ماشین و عملیات (ML Engineer / MLOps)</li>
+  <li>دانشمند داده دامنه‌محور (Domain-Specific Data Scientist)</li>
+</ul>
+<p>تمرکز این مسیر بر استخراج دانش از داده‌ها برای حل مسائل واقعی یک صنعت خاص (مثل مالی، سلامت، بازاریابی) است.</p>
+<ul>
+  <li>مناسب برای: افرادی که به تحلیل، حل مسئله، آمار و درک فرآیندهای کسب‌وکار علاقه دارند.</li>
+  <li>مهارت‌ها: آمار کاربردی، تست A/B، تحلیل علت و معلولی، داستان‌سرایی با داده و هوش کسب‌وکار.</li>
+  <li>ابزارها Python, SQL, Tableau/PowerBI, Scikit-Learn, Pandas:</li>
+  <li>نقش AI: سرعت بخشیدن به تمیزکاری داده‌ها، نوشتن سریع‌تر کدها و تحلیل‌های اکتشافی (EDA)</li>
+  <li>پروژه‌ها: تحلیل ریزش مشتریان (Churn) یک بانک و ارائه راه‌حل برای افزایش ماندگاری آن‌ها.</li>
+  <li>مشاغل Decision Scientist, Product Analyst, Quantitative Analyst:</li>
+  <li>سطح ورود: مناسب برای تازه‌کارها (Junior) به شرط داشتن درک کسب‌وکار.</li>
+  <li>مسیر رشد Senior Data Scientist &rarr; Analytics Manager &rarr; Head of Data / CDO:</li>
+</ul>
+<h2>Hands-on Path</h2>
+<p>ساختار استاندارد: Learn &rarr; Try &rarr; Build &rarr; Challenge &rarr; Real Project</p>
+<p>لول 0_1: پروژه تحلیل پیشرفته رفتار مشتریان و وفاداری، پروژه کشف آنومالی و تحلیل نوسانات داده‌های مالی یا سهام</p>
+<p>لول 2_3: پروژه سیستم پیش‌بینی ریزش مشتریان و تحلیل علت آن، پروژه مدل تخمین قیمت و ارزش‌گذاری املاک</p>
+<p>لول 4_5: پروژه ۱: سیستم توصیه‌گر ترکیبی و تحلیل رفتار کاربران، پروژه پلتفرم پیش‌بینی تقاضا و کشف آنومالی در داده‌های سری زمانی</p>
+<h2>بازار کار و آینده حوزه</h2>
+<p>بازار دیتاساینس دچار یک تغییر ساختاری بزرگ شده است: دورانی که فقط با ساخت یک مدل ساده در جوبیتر نوت‌بوک می‌شد شغل پیدا کرد، تمام شده است. امروزه شرکت‌ها به دنبال افرادی هستند که بتوانند مدل‌ها را واقعی، مقیاس‌پذیر و در خدمت اهداف مالی پیاده‌سازی کنند.</p>
+<h2>موقعیت های شغلی</h2>
+<ul>
+  <li>مهندس هوش مصنوعی کاربردی (Applied AI Engineer): توسعه محصولات هوشمند مبتنی بر LLM ها و ترکیب API های هوش مصنوعی با نرم‌افزار.</li>
+  <li>مهندس داده (Data Engineer): جهت آماده‌سازی لوله‌های داده زنده برای هوش مصنوعی (همچنان بالاترین نرخ تقاضا را دارد).</li>
+  <li>مهندسی خط‌لوله‌های داده (Data Pipeline Engineering).</li>
+</ul>
+<p>چه مهارت هایی بیشتر درخواست می شوند؟</p>
+<ul>
+  <li>کار با تکنیک‌های مدرن هوش مصنوعی مثل RAG (ارتباط دادن LLM به داده‌های شرکت) و Fine-tuning.</li>
+  <li>توانایی استقرار مدل در قالب API های سریع (FastAPI / Docker).</li>
+</ul>
+<p>ابزار های رایج چه چیز هایی اند؟</p>
+<ul>
+  <li>زبان‌ها: Python, SQL (بسیار حیاتی).</li>
+  <li>پردازش و انبار داده: Snowflake, Apache Spark, dbt, SQL Server/PostgreSQL</li>
+</ul>
+<h2>آینده حوزه</h2>
+<p>جهت‌گیری حوزه: حرکت به سمت «هوش مصنوعی عملیاتی و لبه (Edge AI)» و «مدل‌های خودکار» است. تمرکز از "ساخت الگوریتم از صفر" به "طراحی سیستم، ارزیابی خروجی‌ها و کیفیت داده" شیفت پیدا کرده است.</p>
+<p>تأثیر AI: کدهای پایه‌ای پایتون، کوئری‌های ساده SQL و پاک‌سازی‌های اولیه داده به صورت کاملاً اتوماتیک توسط AI انجام می‌شوند. دیتاساینتیستِ آینده بیشتر نقش یک معمار و ناظر کیفیت را دارد تا یک کدنویس صرف.</p>
+<p>مهارت‌های کلیدی آینده:</p>
+<ul>
+  <li>ارزیابی و پایش مدل (Model Evaluation &amp; Alignment): مطمئن شدن از اینکه AI خروجی اشتباه، تبعیض‌آمیز یا خطرناک نمی‌دهد.</li>
+  <li>اخلاق و امنیت داده (AI Governance &amp; Data Privacy).</li>
+  <li>درک عمیق از معماری داده‌های سیستم‌های توزیع‌شده.</li>
+</ul>
+<h3>فرصت های کمتر دیده شده</h3>
+<ul>
+  <li>هوش مصنوعی در تجهیزات و سخت‌افزار (Edge AI / Hardware AI)</li>
+  <li>امنیت داده در شبکه‌های صنعتی (OT / Industrial IoT Security Data Science)</li>
+  <li>دیتاساینس زیستی و سلامت دیجیتال (Bioinformatics &amp; AI Health)( پردازش داده‌های ژنتیک، متون پزشکی و سی‌تی‌اسکن‌ها با مدل‌های چندوجهی)</li>
+</ul>
+<h3>مسیر های شغلی</h3>
+<figure class="figure">
+  <img src="career-paths.png" alt="نمودار مسیرهای شغلی علم داده">
+</figure>
+<h2>اگر نمی‌دانم از کجا شروع کنم؟</h2>
+<ul>
+  <li>اگر هیچ پیش‌زمینه‌ای نداری: از Level 0 Python، ریاضیات و آمار پایه به علاوه تفکر الگوریتمی شروع کن.</li>
+  <li>اگر Python را بلدی: مسیر یادگیری: پاک‌سازی و مهندسی ویژگی‌ها (Feature Engineering) &rarr; تحلیل اکتشافی داده‌ها (EDA) &rarr; مدل‌سازی با یادگیری ماشین کلاسیک (Scikit-Learn, XGBoost) &rarr; استفاده از Git و ورژن کنترل</li>
+  <li>اگر قبلاً در این حوزه کار کرده‌ای: از Level 4 شروع کن.</li>
+  <li>اگر هدفت ورود سریع‌تر به بازار کار است: مسیر های با تقاضای بالای زیر ساختی و تحلیلی به طور مثال:</li>
+  <li>مسیر اول (Data Engineering):تمرکز روی SQL پیشرفته، پایتون، dbt، Spark و ابزارهای ساخت لوله‌کشی داده (Data Pipeline). کمبود شدید نیرو در این بخش باعث ورود سریع‌تر می‌شود.</li>
+  <li>مسیر دوم: (Product Analytics / Business Analytics) تمرکز روی SQL، داشبوردسازی (PowerBI/Tableau)، آمار کاربردی و A/B Testing. این مسیر نیاز به یادگیری مدل‌های ریاضی و الگوریتم‌های پیچیده هوش مصنوعی ندارد و سریع‌تر به نتیجه می‌رسد.</li>
+</ul>
+<h2>خلاصه نهایی رودمپ</h2>
+<ol class="flow"><li>Start here</li><li>Foundations</li><li>Core Skills</li><li>Choose Your Path</li><li>Specialization A | B | C | D | E</li><li>AI × Domain</li><li>Mini Projects</li><li>Real Projects</li><li>Portfolio</li><li>Career Paths</li><li>Next Step</li></ol>
+<h2>منابع</h2>
+<p>منابع زیر مستقیماً بررسی و در تدوین این Draft استفاده شده‌اند (شماره ارجاع در بخش «منابع و رفرنس‌ها»)؛ فهرست کامل‌تر پس از تسک ۲ و مطالعه گزارش جاب‌ویژن تکمیل می‌شود:</p>
+<ul>
+  <li>9 Artificial Intelligence Jobs to Explore in 2026 [coursera]</li>
+  <li>Edge Computing in 2026: Use Cases, Technology, Edge IoT and Edge AI [flolive]</li>
+  <li>New jobs emerging due to AI in 2026 [mercor]</li>
+  <li>Tech Careers in 2026: AI, Cloud and Emerging Roles Driving the Future [Glocomms]</li>
+</ul>
+<p>پس از تسک ۲ (بررسی ۱۰ آگهی شغلی) و مطالعه گزارش جاب‌ویژن، منابع [۶] به بعد با ارجاع دقیق به این فهرست و بخش «بازار کار» اضافه می‌شوند..</p>
+<footer class="site-footer">
+  <p class="footer-line">فانوس 🌱 — انجمن علمی علوم کامپیوتر و جامعه هوش مصنوعی دانشگاه سمنان</p>
+  <p class="footer-line">این فایل با یک قالب عمومی و تمیز ساخته شده چون دسترسی خودکار به قالب دقیق سایت fanoosverse.ir ممکن نشد؛ محتوا دقیقاً مطابق نسخه Word است.</p>
+</footer>
+</main>
+</body>
+</html>

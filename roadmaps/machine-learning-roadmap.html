@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رودمپ مهندسی یادگیری ماشین | فانوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#f97316;
+    --navy-dark:#f97316;
+    --orange:#f97316;
+    --orange-light:rgba(249, 115, 22, 0.1);
+    --text:#ffffff;
+    --muted:#a0a0a0;
+    --line:#1a1a1a;
+    --bg-soft:#0c0c0c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Vazirmatn","Tahoma",sans-serif;
+    color:var(--text);
+    background:#050505;
+    direction:rtl;
+    line-height:2;
+    font-size:16px;
+  }
+  .page{max-width:900px;margin:0 auto;padding:40px 32px 80px;}
+
+  /* ===== Cover ===== */
+  .cover{
+    text-align:center;
+    padding:70px 20px 50px;
+    border-bottom:3px solid var(--navy);
+    margin-bottom:40px;
+  }
+  .cover .lantern{font-size:54px;margin-bottom:10px;}
+  .cover h1{
+    color:var(--navy);
+    font-size:30px;
+    font-weight:800;
+    margin:10px 0 18px;
+  }
+  .cover p{
+    color:var(--muted);
+    font-size:15.5px;
+    max-width:640px;
+    margin:0 auto;
+    line-height:2.1;
+  }
+  .cover .domain-tag{
+    display:inline-block;
+    margin-top:22px;
+    background:var(--orange-light);
+    color:var(--orange);
+    border:1px solid var(--orange);
+    padding:6px 18px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:14px;
+  }
+
+  /* ===== شناسنامه ===== */
+  .id-card{
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 26px;
+    margin-bottom:46px;
+  }
+  .id-card h3{margin:0 0 14px;color:var(--navy);font-size:17px;}
+  .id-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;}
+  .id-grid .row{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:7px 0;font-size:14.5px;}
+  .id-grid .row span:first-child{color:var(--muted);font-weight:600;}
+  .id-grid .row span:last-child{font-weight:600;color:var(--text);}
+  @media(max-width:640px){.id-grid{grid-template-columns:1fr;}}
+
+  /* ===== Sections ===== */
+  section{margin-bottom:46px;}
+  h2.sec-title{
+    color:var(--text);
+    background:var(--navy);
+    display:inline-block;
+    padding:9px 26px;
+    border-radius:8px;
+    font-size:19px;
+    font-weight:700;
+    margin:0 0 20px;
+  }
+  h3.sub-title{
+    color:var(--navy);
+    font-size:16.5px;
+    font-weight:700;
+    border-right:4px solid var(--orange);
+    padding-right:12px;
+    margin:26px 0 10px;
+  }
+  h4.mini-title{
+    color:var(--orange);
+    font-size:15px;
+    font-weight:700;
+    margin:16px 0 6px;
+  }
+  p{margin:8px 0;font-size:15px;}
+  ul{margin:6px 0 6px 0;padding-right:22px;}
+  li{margin:5px 0;font-size:15px;}
+  .lead{color:var(--muted);font-size:15px;}
+
+  /* level cards */
+  .levels{display:flex;flex-direction:column;gap:14px;}
+  .level{
+    border:1px solid var(--line);
+    border-right:5px solid var(--navy);
+    border-radius:10px;
+    padding:16px 20px;
+    background:var(--bg-soft);
+  }
+  .level .lvl-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .level .lvl-num{
+    background:var(--navy);color:var(--text);font-weight:700;font-size:13px;
+    padding:3px 12px;border-radius:20px;flex-shrink:0;
+  }
+  .level .lvl-name{font-weight:700;color:var(--navy);font-size:16px;}
+  .qa{display:grid;grid-template-columns:1fr 1fr;gap:4px 26px;margin-top:8px;}
+  .qa .q{font-size:14px;}
+  .qa .q b{color:var(--orange);}
+  @media(max-width:640px){.qa{grid-template-columns:1fr;}}
+
+  /* table */
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;}
+  th,td{border:1px solid var(--line);padding:9px 12px;text-align:right;}
+  th{background:var(--navy);color:var(--text);font-weight:700;}
+  tr:nth-child(even){background:var(--bg-soft);}
+
+  /* boxes / grid cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .card{
+    border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--bg-soft);
+  }
+  .card h4{margin:0 0 8px;color:var(--navy);font-size:15px;}
+  @media(max-width:640px){.cards{grid-template-columns:1fr;}}
+
+  /* flow diagram */
+  .flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:20px 0;}
+  .flow .step{
+    background:var(--navy);color:var(--text);padding:9px 16px;border-radius:8px;font-size:13.5px;font-weight:600;
+  }
+  .flow .arrow{color:var(--orange);font-weight:700;font-size:16px;}
+  .flow-branch{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:4px 0;}
+  .flow-branch .step{background:var(--orange);}
+
+  /* start-here */
+  .start-box{
+    border:1px solid var(--line);
+    border-right:5px solid var(--orange);
+    border-radius:10px;padding:14px 20px;margin-bottom:10px;background:var(--bg-soft);
+  }
+  .start-box b{color:var(--navy);}
+
+  /* checklist-like list for project stages */
+  .stage-list{display:flex;flex-direction:column;gap:10px;}
+  .stage{border:1px solid var(--line);border-radius:10px;padding:12px 18px;}
+  .stage .tag{display:inline-block;background:var(--orange-light);color:var(--orange);font-weight:700;font-size:12.5px;padding:2px 10px;border-radius:20px;margin-left:8px;}
+
+  .note{
+    background:var(--orange-light);border:1px solid var(--orange);border-radius:8px;
+    padding:10px 16px;font-size:14px;color:#7a4408;margin-top:10px;
+  }
+
+  .sources li{font-size:13.5px;color:var(--muted);}
+  .sources a{color:var(--navy);text-decoration:none;}
+  .sources a:hover{text-decoration:underline;}
+
+  footer{
+    text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line);
+    padding-top:20px;margin-top:60px;
+  }
+  .quote{
+    text-align:center;color:var(--navy);font-weight:600;font-size:15px;
+    margin:50px 0 10px;line-height:2.2;
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <img src="logos/(سفید)لوگو%20فانوس.png" alt="فانوس">
+    <span>فانوس</span>
+  </div>
+  <div class="navbar-links">
+    <a href="index.html">خانه</a>
+    <a href="roadmaps.html" class="active">نقشه‌های راه</a>
+    <a href="community.html">کامیونیتی</a>
+    <a href="about.html">درباره ما</a>
+  </div>
+  <a href="https://t.me/fanoosverse" target="_blank" class="navbar-cta">کانال فانوس‌ورس →</a>
+</nav>
+<div class="page">
+
+  <!-- ===== Cover ===== -->
+  <div class="cover">
+    <div class="lantern">🏮</div>
+    <h1>مسیر ورود به مهندسی یادگیری ماشین<br>(Machine Learning Engineering) در عصر هوش مصنوعی</h1>
+    <p>نقشه راهی کامل برای حرکت از صفر تا ورود حرفه‌ای به بازار کار مهندسی یادگیری ماشین؛ با مسیر مشخص از یادگیری مبانی تا ساخت، استقرار و نگهداری مدل‌های واقعی، همراه با بررسی مستقل تأثیر هوش مصنوعی در این حوزه.</p>
+    <div class="domain-tag">Machine Learning Engineering</div>
+  </div>
+
+  <!-- ===== شناسنامه رودمپ ===== -->
+  <div class="id-card">
+    <h3>شناسنامه رودمپ</h3>
+    <div class="id-grid">
+      <div class="row"><span>نام حوزه</span><span>Machine Learning Engineering</span></div>
+      <div class="row"><span>عنوان رودمپ</span><span>مسیر ورود به مهندسی یادگیری ماشین در عصر هوش مصنوعی</span></div>
+      <div class="row"><span>نسخه</span><span>Draft 03</span></div>
+      <div class="row"><span>تاریخ آخرین به‌روزرسانی</span><span>۲ مهر ۱۴۰۵</span></div>
+      <div class="row"><span>مسئول رودمپ</span><span>مائده علی‌نژاد</span></div>
+      <div class="row"><span>اعضای مشارکت‌کننده</span><span>[نام اعضای تیم]</span></div>
+      <div class="row"><span>سطح مخاطب</span><span>مناسب برای همه افراد (بدون پیش‌زمینه)</span></div>
+      <div class="row"><span>پیش‌نیاز کلی</span><span>آشنایی مقدماتی با کامپیوتر و ریاضیات پایه</span></div>
+    </div>
+  </div>
+
+  <!-- 5. Domain Overview -->
+  <section>
+    <h2 class="sec-title">۱. معرفی و تعریف حوزه (Domain Overview)</h2>
+
+    <h3 class="sub-title">این حوزه چیست؟</h3>
+    <p>مهندس یادگیری ماشین (Machine Learning Engineer) کسی است که مدل‌های یادگیری ماشین را طراحی، پیاده‌سازی و در سیستم‌های واقعی اجرا و نگهداری می‌کند. او در نقطه تلاقی برنامه‌نویسی، داده و هوش مصنوعی قرار دارد و وظیفه‌اش تبدیل یک ایده یا مجموعه داده خام به یک قابلیت واقعی و قابل استفاده در یک نرم‌افزار است؛ نه صرفاً ساخت یک مدل در یک نوت‌بوک.</p>
+
+    <h3 class="sub-title">چه مسئله‌ای را حل می‌کند؟</h3>
+    <p>یک مدل یادگیری ماشین به‌تنهایی ارزشی ندارد مگر اینکه به‌صورت پایدار، مقیاس‌پذیر و قابل اعتماد در اختیار کاربران واقعی قرار گیرد. ML Engineer شکاف میان «مدلی که در تحقیق خوب کار می‌کند» و «سیستمی که در محیط واقعی، با داده‌های واقعی و ترافیک واقعی، درست کار می‌کند» را پر می‌کند. برای مثال، مدلی که قیمت یک محصول را پیش‌بینی می‌کند، ایمیل‌های اسپم را تشخیص می‌دهد، یا رفتار آینده کاربران یک اپلیکیشن را پیش‌بینی می‌کند.</p>
+
+    <h3 class="sub-title">کاربرد اصلی این حوزه در دنیای واقعی چیست؟</h3>
+    <ul>
+      <li>سیستم‌های پیشنهاددهنده (توصیه محصول، موسیقی، محتوا)</li>
+      <li>تشخیص تقلب و ناهنجاری در تراکنش‌های مالی</li>
+      <li>پیش‌بینی تقاضا، قیمت و فروش</li>
+      <li>پردازش زبان طبیعی و چت‌بات‌های هوشمند</li>
+      <li>بینایی ماشین در پزشکی، خودروی خودران و امنیت</li>
+    </ul>
+
+    <h3 class="sub-title">چه کسانی معمولاً وارد این حوزه می‌شوند؟</h3>
+    <ul>
+      <li>دانشجویان علوم کامپیوتر و مهندسی</li>
+      <li>برنامه‌نویسان و توسعه‌دهندگان نرم‌افزار</li>
+      <li>تحلیل‌گران داده و آماردانان</li>
+      <li>پژوهشگران حوزه‌های فنی و علوم پایه</li>
+      <li>افراد علاقه‌مند به تغییر مسیر شغلی (Career Switchers)</li>
+    </ul>
+
+    <h3 class="sub-title">زیرحوزه‌های اصلی چیست؟</h3>
+    <table>
+      <tr><th>زیرشاخه</th><th>توضیح کوتاه</th></tr>
+      <tr><td>Machine Learning کلاسیک</td><td>الگوریتم‌های رگرسیون، دسته‌بندی، خوشه‌بندی</td></tr>
+      <tr><td>Data Engineering</td><td>جمع‌آوری، پاک‌سازی و آماده‌سازی داده در مقیاس بزرگ</td></tr>
+      <tr><td>MLOps</td><td>استقرار، مانیتورینگ و به‌روزرسانی مدل‌ها در محصول</td></tr>
+      <tr><td>NLP و Computer Vision</td><td>پردازش زبان طبیعی و بینایی ماشین</td></tr>
+      <tr><td>Recommendation Systems</td><td>سیستم‌های پیشنهاددهنده</td></tr>
+      <tr><td>GenAI و Agentic AI</td><td>مدل‌های زبانی بزرگ (LLM) و عامل‌های هوشمند</td></tr>
+    </table>
+  </section>
+
+  <!-- 6. Prerequisites -->
+  <section>
+    <h2 class="sec-title">۲. پیش‌نیازها (Prerequisites)</h2>
+    <p>این رودمپ برای «همه افراد» طراحی شده و پیش‌نیاز سخت‌گیرانه‌ای ندارد؛ اما داشتن موارد زیر مسیر یادگیری را سریع‌تر می‌کند:</p>
+    <ul>
+      <li>آشنایی حداقلی با کار با کامپیوتر و اینترنت</li>
+      <li>ریاضیات سطح دبیرستان (جبر و آمار مقدماتی)</li>
+      <li>انگیزه برای یادگیری مستمر و حل مسئله عملی</li>
+    </ul>
+  </section>
+
+  <!-- 7. Learning Roadmap -->
+  <section>
+    <h2 class="sec-title">۳. نقشه مسیر اصلی یادگیری (Learning Roadmap)</h2>
+    <p class="lead">مسیر یادگیری در شش سطح از پایه تا حرفه‌ای طراحی شده است. مسیر کلی: Python → Data & Statistics → Machine Learning → Model Building → Model Evaluation & Optimization → Software Engineering → Deployment & MLOps</p>
+
+    <div class="levels">
+
+      <div class="level">
+        <div class="lvl-head"><span class="lvl-num">Level 0</span><span class="lvl-name">Foundations — دانش و مهارت‌های پایه</span></div>
+        <div class="qa">
+          <div class="q"><b>چه چیزی یاد بگیرم؟</b> برنامه‌نویسی Python (متغیرها، حلقه‌ها، توابع، ساختمان‌داده‌ها)، ریاضیات پایه (جبر خطی، آمار و احتمال مقدماتی)</div>
+          <div class="q"><b>چرا یاد بگیرم؟</b> Python زبان اصلی اکوسیستم ML است و بدون درک آماری، انتخاب و ارزیابی مدل معنا ندارد</div>
+          <div class="q"><b>پیش‌نیاز؟</b> ندارد</div>
+          <div class="q"><b>بعد از آن چه؟</b> ورود به کار با داده و کتابخانه‌های تحلیلی</div>
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="lvl-head"><span class="lvl-num">Level 1</span><span class="lvl-name">Fundamentals — مفاهیم اصلی حوزه</span></div>
+        <div class="qa">
+          <div class="q"><b>چه چیزی یاد بگیرم؟</b> کار با NumPy، Pandas، Matplotlib (مبانی کار با این سه کتابخانه؛ نیازی به تسلط حرفه‌ای در همین مرحله نیست)، مبانی SQL و مفهوم یادگیری با نظارت / بدون نظارت</div>
+          <div class="q"><b>چرا یاد بگیرم؟</b> پایه هر پروژه ML، داده تمیز و قابل تحلیل است</div>
+          <div class="q"><b>پیش‌نیاز؟</b> Level 0</div>
+          <div class="q"><b>بعد از آن چه؟</b> ساخت اولین مدل‌های ساده</div>
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="lvl-head"><span class="lvl-num">Level 2</span><span class="lvl-name">Core Skills — مهارت‌های ضروری برای کار واقعی</span></div>
+        <div class="qa">
+          <div class="q"><b>چه چیزی یاد بگیرم؟</b> Scikit-learn، الگوریتم‌های Regression، Classification، Clustering، Feature Engineering، ارزیابی مدل (Accuracy، Precision/Recall، ROC-AUC)</div>
+          <div class="q"><b>چرا یاد بگیرم؟</b> این‌ها ابزار روزمره هر ML Engineer برای ساخت مدل‌های کاربردی هستند</div>
+          <div class="q"><b>پیش‌نیاز؟</b> Level 1</div>
+          <div class="q"><b>بعد از آن چه؟</b> انتخاب مسیر تخصصی</div>
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="lvl-head"><span class="lvl-num">Level 3</span><span class="lvl-name">Specialization — انتخاب زیرمسیر تخصصی</span></div>
+        <div class="qa">
+          <div class="q"><b>چه چیزی یاد بگیرم؟</b> یکی از مسیرهای: Deep Learning پایه، NLP، Computer Vision، Recommendation Systems یا Data Engineering</div>
+          <div class="q"><b>چرا یاد بگیرم؟</b> بازار کار به‌شدت به سمت تخصص‌گرایی حرکت کرده است</div>
+          <div class="q"><b>پیش‌نیاز؟</b> Level 2</div>
+          <div class="q"><b>بعد از آن چه؟</b> عمیق‌شدن در ابزارهای پیشرفته همان مسیر</div>
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="lvl-head"><span class="lvl-num">Level 4</span><span class="lvl-name">Advanced — مهارت‌های پیشرفته و تخصصی</span></div>
+        <div class="qa">
+          <div class="q"><b>چه چیزی یاد بگیرم؟</b> TensorFlow/PyTorch، بهینه‌سازی مدل‌، Hyperparameter Tuning، کار با LLM و RAG، Git و اصول مهندسی نرم‌افزار</div>
+          <div class="q"><b>چرا یاد بگیرم؟</b> تبدیل مدل به بخشی از یک محصول نرم‌افزاری واقعی نیازمند این مهارت‌هاست</div>
+          <div class="q"><b>پیش‌نیاز؟</b> Level 3</div>
+          <div class="q"><b>بعد از آن چه؟</b> استقرار و مدیریت مدل در تولید</div>
+        </div>
+      </div>
+
+      <div class="level">
+        <div class="lvl-head"><span class="lvl-num">Level 5</span><span class="lvl-name">Professional — آمادگی جدی برای بازار کار</span></div>
+        <div class="qa">
+          <div class="q"><b>چه چیزی یاد بگیرم؟</b> Docker، APIهای سرویس‌دهی مدل (FastAPI)، Cloud (AWS/GCP/Azure)، MLOps، مانیتورینگ و بازآموزی مدل در محیط واقعی</div>
+          <div class="q"><b>چرا یاد بگیرم؟</b> بدون این مهارت‌ها مدل هرگز از حالت آزمایشی خارج نمی‌شود</div>
+          <div class="q"><b>پیش‌نیاز؟</b> Level 4</div>
+          <div class="q"><b>بعد از آن چه؟</b> ورود به بازار کار، فریلنسری یا پژوهش</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. AI x Domain -->
+  <section>
+    <h2 class="sec-title">۴. تأثیر و کاربرد هوش مصنوعی در حوزه (AI × Domain)</h2>
+
+    <h4 class="mini-title">۴.۱ تأثیر AI بر حوزه</h4>
+    <ul>
+      <li><b>در حال اتوماسیون:</b> پاک‌سازی و آماده‌سازی اولیه داده، تولید کد boilerplate، انتخاب اولیه هایپرپارامترها</li>
+      <li><b>سریع‌تر شده:</b> نوشتن و دیباگ کد با دستیارهای AI، مستندسازی، تحلیل اکتشافی داده (EDA)</li>
+      <li><b>ارزشمندتر شده:</b> درک عمیق مسئله کسب‌وکار، طراحی سیستم‌های داده و استقرار در مقیاس، تسلط بر MLOps</li>
+      <li><b>کم‌ارزش‌تر شده:</b> پیاده‌سازی دستی الگوریتم‌های استاندارد بدون درک زیرساخت واقعی محصول</li>
+    </ul>
+
+    <h4 class="mini-title">۴.۲ کاربردهای AI در این حوزه</h4>
+    <p>هوش مصنوعی در تحلیل و آماده‌سازی داده، تولید و اصلاح کد، بهینه‌سازی و تنظیم مدل‌ها، تشخیص خطا و Anomaly Detection، ساخت سیستم‌های پیشنهاددهنده هوشمندتر، پیش‌بینی رفتار کاربران و اتوماسیون گردش‌کار MLOps به‌طور مستقیم استفاده می‌شود.</p>
+
+    <h4 class="mini-title">۴.۳ ابزارهای AI مرتبط</h4>
+    <table>
+      <tr><th>ابزار</th><th>کاربرد</th></tr>
+      <tr><td>GitHub Copilot / Claude / ChatGPT</td><td>تولید و بازبینی کد، دیباگ سریع‌تر</td></tr>
+      <tr><td>Hugging Face</td><td>دسترسی به مدل‌های آماده و Fine-tuning</td></tr>
+      <tr><td>LangChain / LlamaIndex</td><td>ساخت اپلیکیشن‌های مبتنی بر LLM و RAG</td></tr>
+      <tr><td>MLflow / Weights & Biases</td><td>ردیابی آزمایش‌ها و مدیریت چرخه‌عمر مدل</td></tr>
+      <tr><td>AutoML (Vertex AI, SageMaker Autopilot)</td><td>اتوماسیون بخشی از انتخاب و تیونینگ مدل</td></tr>
+    </table>
+
+    <h4 class="mini-title">۴.۴ مهارت‌های جدید موردنیاز</h4>
+    <ul>
+      <li>کار با مدل‌های زبانی بزرگ (LLM) و طراحی سیستم‌های RAG</li>
+      <li>ساخت و مدیریت Agentهای هوشمند (Agentic AI)</li>
+      <li>ارزیابی و کاهش Hallucination در سیستم‌های مبتنی بر AI</li>
+      <li>Prompt Engineering در سطح مهندسی محصول، نه صرفاً کاربر نهایی</li>
+      <li>درک اصول AI مسئولانه: شفافیت، انصاف و امنیت مدل‌ها</li>
+    </ul>
+
+    <h4 class="mini-title">۴.۵ مسیر ترکیبی — AI + Domain</h4>
+    <p>ترکیب مهندسی یادگیری ماشین با هوش مصنوعی مولد، مسیرهای شغلی جدیدی مانند <b>LLM Engineer</b>، <b>AI Platform Engineer</b> و <b>Applied AI Engineer</b> را ایجاد کرده است؛ نقش‌هایی که در آن‌ها فرد هم مدل‌های کلاسیک ML می‌سازد و هم آن‌ها را با مدل‌های زبانی بزرگ و ابزارهای Agentic ترکیب می‌کند تا محصولات هوشمندتری بسازد.</p>
+  </section>
+
+  <!-- 8. Specializations -->
+  <section>
+    <h2 class="sec-title">۵. مسیرهای تخصصی و شغلی (Specializations)</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h4>Classical ML Engineer</h4>
+        <p><b>مناسب برای:</b> علاقه‌مندان به داده‌های ساخت‌یافته و مدل‌سازی آماری</p>
+        <p><b>مهارت‌ها:</b> Regression، Classification، Feature Engineering</p>
+        <p><b>ابزارها:</b> Scikit-learn، XGBoost، Pandas</p>
+        <p><b>نقش AI:</b> بهینه‌سازی و تفسیر مدل</p>
+        <p><b>مشاغل:</b> ML Engineer، Data Scientist</p>
+      </div>
+      <div class="card">
+        <h4>NLP Engineer</h4>
+        <p><b>مناسب برای:</b> علاقه‌مندان به متن و زبان طبیعی</p>
+        <p><b>مهارت‌ها:</b> Tokenization، Embeddings، Transformers</p>
+        <p><b>ابزارها:</b> Hugging Face، spaCy، LangChain</p>
+        <p><b>نقش AI:</b> هسته اصلی این مسیر همان LLMهاست</p>
+        <p><b>مشاغل:</b> NLP Engineer، LLM Engineer</p>
+      </div>
+      <div class="card">
+        <h4>Computer Vision Engineer</h4>
+        <p><b>مناسب برای:</b> علاقه‌مندان به تصویر و ویدئو</p>
+        <p><b>مهارت‌ها:</b> CNN، Object Detection، Image Segmentation</p>
+        <p><b>ابزارها:</b> PyTorch، OpenCV، YOLO</p>
+        <p><b>نقش AI:</b> مدل‌های از پیش‌آموزش‌دیده و Fine-tuning سریع</p>
+        <p><b>مشاغل:</b> CV Engineer، Robotics/AI Engineer</p>
+      </div>
+      <div class="card">
+        <h4>Speech / Audio Engineer</h4>
+        <p><b>مناسب برای:</b> علاقه‌مندان به پردازش صوت و گفتار</p>
+        <p><b>مهارت‌ها:</b> Speech Recognition، Text-to-Speech، Signal Processing</p>
+        <p><b>ابزارها:</b> Whisper، SpeechBrain، librosa، Wav2Vec2</p>
+        <p><b>نقش AI:</b> مدل‌های از پیش‌آموزش‌دیده تشخیص و تولید گفتار</p>
+        <p><b>مشاغل:</b> Speech Engineer، Audio ML Engineer</p>
+      </div>
+      <div class="card">
+        <h4>MLOps / Platform Engineer</h4>
+        <p><b>مناسب برای:</b> علاقه‌مندان به زیرساخت و DevOps</p>
+        <p><b>مهارت‌ها:</b> CI/CD، Containerization، Monitoring</p>
+        <p><b>ابزارها:</b> Docker، Kubernetes، MLflow، Airflow</p>
+        <p><b>نقش AI:</b> اتوماسیون بازآموزی و استقرار مدل</p>
+        <p><b>مشاغل:</b> MLOps Engineer، AI Platform Engineer</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:14px;">برای هر مسیر: پروژه‌های پیشنهادی و سطح ورود به بازار کار در بخش‌های «پروژه‌ها» و «بازار کار» همین سند آمده است.</p>
+
+    <h3 class="sub-title">مسیر رشد کلی</h3>
+    <div class="flow">
+      <span class="step">Foundation</span><span class="arrow">←</span>
+      <span class="step">Core Skills</span><span class="arrow">←</span>
+      <span class="step">Specialization</span><span class="arrow">←</span>
+      <span class="step">Projects</span><span class="arrow">←</span>
+      <span class="step">Portfolio</span><span class="arrow">←</span>
+      <span class="step">Job / Freelance / Research</span>
+    </div>
+  </section>
+
+  <!-- 10. Career Paths -->
+  <section>
+    <h2 class="sec-title">۶. مسیرهای ورود به بازار کار (Career Paths)</h2>
+    <ul>
+      <li><b>کارآموزی (Internship):</b> شروع از موقعیت‌های کارآموزی برای کسب تجربه عملی در تیم‌های واقعی</li>
+      <li><b>موقعیت Junior:</b> پس از یادگیری مهارت‌های Level 0 تا 3 و ساخت چند پروژه، اقدام برای موقعیت‌های Junior ML Engineer</li>
+      <li><b>پروژه و فریلنسری:</b> گرفتن پروژه‌های کوچک داده‌محور و ساخت سابقه کاری مستقل</li>
+      <li><b>ورود از حوزه‌های نزدیک:</b> شروع به‌عنوان Python Developer یا Data Analyst و حرکت تدریجی به سمت ML Engineer</li>
+    </ul>
+    <p>نقش‌های رایج قابل دستیابی: <b>Machine Learning Engineer، Data Scientist، MLOps Engineer، NLP/CV Engineer، Speech/Audio Engineer، LLM Engineer، AI Engineer، Applied AI Engineer</b></p>
+  </section>
+
+  <!-- 11-13. Hands-on Path -->
+  <section>
+    <h2 class="sec-title">۷. مسیر عملی (Hands-on Path)</h2>
+    <p class="lead">ساختار استاندارد هر مرحله: Learn → Try → Build → Challenge → Real Project</p>
+
+    <div class="stage-list">
+      <div class="stage"><span class="tag">Beginner Task</span>پیاده‌سازی یک اسکریپت Python که میانگین، میانه و انحراف معیار یک مجموعه داده ساده را محاسبه کند.</div>
+      <div class="stage"><span class="tag">Beginner Task</span>تحلیل اکتشافی (EDA) روی یک دیتاست عمومی از Kaggle با Pandas و Matplotlib.</div>
+
+      <div class="stage"><span class="tag">Mini Project</span>ساخت مدل پیش‌بینی قیمت خانه با Regression روی دیتاست Boston/California Housing.</div>
+      <div class="stage"><span class="tag">Mini Project</span>ساخت یک طبقه‌بند اسپم/غیراسپم برای ایمیل با Naive Bayes یا Logistic Regression.</div>
+
+      <div class="stage"><span class="tag">Challenge</span>بهبود دقت یک مدل دسته‌بندی از طریق Feature Engineering و Hyperparameter Tuning تا رسیدن به یک آستانه دقت مشخص.</div>
+
+      <div class="stage"><span class="tag">Real Project</span>ساخت یک سیستم پیشنهاددهنده محصول یا محتوا و قرار دادن آن پشت یک API با FastAPI، سپس Deploy روی یک سرویس ابری رایگان.</div>
+      <div class="stage"><span class="tag">Real Project</span>ساخت یک دستیار پرسش‌وپاسخ مبتنی بر RAG روی مجموعه اسناد دلخواه با LangChain و یک LLM متن‌باز.</div>
+    </div>
+    <p class="note">در صورت امکان، خروجی هر پروژه باید در یک Portfolio آنلاین (مثلاً GitHub یا یک سایت شخصی) قابل نمایش باشد.</p>
+  </section>
+
+  <!-- 14. Tools -->
+  <section>
+    <h2 class="sec-title">۸. ابزارها (Tools)</h2>
+    <table>
+      <tr><th>دسته</th><th>ابزارها</th></tr>
+      <tr><td>زبان و کتابخانه پایه</td><td>Python، NumPy، Pandas، Matplotlib</td></tr>
+      <tr><td>یادگیری ماشین</td><td>Scikit-learn، XGBoost، LightGBM</td></tr>
+      <tr><td>یادگیری عمیق</td><td>TensorFlow، PyTorch، Keras</td></tr>
+      <tr><td>NLP و LLM</td><td>Hugging Face، LangChain، LlamaIndex</td></tr>
+      <tr><td>مدیریت آزمایش و مدل</td><td>MLflow، Weights & Biases، DVC</td></tr>
+      <tr><td>استقرار و زیرساخت</td><td>Docker، FastAPI، Git، Kubernetes</td></tr>
+      <tr><td>کلود</td><td>AWS SageMaker، Google Cloud Vertex AI، Azure ML</td></tr>
+      <tr><td>پایگاه داده</td><td>SQL، PostgreSQL، پایگاه‌های برداری (Vector DB) مانند Pinecone/Chroma</td></tr>
+    </table>
+  </section>
+
+  <!-- 15. Resources -->
+  <section>
+    <h2 class="sec-title">۹. منابع منتخب (Selected Resources)</h2>
+    <ul>
+      <li>دوره Machine Learning Specialization — Andrew Ng (Coursera / DeepLearning.AI)</li>
+      <li>کتاب Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow — Aurélien Géron</li>
+      <li>مستندات رسمی Scikit-learn، PyTorch و Hugging Face</li>
+      <li>دوره MLOps Zoomcamp — DataTalksClub (رایگان و پروژه‌محور)</li>
+      <li>پلتفرم Kaggle برای تمرین با دیتاست‌های واقعی و شرکت در مسابقات</li>
+      <li>fast.ai — دوره عملی یادگیری عمیق</li>
+      <li>مجموعه‌داده «mae» — استخراج و پردازش ساختاریافته ۴۰ آگهی شغلی واقعی حوزه ML/AI در ایران (فایل‌های خام و پردازش‌شده mae_0001 تا mae_0040)، برای تحلیل مهارت، حقوق و سطح تجربه موردنیاز بازار کار</li>
+    </ul>
+  </section>
+
+  <!-- 16. Job Market -->
+  <section>
+    <h2 class="sec-title">۱۰. بازار کار و آینده حوزه (Job Market)</h2>
+
+    <h3 class="sub-title">وضعیت فعلی بازار</h3>
+    <p>بازار مهندسی یادگیری ماشین رقابتی اما به‌شدت رو‌به‌رشد است. طبق گزارش‌های سال ۲۰۲۶، ارزش این بازار در حال رسیدن به بیش از ۱۱۳ میلیارد دلار است و بیش از ۱.۶ میلیون نفر در سطح جهان در این حوزه مشغول به کار هستند. رشد سالانه استخدام در این حوزه از میانگین مشاغل فناوری به‌طور محسوسی بالاتر است.</p>
+    <ul>
+      <li>پایتون، SQL و Java پرتقاضاترین زبان‌های برنامه‌نویسی در آگهی‌های شغلی ML Engineer هستند.</li>
+      <li>بیش از نیمی از آگهی‌های شغلی، تخصص عمیق در یک زیرحوزه (Domain Expert) را به مهارت عمومی ترجیح می‌دهند.</li>
+      <li>مهارت‌های AI به‌طور میانگین صرفه (Wage Premium) قابل‌توجهی نسبت به مشاغل مشابه بدون AI ایجاد می‌کنند.</li>
+      <li>در میان پلتفرم‌های ابری، AWS، Azure و Google Cloud بیشترین سهم را در آگهی‌های شغلی مرتبط با AI دارند.</li>
+      <li>بر اساس تحلیل داخلی ۴۰ آگهی واقعی بازار کار ایران (مجموعه‌داده mae)، مهارت‌های Python، Pandas، Scikit-learn، SQL و Docker پرتکرارترین موارد در نیازمندی‌های فنی هستند و بازه حقوق با سطح ارشدیت و تخصص در زیرحوزه (NLP، CV، MLOps) رابطه مستقیم دارد.</li>
+    </ul>
+
+    <h3 class="sub-title">آینده حوزه</h3>
+    <p>حوزه به‌سرعت به سمت ترکیب مهندسی نرم‌افزار، مهندسی داده و هوش مصنوعی مولد حرکت می‌کند. تقاضا برای معماری‌های RAG و متخصصان LLM در حال افزایش چشمگیر است و بیش از سه‌چهارم آگهی‌های شغلی مرتبط با مهندسی AI، تخصص در یک حوزه مشخص را الزامی می‌دانند. توجه به AI مسئولانه (Responsible AI) — شفافیت، انصاف و امنیت مدل‌ها — نیز به بخش ثابتی از انتظارات کارفرمایان تبدیل شده است.</p>
+
+    <h3 class="sub-title">فرصت‌های کمتر دیده‌شده (Emerging Opportunities)</h3>
+    <ul>
+      <li><b>LLM / Applied AI Engineering:</b> طراحی سیستم‌های تولیدمحور مبتنی بر مدل‌های زبانی بزرگ</li>
+      <li><b>AI Hardware:</b> بهینه‌سازی اجرای مدل‌ها روی سخت‌افزارهای تخصصی (GPU/Edge AI)</li>
+      <li><b>ML Security / OT:</b> امنیت مدل‌ها و سامانه‌های صنعتی مبتنی بر هوش مصنوعی، حوزه‌ای نوظهور و کمتر پرداخته‌شده</li>
+      <li><b>AI Governance & Evaluation:</b> ارزیابی، حاکمیت و کاهش خطای مدل‌های تولیدی در مقیاس سازمانی</li>
+    </ul>
+  </section>
+
+  <!-- 18. Starting point -->
+  <section>
+    <h2 class="sec-title">۱۱. اگر نمی‌دانم از کجا شروع کنم؟</h2>
+    <div class="start-box"><b>اگر هیچ پیش‌زمینه‌ای نداری →</b> از Level 0 (Python و ریاضیات پایه) شروع کن.</div>
+    <div class="start-box"><b>اگر Python را بلدی →</b> مستقیم از Level 1 (Data & Statistics) شروع کن.</div>
+    <div class="start-box"><b>اگر قبلاً در این حوزه کار کرده‌ای →</b> بخش Level 3 به بعد و مسیرهای تخصصی را بررسی کن.</div>
+    <div class="start-box"><b>اگر هدفت ورود سریع‌تر به بازار کار است →</b> مسیر MLOps / Platform Engineer را انتخاب کن؛ بیشترین تقاضای فعلی بازار در نقش‌های تولیدمحور است.</div>
+  </section>
+
+  <!-- 19. Final Summary -->
+  <section>
+    <h2 class="sec-title">۱۲. خروجی نهایی رودمپ (Final Roadmap Summary)</h2>
+    <div class="flow">
+      <span class="step">Start Here</span><span class="arrow">↓</span>
+    </div>
+    <div class="flow"><span class="step">Foundations</span><span class="arrow">↓</span></div>
+    <div class="flow"><span class="step">Core Skills</span><span class="arrow">↓</span></div>
+    <div class="flow"><span class="step">Choose Your Path</span><span class="arrow">↓</span></div>
+    <div class="flow-branch">
+      <span class="step">Classical ML</span><span class="step">NLP</span><span class="step">Computer Vision</span><span class="step">Speech/Audio</span><span class="step">MLOps</span>
+    </div>
+    <div class="flow"><span class="arrow">↓</span></div>
+    <div class="flow"><span class="step">AI × Domain</span><span class="arrow">↓</span></div>
+    <div class="flow"><span class="step">Mini Projects</span><span class="arrow">↓</span></div>
+    <div class="flow"><span class="step">Real Projects</span><span class="arrow">↓</span></div>
+    <div class="flow"><span class="step">Portfolio</span><span class="arrow">↓</span></div>
+    <div class="flow"><span class="step">Career Paths</span><span class="arrow">↓</span></div>
+    <div class="flow"><span class="step">Next Step</span></div>
+  </section>
+
+  <div class="quote">
+    شروعى از دل من باش، كه با دنيا پر از جنگم<br>
+    تو فانوس دل من باش كه از تاريكى بيزارم<br><br>
+    فانوس راه دیگران باشید ...
+  </div>
+
+  <footer>
+    استاندارد تهیه و تحویل نقشه راه‌های فانوس — انجمن علمی علوم کامپیوتر دانشگاه سمنان × جامعه هوش مصنوعی سمنان
+  </footer>
+
+</div>
+</body>
+</html>

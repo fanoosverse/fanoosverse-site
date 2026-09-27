@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Deep Learning Engineer | نقشه راه فانوس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#050505;--bg2:#050505;--card:#0c0c0c;--card2:#0c0c0c;--line:#1a1a1a;
+--text:#ffffff;--muted:#a0a0a0;--blue:#f97316;--cyan:#f97316;--violet:#f97316;
+--pink:#f97316;--green:#f97316;--orange:#f97316;--shadow:0 22px 70px rgba(0,0,0,.32);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 10% 5%,rgba(109,140,255,.13),transparent 27%),
+radial-gradient(circle at 90% 12%,rgba(167,117,255,.10),transparent 24%),
+linear-gradient(145deg,var(--bg),var(--bg2) 55%,#090e1a);
+color:var(--text);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.95}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px);background-size:48px 48px}
+a{color:inherit;text-decoration:none}.wrap{max-width:1320px;margin:auto;padding:0 24px}
+.hero{position:relative;overflow:hidden;padding:72px 0 52px;border-bottom:1px solid var(--line)}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(109,140,255,.15);border-radius:50%;left:-130px;top:-180px;box-shadow:0 0 0 60px rgba(109,140,255,.025),0 0 0 120px rgba(109,140,255,.018)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #304267;background:rgba(16,24,43,.7);padding:6px 13px;border-radius:999px;color:#b9c7ee;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan)}
+h1{font-size:clamp(38px,6vw,72px);line-height:1.18;letter-spacing:-1.5px;margin:18px 0 8px;font-weight:900}
+.gradient{background:linear-gradient(90deg,#fff,#aebfff 45%,#72e1d7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:850px;color:var(--muted);font-size:18px;margin:0 0 25px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:10px}.stat{padding:9px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(16,24,43,.65);font-size:13px;color:#c9d3e9}
+.layout{display:grid;grid-template-columns:255px minmax(0,1fr);gap:28px;padding:32px 0}
+.sidebar{position:sticky;top:18px;align-self:start;border:1px solid var(--line);background:rgba(13,20,36,.88);backdrop-filter:blur(16px);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.sidebar-title{font-size:13px;color:var(--muted);padding:7px 10px 11px}
+.sidebar a{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:10px;color:#aebad3;font-size:13px;transition:.18s}
+.sidebar a:hover{background:#17233d;color:white;transform:translateX(-2px)}
+.num{font-family:monospace;color:var(--blue);font-size:11px;min-width:18px}
+.section{scroll-margin-top:22px;margin-bottom:24px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(18,27,48,.96),rgba(10,16,29,.96));box-shadow:var(--shadow);overflow:hidden}
+.section-head{display:flex;align-items:center;gap:15px;padding:24px 27px 18px;border-bottom:1px solid rgba(38,54,83,.65)}
+.section-icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#1d2d54,#131e36);border:1px solid #334875;font-weight:900;color:#b9c9ff}
+.section-head h2{margin:0;font-size:25px;font-weight:800}.section-head p{margin:0;color:var(--muted);font-size:12px}
+.content{padding:25px 27px 29px}h3{font-size:19px;margin:22px 0 7px}p{color:#c3ccdf;margin:7px 0 13px}
+.lead{font-size:16px;color:#d9e0ef}.callout{border:1px solid #2d4168;border-right:4px solid var(--cyan);padding:15px 17px;border-radius:14px;background:rgba(80,216,207,.045);margin:16px 0;color:#dbe8ed}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.chip{border:1px solid #304267;background:#141f36;padding:5px 10px;border-radius:9px;color:#cbd6ef;font-size:12px}
+.roadmap{position:relative;margin:8px 0}.roadmap:before{content:"";position:absolute;right:23px;top:25px;bottom:25px;width:2px;background:linear-gradient(var(--blue),var(--violet),var(--cyan))}
+.stage{position:relative;padding:0 62px 22px 0}.stage:last-child{padding-bottom:0}.stage:before{content:"";position:absolute;right:16px;top:9px;width:16px;height:16px;border-radius:50%;background:#0d1526;border:4px solid var(--blue);box-shadow:0 0 0 5px rgba(109,140,255,.08)}
+.stage:nth-child(2):before{border-color:#788cff}.stage:nth-child(3):before{border-color:var(--violet)}.stage:nth-child(4):before{border-color:#c277ff}.stage:nth-child(5):before{border-color:var(--cyan)}.stage:nth-child(6):before{border-color:var(--green)}
+.stage-card{background:linear-gradient(135deg,rgba(22,34,59,.95),rgba(14,22,39,.95));border:1px solid #293c60;border-radius:17px;padding:18px 20px;transition:.2s}
+.stage-card:hover{border-color:#47618e;transform:translateY(-2px)}
+.stage-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.stage-title{font-size:18px;font-weight:800}.level{font-size:11px;color:#c6d3ff;background:#1b2a4a;border:1px solid #354d7a;padding:3px 8px;border-radius:999px}
+.why{color:#aebad2;font-size:13px}.arrow{color:var(--cyan);font-size:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.four{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.box{border:1px solid var(--line);background:rgba(20,31,53,.72);border-radius:16px;padding:18px}.box h3{margin:0 0 7px;font-size:17px}.box p{font-size:13px}
+.navbar{position:fixed;top:0;right:0;left:0;height:70px;background:rgba(5,5,5,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000}
+.navbar-brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:900;color:var(--text)}
+.navbar-brand img{width:32px;height:32px;object-fit:contain}
+.navbar-links{display:none}@media(min-width:768px){.navbar-links{display:flex;gap:24px;font-size:14px;color:var(--muted)}.navbar-links a{transition:.2s;cursor:pointer;text-decoration:none}.navbar-links a:hover{color:var(--orange)}.navbar-links a.active{color:var(--orange)}}
+.navbar-cta{font-size:12px;padding:8px 16px;border:1px solid var(--orange);background:transparent;color:var(--orange);border-radius:8px;transition:.2s;text-decoration:none;cursor:pointer}
+.navbar-cta:hover{background:var(--orange);color:black;font-weight:bold}
+body{padding-top:70px;}
+.arch{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.arch .box{min-height:155px}.arch-icon{font-size:23px;margin-bottom:6px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.ref-list{margin:10px 0 0;padding-right:20px}.ref-list li{color:#b7c2d8;font-size:13px;margin:7px 0}.ref-list a{color:#9eafff;text-decoration:underline;text-underline-offset:3px}
+.market-note{font-size:12px;color:#8997b1;margin-top:10px}
+
+.question{border:1px dashed #3c4f75;border-radius:15px;padding:16px 18px;margin-top:15px;background:rgba(109,140,255,.035)}
+.question b{color:#dce6ff}.answer{color:#b8c5dc;font-size:13px}
+.spec{position:relative;overflow:hidden}.spec:after{content:"";position:absolute;left:-30px;bottom:-45px;width:130px;height:130px;border-radius:50%;background:rgba(109,140,255,.06)}
+.spec.cv{border-top:3px solid var(--blue)}.spec.nlp{border-top:3px solid var(--violet)}.spec.gen{border-top:3px solid var(--pink)}.spec.audio{border-top:3px solid var(--cyan)}
+.spec h3{margin-top:0}.spec .tagline{font-size:12px;color:var(--muted)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:13px 0}.flow span{background:#172541;border:1px solid #30446c;padding:6px 10px;border-radius:9px;font-size:12px}.flow i{color:#6076a5;font-style:normal}
+pre{direction:ltr;text-align:left;background:#080e1b;border:1px solid #263754;border-radius:14px;padding:17px;overflow:auto;color:#cbd7f0;font:13px/1.7 Consolas,monospace}
+.project{display:grid;grid-template-columns:58px 1fr;gap:15px;align-items:start}.project-num{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#22365d,#14213b);border:1px solid #3b5685;color:#cbd8ff;font-weight:800}
+table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:14px}th,td{padding:12px 14px;text-align:right;border-bottom:1px solid var(--line);font-size:13px}th{background:#172440;color:#cbd7f3}tr:last-child td{border-bottom:0}td{color:#b7c2d8}
+.final{background:radial-gradient(circle at 90% 0%,rgba(80,216,207,.09),transparent 28%),linear-gradient(145deg,#111d33,#0b1424)}
+.bigflow{font-size:17px;line-height:2.6;text-align:center;color:#dfe7f7}.bigflow b{color:#9eafff}
+footer{text-align:center;color:#74829d;padding:18px 0 55px;font-size:12px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0}.two,.three,.arch,.profile-grid,.four{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wrap{padding:0 14px}.hero{padding:52px 0 38px}.layout{padding-top:20px}.section-head,.content{padding-left:18px;padding-right:18px}.two,.three,.arch,.profile-grid,.four{grid-template-columns:1fr}.stage{padding-right:50px}.roadmap:before{right:18px}.stage:before{right:11px}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <img src="logos/(سفید)لوگو%20فانوس.png" alt="فانوس">
+    <span>فانوس</span>
+  </div>
+  <div class="navbar-links">
+    <a href="index.html">خانه</a>
+    <a href="roadmaps.html" class="active">نقشه‌های راه</a>
+    <a href="community.html">کامیونیتی</a>
+    <a href="about.html">درباره ما</a>
+  </div>
+  <a href="https://t.me/fanoosverse" target="_blank" class="navbar-cta">کانال فانوس‌ورس →</a>
+</nav>
+
+<header class="hero">
+<div class="wrap">
+<div class="eyebrow"><span class="dot"></span> FANOS • ROADMAP • 2026</div>
+<h1><span class="gradient">Deep Learning Engineer</span><br>نقشه راه از صفر تا بازار کار</h1>
+<p>یک مسیر مرحله‌به‌مرحله برای یادگیری Deep Learning؛ از Python و ریاضیات تا Neural Network، PyTorch، انتخاب تخصص، Deployment و ساخت پروژه‌های واقعی.</p>
+</div>
+</header>
+
+<main class="wrap layout">
+<aside class="sidebar">
+<div class="sidebar-title">مسیر سریع</div>
+<a href="#identity"><span class="num">01</span> شناسنامه رودمپ</a>
+<a href="#definition"><span class="num">02</span> Deep Learning چیست؟</a>
+<a href="#ai-domain"><span class="num">03</span> AI × Domain</a>
+<a href="#roadmap"><span class="num">04</span> نقشه راه کلی</a>
+<a href="#python"><span class="num">05</span> Python</a>
+<a href="#math"><span class="num">06</span> ریاضیات</a>
+<a href="#ml"><span class="num">07</span> Machine Learning</a>
+<a href="#dl"><span class="num">08</span> Deep Learning</a>
+<a href="#pytorch"><span class="num">09</span> PyTorch</a>
+<a href="#architectures"><span class="num">10</span> معماری‌ها</a>
+<a href="#specialization"><span class="num">11</span> حوزه‌های تخصصی</a>
+<a href="#deployment"><span class="num">12</span> Deployment</a>
+<a href="#projects"><span class="num">13</span> پروژه‌های واقعی</a>
+<a href="#career-paths"><span class="num">14</span> مسیرهای شغلی</a>
+<a href="#tools"><span class="num">15</span> ابزارها</a>
+<a href="#market"><span class="num">16</span> بازار کار</a>
+<a href="#final"><span class="num">17</span> خلاصه نهایی</a>
+<a href="#references"><span class="num">18</span> منابع و رفرنس‌ها</a>
+</aside>
+
+<div>
+
+
+
+<section class="section" id="identity">
+<div class="section-head"><div class="section-icon">01</div><div><h2>شناسنامه رودمپ</h2><p>تعریف سریع مسیر و خروجی مورد انتظار</p></div></div>
+<div class="content">
+<div class="profile-grid">
+<div class="box"><h3>عنوان مسیر</h3><p><b>Deep Learning Engineer</b> — از پایه تا ساخت، استقرار و مهندسی سیستم‌های Deep Learning.</p></div>
+<div class="box"><h3>سطح شروع</h3><p>از صفر؛ پیش‌نیاز اجباری برای شروع این مسیر وجود ندارد.</p></div>
+<div class="box"><h3>هدف نهایی</h3><p>رسیدن به توانایی ساخت مدل، انتخاب تخصص، Deploy کردن و ساخت Portfolio قابل ارائه.</p></div>
+<div class="box"><h3>هسته مسیر</h3><p>Python → Math → ML → DL → PyTorch → Architectures → Specialization → Deployment.</p></div>
+<div class="box"><h3>مخاطب</h3><p>دانشجویان و علاقه‌مندان AI، برنامه‌نویسان، مهندسان نرم‌افزار و افراد حوزه‌های فنی نزدیک.</p></div>
+<div class="box"><h3>خروجی رودمپ</h3><p>دانش مفهومی + توانایی پیاده‌سازی + پروژه‌های واقعی + نمونه‌کار + آمادگی برای ورود به بازار کار.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="definition">
+<div class="section-head"><div class="section-icon">02</div><div><h2>Deep Learning Engineer چیست؟</h2><p>آشنایی با نقش و مسئله‌ای که این حوزه حل می‌کند</p></div></div>
+<div class="content">
+<div class="question"><b>این حوزه چیست؟</b><div class="answer">Deep Learning شاخه‌ای از Machine Learning است که از شبکه‌های عصبی چندلایه برای یادگیری الگوهای پیچیده از داده استفاده می‌کند. مهندس Deep Learning این مدل‌ها را طراحی، آموزش، ارزیابی و در صورت نیاز در یک سیستم واقعی مستقر می‌کند.</div></div>
+<div class="question"><b>چه مسئله‌ای را حل می‌کند؟</b><div class="answer">وقتی استخراج دستی الگوها دشوار است، مدل‌های عمیق می‌توانند از داده‌هایی مثل تصویر، متن، صدا و ویدئو الگو یاد بگیرند و برای کارهایی مانند طبقه‌بندی، تشخیص، پیش‌بینی، درک زبان و تولید محتوا استفاده شوند.</div></div>
+<div class="question"><b>چه کسانی معمولاً وارد این حوزه می‌شوند؟</b><div class="answer">افراد با پیش‌زمینه‌های Computer Science، Computer Engineering، Software Engineering، Data Science، Mathematics، Statistics و رشته‌های فنی نزدیک؛ البته ورود به این حوزه به یک مدرک یا رشته خاص محدود نیست و مهارت عملی اهمیت زیادی دارد.</div></div>
+<div class="question"><b>زیرشاخه‌های اصلی حوزه چیست؟</b><div class="answer">Computer Vision، NLP، Generative AI و LLMها، Speech / Audio و همچنین حوزه‌های تخصصی دیگری که بر اساس نوع داده و مسئله شکل می‌گیرند.</div></div>
+<div class="callout"><b>پیش‌نیازها:</b> برای شروع این مسیر پیش نیاز اجباری وجود ندارد. آشنایی مقدماتی با منطق برنامه‌نویسی و ریاضیات پایه روند یادگیری را سریع‌تر می‌کند.</div>
+<p class="lead"><b>Deep Learning Engineer</b> به‌طور کلی مهندسی است که با استفاده از <b>شبکه‌های عصبی عمیق (Deep Neural Networks)</b> سیستم‌هایی می‌سازد که بتوانند از داده‌ها الگو یاد بگیرند و بر اساس آن پیش‌بینی، تشخیص یا تولید انجام دهند.</p>
+<div class="three">
+<div class="box"><h3>🎨 تولید</h3><p>تولید تصویر، متن، صدا و محتوای جدید.</p></div>
+<div class="box"><h3>🎙️ درک گفتار</h3><p>تشخیص گفتار و تبدیل Speech به Text.</p></div>
+<div class="box"><h3>🚗 سیستم‌های هوشمند</h3><p>کاربرد در خودروهای خودران و سامانه‌های ادراکی.</p></div>
+<div class="box"><h3>👁️ بینایی ماشین</h3><p>تشخیص چهره، اشیا و تحلیل تصویر.</p></div>
+<div class="box"><h3>📊 داده‌های پیچیده</h3><p>پیش‌بینی و تحلیل الگوهای پیچیده در داده.</p></div>
+<div class="box"><h3>🤖 هوش مصنوعی</h3><p>ساخت بخش‌هایی از سیستم‌های AI مدرن.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="ai-domain">
+<div class="section-head"><div class="section-icon">03</div><div><h2>AI × Domain</h2><p>وقتی هوش مصنوعی با یک حوزه تخصصی ترکیب می‌شود</p></div></div>
+<div class="content">
+<p class="lead">در مسیر حرفه‌ای، یادگیری خودِ AI فقط یک بخش ماجراست. ارزش اصلی زمانی بیشتر می‌شود که مهارت‌های AI با دانش یک <b>حوزه تخصصی (Domain)</b> ترکیب شوند؛ مثل پزشکی، مالی، حقوق، آموزش، بازاریابی، صنعت و نرم‌افزار.</p>
+
+<h3>۳.۱ تأثیر AI بر حوزه</h3>
+<div class="two">
+<div class="box"><h3>چه کارهایی در حال خودکارشدن هستند؟</h3><p>بخش‌هایی از کارهای تکراری، قابل‌تعریف و قابل‌اندازه‌گیری مثل پردازش اسناد، استخراج اطلاعات، خلاصه‌سازی، پشتیبانی، تولید محتوا و بعضی وظایف نرم‌افزاری بیش از گذشته با AI انجام یا تقویت می‌شوند.</p></div>
+<div class="box"><h3>چه وظایفی با AI سریع‌تر شده‌اند؟</h3><p>در کارهایی که خروجی آن‌ها قابل بررسی و بازخورد است، AI می‌تواند سرعت و بهره‌وری را افزایش دهد؛ اما میزان اثر به نوع کار، کیفیت ابزار و نحوه استفاده وابسته است.</p></div>
+<div class="box"><h3>چه مهارت‌هایی ارزش بیشتری پیدا کرده‌اند؟</h3><p>حل مسئله، تفکر تحلیلی، خلاقیت، ارتباط مؤثر، کار با داده، سواد AI و توانایی ترکیب ابزارهای AI با دانش تخصصی اهمیت بیشتری پیدا می‌کنند.</p></div>
+<div class="box"><h3>چه مهارت‌هایی بیشتر در معرض تغییرند؟</h3><p>وظایف تکراری و استانداردشده بیشتر در معرض اتوماسیون یا بازطراحی قرار دارند. بنابراین تمرکز صرف بر انجام دستی یک کار تکراری، مزیت پایداری کمتری نسبت به توانایی طراحی و نظارت بر فرایند دارد.</p></div>
+</div>
+<div class="callout"><b>نکته مهم:</b> گزارش‌های WEF و Stanford نشان می‌دهند اثر AI فقط «جایگزینی انسان» نیست؛ بخش مهمی از تغییر، همکاری انسان و ماشین و افزایش بهره‌وری است. در گزارش WEF، کارفرمایان انتظار دارند تا ۲۰۳۰ سهم کارهایی که عمدتاً توسط انسان، فناوری یا ترکیبی از هر دو انجام می‌شوند، به هم نزدیک‌تر شود.</div>
+
+<h3>۳.۲ کاربردهای AI در حوزه Deep Learning</h3>
+<p class="lead">در Deep Learning، تمرکز فقط روی «اتوماسیون یک کار» نیست؛ نقطه قوت اصلی، <b>یادگیری نمایش (Representation Learning)</b> و استخراج الگوهای پیچیده از داده‌های غیرساختاریافته مثل تصویر، ویدئو، متن، صدا و داده‌های چندرسانه‌ای است. همین ویژگی باعث می‌شود Deep Learning در بخش‌هایی از AI که با داده‌های پیچیده و حجم بالا سروکار دارند، نقش محوری داشته باشد.</p>
+<div class="three">
+<div class="box"><h3>👁️ ادراک و Perception</h3><p>تبدیل داده خام به اطلاعات قابل استفاده برای سیستم: تشخیص و مکان‌یابی اشیا، Segmentation، OCR، تحلیل ویدئو و درک صحنه. این بخش پایه بسیاری از سیستم‌های بینایی ماشین و سامانه‌های هوشمند است.</p><div class="chips"><span class="chip">Detection</span><span class="chip">Segmentation</span><span class="chip">OCR</span><span class="chip">Video Understanding</span></div></div>
+<div class="box"><h3>🧠 Representation Learning</h3><p>مدل بدون تعریف دستی تمام ویژگی‌ها، نمایش‌های مفید را از داده یاد می‌گیرد. این ویژگی یکی از تفاوت‌های مهم Deep Learning با بسیاری از روش‌های سنتی مبتنی بر Feature Engineering دستی است.</p><div class="chips"><span class="chip">Embeddings</span><span class="chip">Feature Learning</span><span class="chip">Self-Supervised Learning</span></div></div>
+<div class="box"><h3>✨ تولید محتوای جدید</h3><p>مدل‌های مولد می‌توانند بر اساس الگوهای آموخته‌شده متن، تصویر، صدا، ویدئو یا داده‌های ترکیبی تولید کنند؛ از LLMها تا Diffusion Models و مدل‌های چندوجهی.</p><div class="chips"><span class="chip">LLM</span><span class="chip">Diffusion</span><span class="chip">Multimodal</span></div></div>
+<div class="box"><h3>🔎 جست‌وجو، رتبه‌بندی و Recommendation</h3><p>یادگیری Embeddingها و مدل‌های عمیق برای سنجش شباهت، بازیابی محتوا، رتبه‌بندی نتایج و پیشنهاد محصول یا محتوا استفاده می‌شود؛ مخصوصاً وقتی داده کاربر و محتوا بسیار بزرگ و پیچیده است.</p><div class="chips"><span class="chip">Embeddings</span><span class="chip">Retrieval</span><span class="chip">Ranking</span><span class="chip">Recommendation</span></div></div>
+<div class="box"><h3>🎙️ فهم و تولید گفتار</h3><p>مدل‌های عمیق برای Speech-to-Text، Text-to-Speech، تشخیص گوینده، جداسازی/بهبود صدا و تحلیل رویدادهای صوتی استفاده می‌شوند.</p><div class="chips"><span class="chip">ASR</span><span class="chip">TTS</span><span class="chip">Speaker ID</span><span class="chip">Audio Events</span></div></div>
+<div class="box"><h3>🕸️ داده‌های رابطه‌ای و گرافی</h3><p>وقتی خودِ رابطه بین موجودیت‌ها مهم است، مدل‌های گرافی می‌توانند اطلاعات گره‌ها و ارتباطات آن‌ها را هم‌زمان یاد بگیرند؛ برای Recommendation، کشف تقلب، شبکه‌های اجتماعی و کشف روابط علمی کاربرد دارند.</p><div class="chips"><span class="chip">GNN</span><span class="chip">Node Classification</span><span class="chip">Link Prediction</span></div></div>
+<div class="box"><h3>⚙️ پیش‌بینی و داده‌های زمانی</h3><p>شبکه‌های عمیق برای الگوهای زمانی پیچیده در Forecasting، سنجش تقاضا، داده‌های حسگر و سیگنال‌ها به کار می‌روند؛ انتخاب معماری به ساختار داده و مسئله بستگی دارد.</p><div class="chips"><span class="chip">Time Series</span><span class="chip">Forecasting</span><span class="chip">Sequence Models</span></div></div>
+<div class="box"><h3>🚨 Anomaly Detection</h3><p>مدل می‌تواند الگوهای عادی را یاد بگیرد و نمونه‌های غیرمعمول را شناسایی کند؛ برای پایش سیستم‌ها، کیفیت، امنیت و داده‌های حسگری قابل استفاده است.</p><div class="chips"><span class="chip">Autoencoder</span><span class="chip">Outlier Detection</span></div></div>
+<div class="box"><h3>🔬 AI برای علم و مهندسی</h3><p>Deep Learning در کشف دارو، زیست‌محاسباتی، پیش‌بینی خواص مواد، تحلیل داده‌های علمی و مسائل مهندسی نیز استفاده می‌شود؛ در این کاربردها دانش Domain و ارزیابی علمی اهمیت ویژه دارد.</p><div class="chips"><span class="chip">Drug Discovery</span><span class="chip">Scientific ML</span><span class="chip">Surrogate Models</span></div></div>
+</div>
+<div class="callout"><b>تمایز Deep Learning:</b> برخلاف یک کاربرد عمومی مثل «خلاصه‌سازی سند» یا «اتوماسیون اداری»، مزیت اصلی این حوزه در یادگیری الگو و نمایش از داده‌های پیچیده و چندوجهی است. بنابراین Vision، Speech، LLM، Generative AI، Recommendation و Graph Learning همگی می‌توانند در یک هسته مشترک یعنی <b>Neural Representation Learning</b> به هم متصل شوند.</div>
+
+<h3>۳.۳ ابزارهای AI</h3>
+<p>ابزار موردنیاز به مسئله و حوزه بستگی دارد؛ اما یک متخصص معمولاً باید بتواند از چند لایه ابزار استفاده کند:</p>
+<div class="chips"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">Transformers</span><span class="chip">LLM APIs</span><span class="chip">Vector Databases</span><span class="chip">Git / GitHub</span><span class="chip">Docker</span><span class="chip">Cloud</span><span class="chip">Evaluation</span><span class="chip">MLOps</span></div>
+
+<h3>۳.۴ مهارت‌های جدید</h3>
+<div class="two">
+<div class="box"><h3>AI Literacy</h3><p>شناخت توانایی‌ها، محدودیت‌ها، خطاها و شیوه استفاده درست از مدل‌های AI.</p></div>
+<div class="box"><h3>AI Evaluation</h3><p>توانایی تعریف معیار، تست خروجی، مقایسه مدل‌ها و بررسی کیفیت و خطا.</p></div>
+<div class="box"><h3>Domain Knowledge</h3><p>فهم مسئله واقعی یک صنعت و تشخیص اینکه کجا AI واقعاً ارزش ایجاد می‌کند.</p></div>
+<div class="box"><h3>Responsible AI</h3><p>توجه به حریم خصوصی، امنیت، انصاف، شفافیت، قابلیت اعتماد و ریسک‌های سیستم.</p></div>
+</div>
+<div class="callout"><b>چرا Domain مهم است؟</b> مدل خوب به‌تنهایی محصول خوب نیست. کسی که هم AI را بفهمد و هم مسئله واقعی یک حوزه را بشناسد، می‌تواند داده مناسب‌تر انتخاب کند، معیار درست‌تری تعریف کند و خروجی مدل را در یک فرایند واقعی به کار بگیرد.</div>
+
+<h3>۳.۵ مسیر آینده</h3>
+<div class="flow"><span>AI Skills</span><i>+</i><span>Domain Knowledge</span><i>→</i><span>Problem Solving</span><i>→</i><span>AI System</span><i>→</i><span>Domain Specialist / AI Engineer</span></div>
+<p>مسیر آینده فقط «متخصص یک مدل» بودن نیست؛ ترکیب AI با دانش حوزه، ارزیابی، مهندسی سیستم و توانایی تبدیل یک مسئله واقعی به راه‌حل AI اهمیت بیشتری پیدا می‌کند. داده‌های Stanford نیز نشان می‌دهد استفاده سازمانی از AI در سال ۲۰۲۵ به ۸۸٪ از سازمان‌های مورد بررسی رسیده است و مدل‌ها بیش از گذشته وارد حوزه‌های حرفه‌ای شده‌اند.</p>
+</div>
+</section>
+
+<section class="section" id="roadmap">
+<div class="section-head"><div class="section-icon">04</div><div><h2>Roadmap — نقشه راه کلی</h2><p>ترتیب پیشنهادی یادگیری از پایه تا مهندسی</p></div></div>
+<div class="content">
+<div class="roadmap">
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">Python</span><span class="level">Foundation</span></div><p class="why">پایه برنامه‌نویسی و کار با داده در ML و DL</p><span class="arrow">→ خروجی: توانایی برنامه‌نویسی و کار با داده</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">ریاضیات</span><span class="level">Foundation</span></div><p class="why">برای فهم اینکه مدل‌های ML و DL چگونه کار می‌کنند</p><span class="arrow">→ خروجی: درک محاسبات پشت مدل‌ها</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">Machine Learning</span><span class="level">Fundamentals</span></div><p class="why">قبل از Neural Network، اصول یادگیری ماشین را می‌فهمیم</p><span class="arrow">→ خروجی: درک Training، Evaluation و رفتار مدل</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">Deep Learning</span><span class="level">Core</span></div><p class="why">ورود به قلب DL: Neural Network و سازوکار یادگیری آن</p><span class="arrow">→ خروجی: فهم Forward، Loss، Backpropagation و Gradient Descent</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">PyTorch</span><span class="level">Implementation</span></div><p class="why">پیاده‌سازی و آموزش واقعی شبکه‌های عصبی</p><span class="arrow">→ خروجی: آموزش یک Neural Network از صفر تا صد</span></div></div>
+<div class="stage"><div class="stage-card"><div class="stage-top"><span class="stage-title">Architecture → Specialization → Deployment</span><span class="level">Professional</span></div><p class="why">مدل‌های مختلف، انتخاب حوزه تخصصی و تبدیل مدل به سیستم واقعی</p><span class="arrow">→ خروجی: Portfolio + ورود به بازار کار</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="python">
+<div class="section-head"><div class="section-icon">05</div><div><h2>Python</h2><p>اولین قدم</p></div></div>
+<div class="content">
+<p>اولین قدم، یادگیری خوب Python است؛ اما لازم نیست برای آن به اندازه یک Software Engineer حرفه‌ای زمان گذاشته شود. بخش بزرگی از Machine Learning و Deep Learning با Python انجام می‌شود.</p>
+<h3>موضوعات اصلی</h3>
+<div class="chips"><span class="chip">Syntax</span><span class="chip">Variables</span><span class="chip">Conditions</span><span class="chip">Loops</span><span class="chip">Functions</span><span class="chip">Classes</span><span class="chip">Files</span><span class="chip">Modules</span><span class="chip">Exceptions</span></div>
+<h3>کتابخانه‌ها</h3><div class="chips"><span class="chip">NumPy</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span></div>
+<div class="callout"><b>هدف:</b> در نهایت باید بتوانیم با Python برنامه بنویسیم و با داده‌ها کار کنیم.</div>
+</div>
+</section>
+
+<section class="section" id="math">
+<div class="section-head"><div class="section-icon">06</div><div><h2>ریاضیات</h2><p>ابزار فهم مدل‌ها، نه حفظ فرمول‌ها</p></div></div>
+<div class="content">
+<p>در این مرحله ریاضیات موردنیاز را یاد می‌گیریم تا بعداً بتوانیم بفهمیم مدل‌های ML و DL دقیقاً چگونه کار می‌کنند.</p>
+<div class="arch">
+<div class="box"><div class="arch-icon">∑</div><h3>Linear Algebra</h3><p>Vector، Matrix، Tensor و عملیات ماتریسی.</p></div>
+<div class="box"><div class="arch-icon">∂</div><h3>Calculus</h3><p>Derivative، Partial Derivative، Gradient و Chain Rule.</p></div>
+<div class="box"><div class="arch-icon">σ</div><h3>Probability & Statistics</h3><p>Probability، Distribution، Mean، Variance و مفاهیم آماری پایه.</p></div>
+</div>
+<div class="callout">هدف ریاضیات در این رودمپ: <b>فهم پشت صحنه مدل‌ها</b> و نه تبدیل‌شدن به متخصص ریاضی محض.</div>
+</div>
+</section>
+
+<section class="section" id="ml">
+<div class="section-head"><div class="section-icon">07</div><div><h2>Machine Learning</h2><p>قبل از Deep Learning</p></div></div>
+<div class="content">
+<p>قبل از ورود مستقیم به Neural Network، با اصول Machine Learning آشنا می‌شویم تا مفاهیم یادگیری، آموزش، ارزیابی و رفتار مدل را عمیق‌تر بفهمیم.</p>
+<h3>مفاهیم</h3><div class="chips"><span class="chip">Training</span><span class="chip">Testing</span><span class="chip">Features</span><span class="chip">Labels</span><span class="chip">Overfitting</span><span class="chip">Underfitting</span><span class="chip">Evaluation</span></div>
+<h3>الگوریتم‌های معروف</h3><div class="chips"><span class="chip">Linear Regression</span><span class="chip">Logistic Regression</span><span class="chip">Decision Tree</span><span class="chip">Random Forest</span><span class="chip">SVM</span></div>
+<div class="question"><b>سؤال: تفاوت ML و DL چیست؟</b><div class="answer">به‌طور کلی ML زیرمجموعه‌ای از AI است و DL زیرمجموعه‌ای از ML محسوب می‌شود. ML دامنه گسترده‌تری دارد، در حالی که DL تمرکز بیشتری روی مدل‌های عصبی عمیق دارد.</div></div>
+</div>
+</section>
+
+<section class="section" id="dl">
+<div class="section-head"><div class="section-icon">08</div><div><h2>Deep Learning</h2><p>قلب مسیر: Neural Network</p></div></div>
+<div class="content">
+<p>حالا وارد هسته اصلی Deep Learning می‌شویم؛ یعنی <b>Neural Network</b>. اینجا باید بفهمیم شبکه چگونه ورودی را به خروجی تبدیل می‌کند و چگونه از خطا یاد می‌گیرد.</p>
+<div class="two">
+<div class="box"><h3>Perceptron</h3><p>ساده‌ترین شکل نورون مصنوعی و نقطه شروع درک شبکه عصبی.</p></div>
+<div class="box"><h3>Forward Propagation</h3><p>ورودی وارد شبکه می‌شود و خروجی تولید می‌شود.</p></div>
+<div class="box"><h3>Loss Function</h3><p>مشخص می‌کند مدل تا چه اندازه اشتباه کرده است.</p></div>
+<div class="box"><h3>Backpropagation</h3><p>خطا را به عقب منتقل می‌کنیم تا بفهمیم وزن‌ها چگونه باید تغییر کنند.</p></div>
+<div class="box"><h3>Gradient Descent</h3><p>وزن‌ها را طوری تغییر می‌دهیم که Loss کاهش پیدا کند.</p></div>
+<div class="box"><h3>Activation & Optimization</h3><p>برای ساخت و آموزش مؤثر شبکه، Activation Functionها و Optimizerها را می‌شناسیم.</p></div>
+</div>
+<div class="flow"><span>Input</span><i>→</i><span>Neural Network</span><i>→</i><span>Prediction</span><i>→</i><span>Loss</span><i>→</i><span>Backpropagation</span><i>→</i><span>Weight Update</span></div>
+</div>
+</section>
+
+<section class="section" id="pytorch">
+<div class="section-head"><div class="section-icon">09</div><div><h2>Frameworkها: PyTorch، TensorFlow و Keras</h2><p>تبدیل مفاهیم Deep Learning به مدل قابل آموزش</p></div></div>
+<div class="content">
+<p>در این مرحله، مفاهیم Neural Network را به کد تبدیل می‌کنیم. <b>PyTorch</b> و <b>TensorFlow</b> دو اکوسیستم مهم برای ساخت و آموزش مدل‌های Deep Learning هستند و <b>Keras</b> یک API سطح‌بالا برای ساخت سریع و خوانای مدل‌هاست. انتخاب ابزار باید بر اساس مسئله، اکوسیستم پروژه و نیازهای استقرار انجام شود.</p>
+<div class="three">
+<div class="box"><h3>🔥 PyTorch</h3><p>یک Tensor Library و چارچوب Deep Learning با ابزارهای Autograd، Dataset/DataLoader، Optimizer، Distributed Training و پشتیبانی از CPU/GPU است. برای پژوهش، نمونه‌سازی و ساخت مدل‌های سفارشی بسیار رایج است.</p><div class="chips"><span class="chip">Tensors</span><span class="chip">Autograd</span><span class="chip">DataLoader</span><span class="chip">torch.nn</span><span class="chip">CUDA</span></div></div>
+<div class="box"><h3>🟠 TensorFlow</h3><p>یک پلتفرم End-to-End برای Machine Learning است که محاسبات Tensor، شتاب‌دهی GPU، Automatic Differentiation، ساخت و آموزش مدل و Export/Deployment را پوشش می‌دهد. اکوسیستم آن ابزارهایی برای داده، سرویس‌دهی و اجرا روی محیط‌های مختلف دارد.</p><div class="chips"><span class="chip">tf.Tensor</span><span class="chip">tf.data</span><span class="chip">GPU</span><span class="chip">TFX</span><span class="chip">LiteRT</span></div></div>
+<div class="box"><h3>🟣 Keras</h3><p>API سطح‌بالا برای Deep Learning است که ساخت مدل، آموزش، ارزیابی، Fine-tuning و ذخیره‌سازی را ساده‌تر می‌کند. <b>Keras 3</b> می‌تواند روی Backendهای TensorFlow، PyTorch و JAX کار کند؛ بنابراین صرفاً به TensorFlow محدود نیست.</p><div class="chips"><span class="chip">Sequential</span><span class="chip">Functional API</span><span class="chip">Callbacks</span><span class="chip">Fine-tuning</span><span class="chip">Multi-backend</span></div></div>
+</div>
+<h3>مفاهیم عملی مشترک</h3>
+<div class="chips"><span class="chip">Dataset</span><span class="chip">DataLoader / tf.data</span><span class="chip">Model</span><span class="chip">Forward Pass</span><span class="chip">Loss</span><span class="chip">Backpropagation</span><span class="chip">Optimizer</span><span class="chip">Checkpointing</span><span class="chip">GPU / Accelerator</span><span class="chip">Evaluation</span></div>
+<div class="callout"><b>هدف:</b> لازم نیست از همان ابتدا در همه Frameworkها متخصص باشی. یک Framework را عمیق یاد بگیر، اما ساختار مفاهیم را طوری یاد بگیر که بتوانی همان مدل و pipeline را در اکوسیستم‌های دیگر هم درک و پیاده‌سازی کنی.</div>
+<pre>Dataset
+   ↓
+Preprocessing / Data Pipeline
+   ↓
+Neural Network
+   ↓
+Forward Pass
+   ↓
+Loss
+   ↓
+Backward / Autograd
+   ↓
+Optimizer
+   ↓
+Updated Weights
+   ↓
+Evaluation / Export</pre>
+</div>
+</section>
+
+<section class="section" id="architectures">
+<div class="section-head"><div class="section-icon">10</div><div><h2>معماری‌های مختلف Deep Learning</h2><p>بعد از فهم اصول، خانواده‌های اصلی مدل‌ها را بشناس</p></div></div>
+<div class="content">
+<div class="three">
+<div class="box"><h3>🖼️ CNN</h3><p>برای استخراج الگوهای مکانی از تصویر و داده‌های مشابه؛ پایه بسیاری از مسائل Classification، Detection و Segmentation.</p><div class="flow"><span>Image</span><i>→</i><span>CNN</span><i>→</i><span>Prediction</span></div></div>
+<div class="box"><h3>🔁 RNN / LSTM / GRU</h3><p>برای داده‌های ترتیبی و وابستگی‌های زمانی طراحی شده‌اند و هنوز برای برخی مسائل Sequence و Time Series آموزشی مفیدند، هرچند در بسیاری از کاربردهای مدرن زبان، Transformerها غالب‌اند.</p></div>
+<div class="box"><h3>⚡ Transformers</h3><p>با Attention و Self-Attention برای مدل‌سازی وابستگی‌های توالی و ورودی‌های چندوجهی استفاده می‌شوند و پایه بسیاری از LLMها و مدل‌های مدرن هستند.</p><div class="chips"><span class="chip">Attention</span><span class="chip">Self-Attention</span><span class="chip">Encoder/Decoder</span></div></div>
+<div class="box"><h3>🕸️ GNN</h3><p>برای داده‌هایی که ساختار Graph دارند؛ اطلاعات گره‌ها و ارتباط بین آن‌ها را مدل می‌کند. کاربردها شامل Recommendation، Link Prediction، کشف تقلب و مسائل علمی/شبکه‌ای است.</p><div class="chips"><span class="chip">GCN</span><span class="chip">GAT</span><span class="chip">GraphSAGE</span></div></div>
+<div class="box"><h3>🔍 Autoencoder / VAE</h3><p>برای یادگیری نمایش فشرده داده، بازسازی، کاهش بُعد، تشخیص ناهنجاری و در VAE برای مدل‌سازی فضای نهفته و تولید نمونه استفاده می‌شوند.</p></div>
+<div class="box"><h3>🎨 GAN</h3><p>از یک Generator و Discriminator برای یادگیری تولید داده استفاده می‌کند. از خانواده‌های مهم تاریخی در Generative Modeling است و در تولید تصویر و افزایش داده کاربرد داشته است.</p><div class="chips"><span class="chip">Generator</span><span class="chip">Discriminator</span></div></div>
+<div class="box"><h3>🌫️ Diffusion Models</h3><p>با فرایندهای تدریجی نویزدهی و حذف نویز، توزیع داده را یاد می‌گیرند و در تولید تصویر و مدل‌های مولد مدرن نقش مهمی دارند.</p><div class="chips"><span class="chip">Denoising</span><span class="chip">Text-to-Image</span></div></div>
+<div class="box"><h3>🧩 Multimodal Architectures</h3><p>چند نوع داده مثل متن، تصویر و صدا را در یک سیستم یا فضای مشترک ترکیب می‌کنند و برای جست‌وجو، درک و تولید چندوجهی استفاده می‌شوند.</p></div>
+<div class="box"><h3>🧱 MLP / Feedforward Networks</h3><p>معماری پایه و عمومی برای داده‌های برداری و مسائل جدولی؛ همچنین برای درک لایه‌ها، Activation و جریان آموزش نقطه شروع خوبی است.</p></div>
+</div>
+<div class="callout"><b>نکته:</b> معماری را بر اساس نوع داده و مسئله انتخاب می‌کنیم: تصویر → CNN/ViT، توالی و زبان → Transformer، گراف → GNN، تولید → VAE/GAN/Diffusion/Autoregressive، و مسائل برداری → MLP. این مرزبندی مطلق نیست و معماری‌های جدید اغلب ترکیبی هستند.</div>
+</div>
+</section>
+
+<section class="section" id="specialization">
+<div class="section-head"><div class="section-icon">11</div><div><h2>حوزه‌های تخصصی</h2><p>بعد از Core Skills، بر اساس نوع داده و مسئله مسیر تخصصی را انتخاب کن</p></div></div>
+<div class="content">
+<div class="two">
+<div class="box spec cv"><h3>01 — Computer Vision</h3><div class="tagline">تصویر، ویدئو و ادراک بصری</div><p>تمرکز روی فهم محتوای تصویری و ویدئویی؛ از Classification و Object Detection تا Segmentation، OCR، Tracking و 3D/Video Understanding.</p><div class="chips"><span class="chip">Detection</span><span class="chip">Segmentation</span><span class="chip">OCR</span><span class="chip">Tracking</span></div></div>
+<div class="box spec nlp"><h3>02 — NLP / LLM</h3><div class="tagline">زبان، متن و مدل‌های زبانی</div><p>از Text Classification و Information Extraction تا Transformers، Embeddings، LLM، RAG و Fine-tuning مدل‌های زبانی.</p><div class="chips"><span class="chip">Transformers</span><span class="chip">LLM</span><span class="chip">RAG</span><span class="chip">Fine-tuning</span></div></div>
+<div class="box spec gen"><h3>03 — Generative AI</h3><div class="tagline">تولید و مدل‌های Foundation</div><p>ساخت سیستم‌هایی که متن، تصویر، صدا یا محتوای چندوجهی تولید می‌کنند؛ شامل LLM، Diffusion، Multimodal Models و سیستم‌های Agentic.</p><div class="chips"><span class="chip">LLM</span><span class="chip">Diffusion</span><span class="chip">Multimodal</span><span class="chip">Agents</span></div></div>
+<div class="box spec audio"><h3>04 — Speech / Audio</h3><div class="tagline">گفتار، صدا و سیگنال‌های صوتی</div><p>از ASR و TTS تا Speaker Recognition، Audio Classification، Speech Enhancement و پردازش سیگنال‌های صوتی.</p><div class="chips"><span class="chip">ASR</span><span class="chip">TTS</span><span class="chip">Speaker ID</span><span class="chip">Audio ML</span></div></div>
+<div class="box"><h3>05 — Graph Machine Learning</h3><div class="tagline">داده‌های رابطه‌ای و شبکه‌ای</div><p>وقتی رابطه بین موجودیت‌ها بخشی از مسئله است؛ شامل GNN، Node Classification، Link Prediction، Graph Embeddings و Recommendation.</p><div class="chips"><span class="chip">GNN</span><span class="chip">Graph Embedding</span><span class="chip">Link Prediction</span></div></div>
+<div class="box"><h3>06 — Multimodal AI</h3><div class="tagline">ترکیب متن، تصویر، صدا و ویدئو</div><p>تمرکز روی مدل‌هایی که چند modality را هم‌زمان درک یا تولید می‌کنند؛ مثلاً پاسخ‌گویی به سؤال درباره تصویر یا ترکیب متن و تصویر در یک سیستم واحد.</p><div class="chips"><span class="chip">Vision-Language</span><span class="chip">Audio-Language</span><span class="chip">Multimodal LLM</span></div></div>
+<div class="box"><h3>07 — Deep Reinforcement Learning</h3><div class="tagline">یادگیری از تعامل و بازخورد</div><p>ترکیب Neural Networks با Reinforcement Learning برای مسائل تصمیم‌گیری دنباله‌دار؛ از کنترل و بازی تا برخی مسائل بهینه‌سازی و Agentها.</p><div class="chips"><span class="chip">Policy</span><span class="chip">Value Function</span><span class="chip">RL Agents</span></div></div>
+<div class="box"><h3>08 — Scientific / AI for Science</h3><div class="tagline">Deep Learning برای مسائل علمی و مهندسی</div><p>کار با داده‌ها و شبیه‌سازی‌های علمی؛ مثل کشف دارو، زیست‌محاسباتی، مواد، فیزیک و مدل‌های جانشین برای شبیه‌سازی‌های پرهزینه.</p><div class="chips"><span class="chip">Scientific ML</span><span class="chip">Drug Discovery</span><span class="chip">Simulation</span></div></div>
+</div>
+<div class="callout"><b>انتخاب تخصص:</b> تخصص را فقط بر اساس اسم یک تکنولوژی انتخاب نکن؛ نوع داده، مسئله، علاقه، پروژه‌های قابل ساخت و نیاز بازار کار را کنار هم بررسی کن. همچنین مرزها قابل ترکیب‌اند؛ مثلاً یک محصول می‌تواند هم‌زمان Vision + LLM + Multimodal باشد.</div>
+</div>
+</section>
+
+<section class="section" id="deployment">
+
+<section class="section" id="projects">
+<div class="section-head"><div class="section-icon">13</div><div><h2>پروژه‌های واقعی</h2><p>تمرین باید در طول کل Roadmap تکرار شود</p></div></div>
+<div class="content">
+<div class="project"><div class="project-num">01</div><div><h3>Cat vs Dog — پروژه شروع</h3><p>یک Dataset تصویری آماده کن، تصاویر را به train/validation/test تقسیم کن، preprocessing انجام بده و یک CNN ساده را با PyTorch آموزش بده. در پایان Accuracy و چند نمونه prediction درست و غلط را گزارش کن.</p></div></div>
+<div class="project"><div class="project-num">02</div><div><h3>Image Classification — پروژه قابل ارائه</h3><p>یک مسئله چندکلاسه واقعی‌تر انتخاب کن؛ از Data Augmentation و Transfer Learning استفاده کن، چند مدل یا تنظیم مختلف را مقایسه کن و علاوه بر metricها، خطاهای مدل را تحلیل کن. خروجی باید شامل کد تمیز، README، نتایج و توضیح روش باشد.</p></div></div>
+<div class="project"><div class="project-num">03</div><div><h3>NLP / Speech Mini Project — انتخاب تخصص</h3><p>برای NLP می‌توانی Sentiment Analysis، Text Classification یا Summarization بسازی؛ برای Speech/Audio می‌توانی Speech-to-Text یا Audio Classification را تمرین کنی. هدف این پروژه شناخت pipeline داده، انتخاب مدل و ارزیابی مناسب حوزه تخصصی است.</p></div></div>
+<div class="project"><div class="project-num">04</div><div><h3>End-to-End AI System — پروژه مهندسی</h3><p>مدل آموزش‌دیده را از Notebook خارج کن: ورودی را از کاربر بگیر، preprocessing و inference را انجام بده، نتیجه را از طریق API برگردان، سرویس را با Docker بسته‌بندی کن و روی یک سرور یا Cloud اجرا کن.</p></div></div>
+<div class="project"><div class="project-num">05</div><div><h3>Portfolio Project — پروژه نهایی</h3><p>یک مسئله واقعی با ارزش کاربردی انتخاب کن و کل چرخه را پوشش بده: تعریف مسئله و معیار موفقیت، جمع‌آوری/پاک‌سازی داده، baseline، آموزش و optimization، ارزیابی و تحلیل خطا، Deployment و مستندسازی. این پروژه باید قابل نمایش در GitHub و Portfolio باشد.</p></div></div>
+<div class="callout"><b>پروژه واقعی یعنی فقط «مدل آموزش‌داده‌شده» نباشد:</b> مسئله مشخص، داده، ارزیابی، تحلیل خطا، کد قابل اجرا، مستندات و در پروژه‌های پیشرفته‌تر API/Deployment داشته باشد.</div>
+<pre>User
+  ↓
+Real-world Input
+  ↓
+Data / Preprocessing
+  ↓
+Deep Learning Model
+  ↓
+Evaluation + Error Analysis
+  ↓
+Inference API
+  ↓
+Docker
+  ↓
+Cloud / Server
+  ↓
+Usable AI System</pre>
+</div>
+</section>
+
+
+
+<section class="section" id="career-paths">
+<div class="section-head"><div class="section-icon">14</div><div><h2>مسیرهای شغلی</h2><p>نقش‌هایی که می‌توانند از مهارت‌های Deep Learning و AI استفاده کنند</p></div></div>
+<div class="content">
+<div class="three">
+<div class="box"><h3>🧠 Deep Learning Engineer</h3><p>طراحی، آموزش، بهینه‌سازی و ارزیابی شبکه‌های عصبی و تبدیل مدل به یک جزء قابل استفاده در محصول.</p></div>
+<div class="box"><h3>🤖 Machine Learning Engineer</h3><p>ساخت و عملیاتی‌کردن مدل‌های ML/DL، طراحی pipeline داده و مدل، ارزیابی و اتصال مدل به سیستم نرم‌افزاری.</p></div>
+<div class="box"><h3>⚙️ AI Engineer</h3><p>ساخت قابلیت‌های AI در محصول؛ ممکن است شامل مدل‌های آماده، LLM، RAG، APIهای مدل و در صورت نیاز آموزش یا Fine-tuning باشد.</p></div>
+<div class="box"><h3>✨ Generative AI Engineer</h3><p>ساخت سیستم‌های مبتنی بر مدل‌های مولد؛ مانند LLM، RAG، Fine-tuning، Evaluation، Multimodal و Agentic Workflows.</p></div>
+<div class="box"><h3>👁️ Computer Vision Engineer</h3><p>توسعه سیستم‌های تصویر و ویدئو برای Classification، Detection، Segmentation، OCR، Tracking و تحلیل بصری.</p></div>
+<div class="box"><h3>💬 NLP / LLM Engineer</h3><p>کار روی مدل‌های زبان، Embedding، Retrieval، RAG، Fine-tuning و ارزیابی سیستم‌های متنی و زبانی.</p></div>
+<div class="box"><h3>🎙️ Speech / Audio ML Engineer</h3><p>ساخت مدل‌ها و pipelineهای گفتار و صوت برای ASR، TTS، Speaker Recognition و Audio Understanding.</p></div>
+<div class="box"><h3>🔬 Research Engineer / Research Scientist</h3><p>تمرکز بیشتر روی پژوهش، آزمایش ایده‌های جدید، بازتولید مقاله، طراحی آزمایش و توسعه روش‌ها و معماری‌های تازه؛ شرایط تحصیلی بسته به سازمان متفاوت است.</p></div>
+<div class="box"><h3>🚀 MLOps / ML Platform Engineer</h3><p>ساخت زیرساخت آموزش و استقرار مدل، مدیریت pipelineها، مانیتورینگ، نسخه‌بندی مدل و فراهم‌کردن محیط اجرای پایدار برای تیم‌های ML.</p></div>
+</div>
+<div class="callout"><b>نکته:</b> نام شغلی در شرکت‌ها استاندارد واحدی ندارد. ممکن است یک شرکت برای کاری مشابه از عنوان AI Engineer، ML Engineer یا Deep Learning Engineer استفاده کند؛ بنابراین هنگام جست‌وجوی شغل باید چند عنوان و چند کلیدواژه را هم‌زمان بررسی کرد.</div>
+</div>
+</section>
+
+<section class="section" id="tools">
+<div class="section-head"><div class="section-icon">15</div><div><h2>ابزارها</h2><p>زبان‌ها، کتابخانه‌ها، Frameworkها و ابزارهای مهندسی</p></div></div>
+<div class="content">
+<div class="four">
+<div class="box"><h3>Python</h3><p>زبان اصلی مسیر؛ Syntax، Functions، OOP، Modules، Exceptions و کار با فایل‌ها.</p></div>
+<div class="box"><h3>NumPy</h3><p>آرایه‌ها، عملیات عددی، broadcasting و محاسبات علمی پایه.</p></div>
+<div class="box"><h3>Pandas</h3><p>خواندن، پاک‌سازی، تبدیل و تحلیل داده‌های جدولی.</p></div>
+<div class="box"><h3>Matplotlib</h3><p>Visualization برای بررسی داده و تحلیل نتایج مدل.</p></div>
+<div class="box"><h3>scikit-learn</h3><p>الگوریتم‌های ML، preprocessing، model selection و evaluation.</p></div>
+<div class="box"><h3>PyTorch</h3><p>Framework/Tensor Library برای ساخت و آموزش مدل‌های Deep Learning با Autograd، DataLoader، Optimizer و شتاب‌دهنده‌ها.</p></div>
+<div class="box"><h3>TensorFlow</h3><p>پلتفرم End-to-End برای ساخت، آموزش، پردازش داده و Export/Deployment مدل‌های ML/DL با پشتیبانی از CPU/GPU و پردازش توزیع‌شده.</p></div>
+<div class="box"><h3>Keras</h3><p>API سطح‌بالا برای ساخت سریع و خوانای مدل‌های Deep Learning؛ Keras 3 از Backendهای TensorFlow، PyTorch و JAX پشتیبانی می‌کند.</p></div>
+<div class="box"><h3>Hugging Face Transformers</h3><p>کتابخانه و اکوسیستم رایج برای مدل‌های Transformer، مدل‌های ازپیش‌آموزش‌دیده، Fine-tuning و LLMها.</p></div>
+<div class="box"><h3>Git / GitHub</h3><p>نسخه‌بندی، مدیریت کد و ارائه پروژه‌ها به شکل قابل بررسی.</p></div>
+<div class="box"><h3>Jupyter / VS Code</h3><p>محیط‌های رایج برای آزمایش، توسعه، تحلیل و اجرای کد.</p></div>
+<div class="box"><h3>FastAPI</h3><p>ساخت API برای ارائه inference مدل به سایر بخش‌های یک سیستم.</p></div>
+<div class="box"><h3>Docker</h3><p>بسته‌بندی برنامه و وابستگی‌ها در محیط‌های قابل تکرار برای Deployment.</p></div>
+<div class="box"><h3>Linux / CLI</h3><p>مهارت‌های پایه خط فرمان و محیط Linux برای کار با سرور و زیرساخت مفید است.</p></div>
+<div class="box"><h3>CUDA / GPU</h3><p>برای آموزش و inference مدل‌های بزرگ، آشنایی با GPU و شتاب‌دهنده‌ها مهم است.</p></div>
+<div class="box"><h3>MLflow / MLOps</h3><p>برای Tracking آزمایش‌ها، مدیریت چرخه عمر مدل و سازمان‌دهی فرایندهای ML بر اساس نیاز پروژه.</p></div>
+</div>
+<div class="callout"><b>ترتیب پیشنهادی:</b> Python → NumPy/Pandas/Matplotlib → scikit-learn → یکی از PyTorch یا TensorFlow/Keras → Git/Linux → FastAPI/Docker → GPU/CUDA → ابزارهای MLOps بر اساس نیاز پروژه.</div>
+</div>
+</section>
+
+<section class="section" id="market">
+<div class="section-head"><div class="section-icon">16</div><div><h2>بازار کار</h2><p>تصویر جهانی و بازار ایران بر اساس گزارش‌ها و داده‌های استخدامی</p></div></div>
+<div class="content">
+<h3>بازار جهانی</h3>
+<div class="two">
+<div class="box"><h3>روند کلی</h3><p>گزارش <b>World Economic Forum — Future of Jobs 2025</b> نقش‌های AI و Machine Learning را در میان مشاغل با رشد سریع تا 2030 قرار می‌دهد. این گزارش بر داده‌های نظرسنجی کارفرمایان در مقیاس جهانی تکیه دارد.</p></div>
+<div class="box"><h3>داده‌های تخصصی AI</h3><p>گزارش <b>Stanford AI Index 2026</b> نشان می‌دهد پذیرش سازمانی AI در نمونه بررسی‌شده در سال 2025 به 88٪ رسیده و Generative AI در بسیاری از کسب‌وکارها وارد حداقل یک کارکرد شده است. این آمار مربوط به سازمان‌های بررسی‌شده در گزارش است و نماینده مستقیم بازار کار ایران نیست.</p></div>
+</div>
+
+<h3>بازار کار ایران</h3>
+<div class="two">
+<div class="box"><h3>داده‌های گزارش «شاخص هوش مصنوعی ایران ۱۴۰۴»</h3><p>این گزارش توسط <b>مرکز استراتژی و تحول هوش مصنوعی شریف</b> تهیه شده و برای بررسی سمت تقاضای نیروی انسانی، از داده‌های <b>JobVision</b> نیز استفاده کرده است. در خلاصه منتشرشده از گزارش، بازار کار AI ایران هنوز از نظر تعداد فرصت‌ها محدود و تا حد زیادی در <b>تهران و شرکت‌های فناوری</b> متمرکز توصیف شده است.</p></div>
+<div class="box"><h3>مهارت و سرمایه انسانی</h3><p>همان گزارش برای سال 2024 حدود <b>۱۴٬۱۶۴ استعداد فعال AI مستقر در ایران</b> را شناسایی کرده و کمبود مهارت و نیروی انسانی باکیفیت را در کنار هزینه توسعه AI از موانع مهم توسعه کسب‌وکارهای این حوزه معرفی می‌کند.</p></div>
+<div class="box"><h3>عنوان‌های شغلی در ایران</h3><p>برای جست‌وجوی فرصت‌های Deep Learning نباید فقط عبارت «Deep Learning Engineer» را جست‌وجو کرد. عنوان‌هایی مانند <b>AI Engineer، Machine Learning Engineer، Data Scientist، Computer Vision Engineer، NLP/LLM Engineer</b> و نقش‌های مرتبط با Generative AI می‌توانند مهارت‌های Deep Learning را در شرح شغل خود داشته باشند.</p></div>
+<div class="box"><h3>الگوی مهارتی آگهی‌ها</h3><p>در آگهی‌های مرتبط با AI/ML، ترکیبی از Python، مبانی ML/DL، یکی از Frameworkها، کار با داده، ارزیابی مدل و مهارت‌های مهندسی مانند Git، API و Deployment دیده می‌شود. برای نقش‌های تخصصی‌تر، مهارت‌هایی مثل Computer Vision، NLP/LLM، Speech، Generative AI یا MLOps نیز اضافه می‌شوند.</p></div>
+</div>
+<div class="callout"><b>نتیجه برای رودمپ:</b> برای بازار ایران، یادگیری Deep Learning را به یک Framework محدود نکن. ترکیب <b>Python + ML/DL + یک تخصص + مهندسی نرم‌افزار + Deployment + پروژه قابل ارائه</b> باعث می‌شود بتوانی آگهی‌های متنوع‌تری را هدف بگیری؛ در عین حال باید محدودبودن تعداد فرصت‌ها و تمرکز جغرافیایی بازار ایران را در برنامه‌ریزی شغلی در نظر گرفت.</div>
+<p class="market-note">محدوده و روش داده‌ها مهم است: داده‌های WEF و Stanford تصویری جهانی ارائه می‌کنند؛ داده‌های ایران از گزارش «شاخص هوش مصنوعی ایران ۱۴۰۴» و همکاری آن با JobVision آمده‌اند. این داده‌ها را نباید مستقیماً با اعداد بازار آمریکا یا سایر کشورها مقایسه کرد.</p>
+</div>
+</section>
+
+<section class="section" id="final">
+
+
+
+<section class="section" id="references">
+<div class="section-head"><div class="section-icon">18</div><div><h2>منابع و رفرنس‌ها</h2><p>مستندات رسمی، گزارش‌های معتبر و منابع پژوهشی مورد استفاده</p></div></div>
+<div class="content">
+<ul class="ref-list">
+<li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noopener">Stanford HAI — 2026 AI Index Report</a> — برای روندهای AI، کاربردهای تخصصی، اقتصاد، بازار کار و پذیرش سازمانی AI.</li>
+<li><a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/2-jobs-outlook/" target="_blank" rel="noopener">World Economic Forum — The Future of Jobs Report 2025: Jobs Outlook</a> — برای روندهای جهانی مشاغل و تقاضای مهارتی.</li>
+<li><a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/" target="_blank" rel="noopener">World Economic Forum — Future of Jobs Report 2025: Skills Outlook</a> — برای روند تغییر مهارت‌ها.</li>
+<li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST — AI Risk Management Framework</a> — برای ملاحظات اعتمادپذیری، ایمنی، امنیت، شفافیت، حریم خصوصی و ریسک AI.</li>
+<li><a href="https://www.tensorflow.org/guide/basics" target="_blank" rel="noopener">TensorFlow — Official Documentation: Basics</a> — برای Tensorها، محاسبات GPU، Automatic Differentiation، ساخت، آموزش و Export مدل.</li>
+<li><a href="https://www.tensorflow.org/guide/keras" target="_blank" rel="noopener">TensorFlow — Keras Guide</a> — برای نقش Keras به‌عنوان API سطح‌بالای Deep Learning و اجزای مدل/لایه/آموزش.</li>
+<li><a href="https://keras.io/keras_3/" target="_blank" rel="noopener">Keras — Keras 3</a> — برای پشتیبانی Keras 3 از Backendهای JAX، TensorFlow و PyTorch و قابلیت‌های ساخت، آموزش و Deployment.</li>
+<li><a href="https://docs.pytorch.org/docs/main/" target="_blank" rel="noopener">PyTorch — Official Documentation</a> — برای Tensor، Autograd، DataLoader، Optimizer، GPU و ابزارهای آموزش/استقرار.</li>
+<li><a href="https://www.tensorflow.org/" target="_blank" rel="noopener">TensorFlow — Official Platform</a> — برای اکوسیستم TensorFlow و ابزارهایی مانند tf.data، TFX، LiteRT و TensorFlow GNN.</li>
+<li><a href="https://www.cs.stanford.edu/people/jure-leskovec" target="_blank" rel="noopener">Stanford Computer Science — Jure Leskovec</a> — برای زمینه علمی Graph Neural Networks و پژوهش‌های گراف‌محور.</li>
+<li><a href="https://www.python.org/doc/" target="_blank" rel="noopener">Python.org — Official Documentation</a> — برای زبان Python.</li>
+<li><a href="https://numpy.org/" target="_blank" rel="noopener">NumPy — Official Documentation</a> — برای محاسبات عددی و آرایه‌ها.</li>
+<li><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener">scikit-learn — User Guide</a> — برای الگوریتم‌های Machine Learning، preprocessing و evaluation.</li>
+<li><a href="https://huggingface.co/docs/transformers/index" target="_blank" rel="noopener">Hugging Face — Transformers Documentation</a> — برای مدل‌های Transformer، مدل‌های ازپیش‌آموزش‌دیده و Fine-tuning.</li>
+<li><a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener">FastAPI — Official Documentation</a> — برای ساخت API با Python.</li>
+<li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Docker — Official Documentation</a> — برای Containerization و Deployment.</li>
+<li><a href="https://ir.linkedin.com/company/sharifaistrategy" target="_blank" rel="noopener">Sharif Center for AI Strategy and Transformation — اطلاع‌رسانی رسمی «شاخص هوش مصنوعی ایران ۱۴۰۴»</a> — برای منشأ گزارش و همکاری با JobVision در تحلیل بازار کار.</li>
+<li><a href="https://www.linkedin.com/posts/job-vision-ir_%D8%B4%D8%A7%D8%AE%D8%B5-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DB%B1%DB%B4%DB%B0%DB%B4-activity-7501228540554764288-Cv-o" target="_blank" rel="noopener">JobVision — معرفی گزارش شاخص هوش مصنوعی ایران ۱۴۰۴</a> — برای استفاده از داده‌های JobVision در تحلیل تقاضای نیروی انسانی AI در ایران.</li>
+<li><a href="https://tehrandata.org/reports/%D8%B4%D8%A7%D8%AE%D8%B5-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DB%B1%DB%B4%DB%B0%DB%B4/" target="_blank" rel="noopener">گزارش شاخص هوش مصنوعی ایران ۱۴۰۴ — صفحه معرفی گزارش</a> — برای خلاصه داده‌ها و یافته‌های اکوسیستم AI ایران.</li>
+</ul>
+<div class="callout"><b>روش استفاده از منابع:</b> محتوای آموزشی رودمپ خلاصه و کاربردی نوشته شده است؛ برای جزئیات فنی به مستندات رسمی ابزارها و برای آمار بازار کار به گزارش اصلی و روش‌شناسی همان گزارش‌ها مراجعه شود.</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer>Deep Learning Engineer Roadmap • Fanous • 2026 • منابع رسمی، پژوهشی و گزارش‌های بازار کار</footer>
+</body>
+</html>

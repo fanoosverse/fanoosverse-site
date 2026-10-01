@@ -1,17 +1,23 @@
-# 🛠️ Test and Configuration Branch Guide
+# 🛠️ Sandbox Directory Guide
 
-This branch serves as an isolated "sandbox" environment to test our approaches and see the big picture before integrating anything into the Fanoos Lantern Project environment.
+This directory serves as an isolated "sandbox" environment to test our approaches and see the big picture before integrating anything into the main Fanoos Lantern Project environment.
 
-## 🎯 What is this branch used for?
-We are using this branch as a laboratory. The following items should be pushed here:
+## 🎯 What is this folder used for?
+We are using this directory as a laboratory. The following items should be pushed here:
 * **Web Scraping Codes:** Testing various data extraction tools and storing sample outputs.
 * **LLM Configurations:** Testing free API keys, and configuring language models for coding or supervisor agents.
 * **Data Processing Pipelines:** Testing Pydantic scripts, key extraction, and data validation before database integration.
 * **Database Tests:** Connection scripts and test queries for Qdrant (Vector DB) and PostgreSQL.
 
-## ⚠ Branch Rules
+## ⚠ Sandbox Rules
 1. **No Production Code:** Do not push final, production-ready code directly here. This space is strictly for Trial & Error and Proof of Concept (PoC) scripts.
-2. **Organize Your Folders:** Do not leave your test scripts scattered in the root directory. Create a dedicated folder for your specific task (e.g., `web-scraping-tests/` or `llm-configs/`) and place your files inside.
+2. **Use Your Designated Folders:** Do not leave your test scripts scattered in the root of the sandbox directory. Place your files inside the dedicated sub-directory created for your specific task.
 3. **Document Your Code:** Inside your specific folder, either include a short text file or use clear code comments to explain exactly what the test does and which task it belongs to.
 
-If you have any questions about how to push your files to this branch, don't hesitate to contact the technical leads.
+If you have any questions about how to push your files to this directory, don't hesitate to contact the technical leads.
+
+
+
+touch sandbox/db_configurations/.gitkeep sandbox/web_scraping_approaches/.gitkeep sandbox/llm_evaluations/.gitkeep sandbox/pydantic_extraction/.gitkeep sandbox/supervisor_pipeline/.gitkeep sandbox/db_keys_architecture/.gitkeep sandbox/data_sources_research/.gitkeep
+
+touch sandbox/llm_evaluations/.gitkeep

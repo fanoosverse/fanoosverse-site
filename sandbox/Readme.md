@@ -16,8 +16,3 @@ We are using this directory as a laboratory. The following items should be pushe
 
 If you have any questions about how to push your files to this directory, don't hesitate to contact the technical leads.
 
-
-
-touch sandbox/db_configurations/.gitkeep sandbox/web_scraping_approaches/.gitkeep sandbox/llm_evaluations/.gitkeep sandbox/pydantic_extraction/.gitkeep sandbox/supervisor_pipeline/.gitkeep sandbox/db_keys_architecture/.gitkeep sandbox/data_sources_research/.gitkeep
-
-touch sandbox/llm_evaluations/.gitkeep

@@ -1,0 +1,18 @@
+{
+  "military_service_requirement": "exemption_or_completion",
+  "soft_skills": [
+    "Team Leadership",
+    "Stakeholder Communication",
+    "Complex Problem Solving"
+  ],
+  "benefits": [
+    "بیمه درمان تکمیلی",
+    "ساعت کاری منعطف",
+    "پاداش",
+    "کمک هزینه دوره آموزشی",
+    "بسته ها و هدایای مناسبتی"
+  ],
+  "source_url": "https://example-job-board.ir/jobs/job_mae_0001",
+  "education_degree": ["bachelor"],
+  "education_field": ["computer_science", "information_technology"]
+}

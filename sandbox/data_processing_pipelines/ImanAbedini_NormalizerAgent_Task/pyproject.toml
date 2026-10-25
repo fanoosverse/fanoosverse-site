@@ -24,6 +24,7 @@ dev = [
     "pytest-asyncio>=0.23",
     "ruff>=0.4",
     "mypy>=1.9",
+    "types-PyYAML>=6.0",
 ]
 
 [project.scripts]
@@ -38,7 +39,10 @@ normalizer_agent = ["py.typed"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
+# The anyio pytest plugin can hang at interpreter shutdown with the asyncio
+# plugin; this suite uses pytest-asyncio exclusively.
+addopts = "-p no:anyio"
 markers = [
     "live: golden tests against real providers (opt-in, needs API keys)",
 ]
@@ -50,6 +54,9 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["normalizer_agent", "run_pipeline"]
 
 [tool.mypy]
 python_version = "3.11"

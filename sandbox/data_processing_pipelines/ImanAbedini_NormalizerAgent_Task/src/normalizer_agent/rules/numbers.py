@@ -1,7 +1,7 @@
 """Number extraction from raw (mostly Persian) text.
 
-Supports ASCII digits with separators, Persian number words ("سی و پنج"),
-range patterns ("۲۰ تا ۳۵"), and magnitude multipliers for money.
+Supports ASCII digits with separators, Persian number words ("thirty five"),
+range patterns ("20 to 35"), and magnitude multipliers for money.
 """
 
 from __future__ import annotations
@@ -79,10 +79,10 @@ class NumberResult:
 
 
 def _words_to_int(phrase: str) -> int | None:
-    """Compose a Persian number-word phrase ("سی و پنج") into an int.
+    """Compose a Persian number-word phrase ("thirty five") into an int.
 
     Standard Persian numbers below 1000 are purely additive:
-    "دویست و سی و پنج" = 200 + 30 + 5.
+    "two hundred and thirty five" = 200 + 30 + 5.
     """
 
     total = 0

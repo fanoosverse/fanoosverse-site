@@ -1,2 +1,0 @@
-[console_scripts]
-normalizer = normalizer_agent.interface.cli:main

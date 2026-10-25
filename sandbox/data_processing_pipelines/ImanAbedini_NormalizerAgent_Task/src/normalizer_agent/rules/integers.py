@@ -1,9 +1,9 @@
 """Integer extraction for age / experience / size fields.
 
 ``0`` is meaningful ("no experience required") and distinct from ``None``
-("not stated"). Raw strings like «حداقل ۳ سال سابقه» or «سن ۲۰ تا ۳۵ سال» are
-parsed into integers with the configured plausible ranges enforced by the
-validator, not here.
+("not stated"). Raw strings such as "at least 3 years of experience" or
+"age 20 to 35" are parsed into integers with the configured plausible ranges
+enforced by the validator, not here.
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ _MONTHS_RE = re.compile(r"\d+\s*(?:ماه|months?)", re.IGNORECASE)
 
 
 def extract_experience_years(raw: str) -> int | None:
-    """Minimum years of experience; ``0`` for «بدون سابقه / fresh / no experience»."""
+    """Minimum years of experience; ``0`` for "no experience / fresh"."""
 
     unified = unify_text(raw)
     if re.search(
@@ -32,7 +32,7 @@ def extract_experience_years(raw: str) -> int | None:
 
 
 def extract_age(raw: str, *, prefer: str = "min") -> int | None:
-    """Age bound from text like «سن ۲۰ تا ۳۵ سال» or «حداکثر ۴۰ ساله»."""
+    """Age bound from text such as "age 20 to 35" or "maximum 40 years old"."""
 
     unified = unify_text(raw)
     if not re.search(r"سن|سال|age", unified, flags=re.IGNORECASE):

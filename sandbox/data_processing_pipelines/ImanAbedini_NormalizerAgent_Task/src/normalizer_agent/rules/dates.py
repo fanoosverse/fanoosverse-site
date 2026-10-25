@@ -2,9 +2,9 @@
 
 Target form: ISO 8601 Gregorian (``YYYY-MM-DD``). Jalali (Persian solar
 Hijri) dates are converted with the standard 33-year-cycle algorithm — no
-external calendar dependency. Relative dates ("۵ روز پیش") may be resolved
-against ``collected_at`` but the caller MUST flag them ``inferred`` and send
-them to review.
+external calendar dependency. Relative dates (for example, "5 days ago") may
+be resolved against ``collected_at`` but the caller MUST flag them
+``inferred`` and send them to review.
 """
 
 from __future__ import annotations
@@ -128,7 +128,7 @@ def parse_date(
     """Parse ``raw`` into a Gregorian date.
 
     Returns ``(date, kind)`` where ``kind`` is ``explicit`` or ``inferred``
-    (relative dates like "۵ روز پیش" resolved against ``reference_now`` /
+    (relative dates such as "5 days ago" resolved against ``reference_now`` /
     ``collected_at``). ``(None, None)`` when nothing parseable is found.
     """
 

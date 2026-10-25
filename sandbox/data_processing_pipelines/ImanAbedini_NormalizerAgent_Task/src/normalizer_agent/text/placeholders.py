@@ -1,8 +1,8 @@
 """Placeholder and explicit-no detection (R-placeholder, R-explicit-no).
 
-Placeholders ("نامشخص", "N/A", "-", ...) are never emitted as values.
-Explicit-no ("مهم نیست", "not important") is a real value: it maps to the
-enum's "any"-style member when the field has one.
+Placeholders ("unknown", "N/A", "-", ...) are never emitted as values.
+Explicit-no ("not important", "does not matter") is a real value: it maps to
+the enum's "any"-style member when the field has one.
 """
 
 from __future__ import annotations

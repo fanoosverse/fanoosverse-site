@@ -1,10 +1,10 @@
 """Money parsing (R-money).
 
 Storage unit is IRR: ``1 toman = 10 rial``. Persian magnitude words multiply
-(``میلیون``=1e6, ``میلیارد``=1e9, ``هزار``=1e3). Foreign currencies are NOT
-converted: the amount and its ISO 4217 code survive as-is. "توافقی" /
-"negotiable" is not a number and must never become 0. The pay period is never
-inferred from the text.
+("million"=1e6, "billion"=1e9, "thousand"=1e3). Foreign currencies are NOT
+converted: the amount and its ISO 4217 code survive as-is. "Negotiable" is
+not a number and must never become 0. The pay period is never inferred from
+the text.
 """
 
 from __future__ import annotations
@@ -78,7 +78,7 @@ def parse_money(text: str) -> MoneyResult:
 
     # IRR: Persian job ads state amounts in toman by convention, so an amount
     # with no explicit unit is treated as toman (x10 to IRR). An explicit
-    # "ریال/rial" disables the multiplication.
+    # The Persian word for rial disables the toman multiplication.
     rial = re.search(r"ریال|rials?\b", unified, flags=re.IGNORECASE)
     factor = magnitude * (1 if rial else 10)
     is_range = len(numbers) > 1 and re.search(r"تا|الی|-|–|until|\bto\b", unified)

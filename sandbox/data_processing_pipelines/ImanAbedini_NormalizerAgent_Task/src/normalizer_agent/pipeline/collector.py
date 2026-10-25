@@ -58,7 +58,7 @@ def _money_raw(raw_model: schema.JobAdRaw, rule: FieldRule, own: str) -> str:
     """Combine the salary pair's raw texts into one parseable string.
 
     The pair fields (salary_min/salary_max) each carry part of the story:
-    "38 تا 52 میلیون" / "52 میلیون تومان". Joining them lets the money rule
+    "38 to 52 million" / "52 million toman". Joining them lets the money rule
     see the full range once.
     """
 

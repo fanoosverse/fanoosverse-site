@@ -1,10 +1,10 @@
 """Composite-value splitting (R-composite).
 
-One value = one concept. ``Python و SQL`` and ``React, Vue`` become two items;
-whitelisted pairs that are legitimately one concept (``CI/CD``, ``A/B
-Testing``, ``ML/AI``) stay whole. Values that resolve as a whole (checked via
-``keep_whole``) are never split — this protects entries like
-``حضوری و دورکاری`` (hybrid) whose split parts would mean something else.
+One value = one concept. ``Python and SQL`` and ``React, Vue`` become two
+items; whitelisted pairs that are legitimately one concept (``CI/CD``,
+``A/B Testing``, ``ML/AI``) stay whole. Values that resolve as a whole
+(checked via ``keep_whole``) are never split — this protects entries like
+"onsite and remote" (hybrid) whose split parts would mean something else.
 """
 
 from __future__ import annotations

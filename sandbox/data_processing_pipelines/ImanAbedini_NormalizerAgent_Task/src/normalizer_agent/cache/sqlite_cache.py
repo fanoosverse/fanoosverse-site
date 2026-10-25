@@ -62,6 +62,10 @@ class LLMCache:
             return
         path = Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)
+        # Create the file explicitly. Some sandboxed Windows environments deny
+        # SQLite's O_CREAT path even when the directory itself is writable;
+        # touching first also gives a clear error if the path is not writable.
+        path.touch(exist_ok=True)
         self._conn = sqlite3.connect(str(path), check_same_thread=False)
         self._conn.execute(
             """

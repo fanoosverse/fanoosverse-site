@@ -58,3 +58,4 @@ Completed Fields (Parsed JSON):
         if attempt < ATTEMPTS:
             time.sleep(2 ** attempt)
     raise LLMError(f"Supervisor unavailable: {last[:300]}", "fatal")
+    

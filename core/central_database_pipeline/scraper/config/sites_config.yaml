@@ -1,0 +1,109 @@
+# =====================================================================
+# Fanoos Web Scraper - Declarative Platform Configurations
+# =====================================================================
+
+platforms:
+  jobinja:
+    enabled: true
+    base_url: "https://jobinja.ir"
+    discovery_urls:
+      - "https://jobinja.ir/jobs"
+    requires_js: false
+    rate_limit_seconds: 2.5
+    max_pages_per_seed: 3
+    selectors:
+      job_links:
+        - "a.c-jobListView__titleLink"
+        - "div.o-listView__itemInfo a[href*='/jobs/']"
+      title:
+        - "div.c-jobView__titleText h1"
+        - "h1"
+      company:
+        - "h2.c-companyHeader__title"
+        - "div.c-companyHeader__info h2"
+      location:
+        - "//li[contains(@class, 'c-infoBox__item') and .//h4[contains(text(), 'محل کار')]]//span"
+        - "span.c-jobView__location"
+      info_box:
+        - "ul.c-infoBox li.c-infoBox__item"
+      description:
+        - "div.s-jobDesc"
+        - "section.c-jobView__description"
+
+  iranestekhdam:
+    enabled: true
+    base_url: "https://iranestekhdam.ir"
+    discovery_urls:
+      - "https://iranestekhdam.ir/search?q=برنامه+نویس"
+    requires_js: false
+    rate_limit_seconds: 2.0
+    max_pages_per_seed: 3
+    selectors:
+      job_links:
+        - "article h2 a"
+        - "div.post-title a[href*='iranestekhdam.ir']"
+      title:
+        - "h1.entry-title"
+        - "article h1"
+      company:
+        - "//td[contains(text(), 'نام شرکت')]/following-sibling::td"
+        - "div.company-name"
+      location:
+        - "//td[contains(text(), 'استان') or contains(text(), 'شهر')]/following-sibling::td"
+      info_box:
+        - "table.table-striped tr"
+        - "div.job-meta-box"
+      description:
+        - "div.entry-content"
+        - "article.post"
+
+  jobvision:
+    enabled: true
+    base_url: "https://jobvision.ir"
+    discovery_urls:
+      - "https://jobvision.ir/jobs/category/developer"
+    requires_js: true
+    rate_limit_seconds: 3.5
+    max_pages_per_seed: 2
+    selectors:
+      job_links:
+        - "job-card a[href^='/jobs/']"
+        - "a[href*='/jobs/']"
+      title:
+        - "h1"
+        - "div.job-title"
+      company:
+        - "a[href*='/companies/']"
+        - "div.company-brand"
+      location:
+        - "span.location-text"
+      info_box:
+        - "div.job-properties"
+        - "app-job-specification"
+      description:
+        - "div.job-description"
+        - "app-job-description"
+        - "main"
+
+  quera:
+    enabled: true
+    base_url: "https://quera.org"
+    discovery_urls:
+      - "https://quera.org/magnet/jobs"
+    requires_js: true
+    rate_limit_seconds: 3.0
+    max_pages_per_seed: 2
+    selectors:
+      job_links:
+        - "a[href^='/magnet/jobs/']"
+      title:
+        - "h1"
+      company:
+        - "a[href^='/magnet/companies/']"
+      location:
+        - "//span[contains(text(), 'تهران') or contains(text(), 'دورکاری')]"
+      info_box:
+        - "div.chakra-stack"
+      description:
+        - "main"
+        - "article"

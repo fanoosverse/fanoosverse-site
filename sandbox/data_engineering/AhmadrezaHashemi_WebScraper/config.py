@@ -29,9 +29,10 @@ except ImportError:
 # =====================================================================
 
 SCRAPER_ROOT_DIR = Path(__file__).resolve().parent
+PIPELINE_ROOT_DIR = SCRAPER_ROOT_DIR.parent
 DEFAULT_YAML_PATH = SCRAPER_ROOT_DIR / "config" / "sites_config.yaml"
-DEFAULT_ENV_PATH = SCRAPER_ROOT_DIR / ".env"
-
+DEFAULT_ENV_PATH = PIPELINE_ROOT_DIR / ".env"
+DEFAULT_LEDGER_DB_PATH = PIPELINE_ROOT_DIR / "database" / "scraper_ledger.db"
 
 # =====================================================================
 # Pydantic Schemas for sites_config.yaml
@@ -93,7 +94,7 @@ class ScraperEnvSettings(BaseModel):
     environment: Literal["development", "staging", "production"] = Field(default="development")
     log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"] = Field(default="INFO")
     log_dir: Path = Field(default=SCRAPER_ROOT_DIR / "logs")
-    ledger_db_path: Path = Field(default=SCRAPER_ROOT_DIR / "scraper_ledger.db")
+    ledger_db_path: Path = Field(default=DEFAULT_LEDGER_DB_PATH) 
 
     # Network & Transport Parameters
     http_timeout_seconds: float = Field(default=20.0, ge=5.0, le=120.0)
@@ -159,7 +160,7 @@ class AppConfig:
             "environment": os.getenv("SCRAPER_ENV", "development"),
             "log_level": os.getenv("SCRAPER_LOG_LEVEL", "INFO").upper(),
             "log_dir": Path(os.getenv("SCRAPER_LOG_DIR", str(SCRAPER_ROOT_DIR / "logs"))),
-            "ledger_db_path": Path(os.getenv("SCRAPER_LEDGER_DB_PATH", str(SCRAPER_ROOT_DIR / "scraper_ledger.db"))),
+            "ledger_db_path": Path(os.getenv("SCRAPER_LEDGER_DB_PATH", str(DEFAULT_LEDGER_DB_PATH))),
             "http_timeout_seconds": float(os.getenv("SCRAPER_HTTP_TIMEOUT", "20.0")),
             "max_retries": int(os.getenv("SCRAPER_MAX_RETRIES", "3")),
             "chrome_impersonate_version": os.getenv("SCRAPER_IMPERSONATE", "chrome124"),

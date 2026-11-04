@@ -1,0 +1,5 @@
+{"prompt_id": "extractor.main", "agent": "extractor", "version": "v1.1", "active": true, "content": "..."}
+{"prompt_id": "supervisor.extractor", "agent": "supervisor", "version": "v1.1", "active": true, "content": "..."}
+{"prompt_id": "normalizer.values", "agent": "normalizer", "version": "v1.1", "active": true, "content": "..."}
+{"prompt_id": "normalizer.repair", "agent": "normalizer", "version": "v1.1", "active": true, "content": "..."}
+{"prompt_id": "supervisor.normalizer", "agent": "supervisor", "version": "v1.1", "active": true, "content": "..."}
